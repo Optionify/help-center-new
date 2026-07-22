@@ -1,320 +1,116 @@
 ---
-title: "Creating Your First Product Option"
-description: "Step-by-step tutorial on creating your first custom product option in Optionify. Learn the process from start to finish with practical examples."
+title: "Add a Product Option in Shopify"
+description: "How to add a product option in Shopify with Optionify: create an option set, pick a type, add values and add-on pricing, assign, and preview."
 category: "getting-started"
-lastUpdated: "2025-12-03"
-tags: ["tutorial", "getting started", "options", "setup"]
+lastUpdated: "2026-07-05"
+tags: ["how to add a product option in Shopify", "create an option set", "product options", "Optionify tutorial", "Shopify customization"]
 featured: true
 order: 2
+faq:
+  - question: "How do I add a product option in Shopify?"
+    answer: "Open Optionify, click Create option set, name it, add an option and choose one of 17 types, add values, optionally set an add-on price, pick an assignment method, set the status to Active, and save with the save bar. Then use Preview to see it live."
+  - question: "What is an option set in Optionify?"
+    answer: "An option set is a named group that holds one or more options and their values. You assign the whole set to products rather than individual options, so a single set can cover one product, a tag, a collection, or your entire catalog at once."
+  - question: "Can I charge extra for a product option?"
+    answer: "Yes. Any option or value can carry an add-on price, set as a fixed amount or a percentage of the product price. The charge reaches checkout through a hidden companion product, so it also works with Buy it Now and Shop Pay."
+  - question: "Why isn't my option showing on the product page?"
+    answer: "The most common causes are the option set still being in Draft, the Optionify theme app embed not being enabled, or the set not being assigned to that product. Set the status to Active, enable the embed in your theme editor, and confirm the assignment."
+  - question: "Do I have to save before previewing?"
+    answer: "Yes. Save your option set with the save bar first, and make sure its status is Active. Preview opens a real product the set is assigned to on your live storefront, so it needs the saved, active version to render correctly."
 ---
 
-Ready to create your first custom product option? This tutorial will guide you through the entire process with a practical example: adding a gift message option to your products.
+This tutorial shows you how to add a product option in Shopify using Optionify, from creating an option set to previewing it live. We'll build a gift-message field with an optional add-on charge so you see the whole real flow: create the set, pick a type, add values, price it, assign it, activate, save, and preview.
 
-## Before You Begin
+## How do I add a product option in Shopify?
 
-Make sure you have:
+Open Optionify and click **Create option set**, name the set, add an option and choose one of the 17 types, add values for choice types, optionally set an add-on price, pick an assignment method, set the status to **Active**, and save with the save bar. Then use **Preview** to see it live.
 
-- ✅ Installed Optionify on your Shopify store
-- ✅ Completed the initial setup wizard
-- ✅ Have at least one product in your store
+Everything below expands on those steps. If you're brand new to the app, skim [getting started with Optionify](/articles/getting-started-with-optionify) first so the terms below are familiar.
 
+## Step 1: Create an option set
 
-## Step 1: Access the Option Creator
+In Optionify, click the **Create option set** button. This opens the option set editor, where all of your work happens. An **option set** is a named group that holds one or more options; you assign the set to products, not individual options, so it's the container everything lives in.
 
-1. Open your Shopify admin panel
-2. Navigate to **Apps** → **Optionify**
-3. Click the **Create New Option** button in the dashboard
+![The Create option set button in the Optionify admin](/images/creating-first-option/create-option-set-button.png)
+*Click "Create option set" to open the editor*
 
-\![Create New Option button location](/images/creating-first-option/create-button.png)
-*The "Create New Option" button is prominently displayed on the dashboard*
+Give the set a clear name such as `Gift Message`. The name is for your own organization in the option set list; customers never see it.
 
-You'll be taken to the Option Builder interface.
+## Step 2: Add an option and choose its type
 
-## Step 2: Choose Your Option Type
+Inside the set, add an option and choose its type from the 17 available. For our gift message we'll use **Text input**, which collects a short custom string. Choice types like Dropdown or Radio buttons hold values you define; input types like Text or Date picker collect what the customer types or selects.
 
-The first step is selecting which type of option you want to create.
+![Choosing an option type from the 17 available in the editor](/images/creating-first-option/choose-option-type.png)
+*Selecting a type for the new option from the 17 Optionify types*
 
-For our gift message example, we'll use **Text** (single-line input):
+Set a customer-facing **label** for the option, for example `Gift Message`. This label is what shoppers read on the product page, so keep it clear and indicate whether it's optional.
 
-1. Click on the **Text** option type card
-2. The builder will update to show text-specific settings
+## Step 3: Add values (for choice options)
 
-\![Option type selection screen](/images/creating-first-option/option-type-selection.png)
-*Choose from 11 different option types based on your needs*
+If your option is a choice type such as Dropdown, Radio buttons, or Checkbox, add the **values** customers select from. Each value is one selectable choice, like `Small`, `Medium`, and `Large`. Text, number, date, and upload options don't use values, since the customer supplies the content directly.
 
-### Quick Option Type Reference
+For example, a "Wrapping Style" dropdown might have values `Kraft paper`, `Gift box`, and `Ribbon only`. Our Text input gift message skips this step because the shopper types their own message. For a deeper look at choice-based options, see the [radio button options](/articles/radio-options) and [dropdown options](/articles/dropdown-options) guides.
 
-- **Text**: Short one-line input (names, messages)
-- **Textarea**: Multi-line input (longer messages, instructions)
-- **Radio**: Choose one from several options
-- **Checkbox**: Select multiple items
-- **Dropdown**: Choose from a dropdown menu
+## Step 4: Set an add-on price (optional)
 
+Any option or value can carry an **add-on price**. Choose **Fixed** for a set money amount or **Percent** for a percentage of the product price. Both are live and reach checkout through a hidden companion product, so the charge works with Buy it Now and Shop Pay too.
 
-## Step 3: Configure Basic Settings
+![Setting a fixed or percentage add-on price on an option](/images/creating-first-option/add-on-pricing.png)
+*Adding a fixed or percent add-on price to an option or value*
 
-Now you'll set up the core details of your option:
+For a paid gift-wrap upgrade you might set a fixed `+$5.00`. For a premium material you might use a percentage so the upcharge scales with product price. Leave pricing empty for free options like a plain gift message. See [pricing variants](/articles/pricing-variants) for strategy on fixed versus percent charges.
 
-### Option Label
+## Step 5: Choose an assignment method
 
-This is what customers will see. For our example:
+Decide where the option set appears using one of four assignment methods: **All Products**, **Tagged Products**, **Collections**, or **Individual Products**. This lives inside the option set, so one set can cover your whole catalog or a single item depending on what you pick.
 
-```
-Gift Message (Optional)
-```
+![Selecting an assignment method for the option set](/images/creating-first-option/assignment-method.png)
+*Choosing All Products, Tagged Products, Collections, or Individual Products*
 
-**Best practices for labels:**
-- Be clear and descriptive
-- Indicate if optional or required
-- Keep it under 50 characters
-- Use sentence case
+For a gift message you'd likely choose **Tagged Products** and target a tag such as `gift-wrappable`, or **All Products** if every item can be gifted. Read [understanding assign types](/articles/understanding-assign-types) for help deciding between the four methods.
 
-### Internal Name
+## Step 6: Set the status to Active and save
 
-This helps you identify the option in your admin:
+Set the option set's status to **Active** so it can appear on the storefront; a **Draft** set stays hidden. Optionify has no separate "Publish" button. Instead, your changes are committed through Shopify's **save bar** at the top of the editor when you click **Save**.
 
-```
-gift-message-text
-```
+![The Shopify save bar and the Active status toggle in the editor](/images/creating-first-option/active-status-save-bar.png)
+*Set the status to Active and save with the Shopify save bar*
 
-**Naming conventions:**
-- Use lowercase
-- Separate words with hyphens
-- Keep it descriptive
-- Avoid special characters
+If nothing shows up on your storefront later, the usual culprits are a Draft status, an option set not assigned to that product, or the Optionify theme app embed being turned off in your theme editor.
 
-\![Basic settings configuration panel](/images/creating-first-option/basic-settings.png)
-*Fill in the option label and internal name*
+## Step 7: Preview the option live
 
-### Help Text (Optional)
+Once the set is saved and **Active**, click the **Preview** action. Optionify finds a product the set is assigned to and opens it on your live storefront, so you see the real rendering rather than a mockup. Preview needs an Active, assigned set because it loads an actual product page.
 
-Add guidance for customers:
+Check that the label reads clearly, any values look right, and add-on prices display as expected. If the option doesn't appear, confirm the theme app embed is enabled, as covered in [getting started with Optionify](/articles/getting-started-with-optionify).
 
-```
-Add a personalized message for the gift recipient (max 100 characters)
-```
+## How does option data reach my orders?
 
-This appears below the input field to guide customers.
+Every option a customer fills in is saved to the Shopify order as line item properties. Open the order in your Shopify admin and you'll see the exact text, selected values, dates, or uploads alongside the product, so your fulfillment team has everything they need to pack it correctly.
 
-## Step 4: Configure Option-Specific Settings
+For our example, an order would list `Gift Message: Happy Birthday, Sarah!` right under the product. Any add-on charge you set also flows through to the order total via the companion product, keeping your accounting accurate.
 
-Each option type has unique settings. For Text options:
+## FAQ
 
-### Character Limit
+**How do I add a product option in Shopify?**
+Open Optionify, click Create option set, name it, add an option and choose one of 17 types, add values, optionally set an add-on price, pick an assignment method, set the status to Active, and save with the save bar. Then use Preview to see it live.
 
-Set a maximum character count:
-- **Enabled**: Yes
-- **Max Characters**: 100
+**What is an option set in Optionify?**
+An option set is a named group that holds one or more options and their values. You assign the whole set to products rather than individual options, so a single set can cover one product, a tag, a collection, or your entire catalog at once.
 
+**Can I charge extra for a product option?**
+Yes. Any option or value can carry an add-on price, set as a fixed amount or a percentage of the product price. The charge reaches checkout through a hidden companion product, so it also works with Buy it Now and Shop Pay.
 
-### Placeholder Text
+**Why isn't my option showing on the product page?**
+The most common causes are the option set still being in Draft, the Optionify theme app embed not being enabled, or the set not being assigned to that product. Set the status to Active, enable the embed in your theme editor, and confirm the assignment.
 
-Example text that appears before the customer types:
+**Do I have to save before previewing?**
+Yes. Save your option set with the save bar first, and make sure its status is Active. Preview opens a real product the set is assigned to on your live storefront, so it needs the saved, active version to render correctly.
 
-```
-e.g., "Happy Birthday, Sarah!"
-```
+## Get started with Optionify
 
-### Validation
+You've now created an option set, priced an option, assigned it, and previewed it live, all on Optionify's free plan. There are no paid tiers, so every option type and feature is available from day one.
 
-- **Required**: No (this is optional)
-- **Minimum Length**: 0
-- **Pattern**: None (accepts all characters)
+**[Install Optionify free on the Shopify App Store](https://apps.shopify.com/optionify)**
 
-\![Text option specific settings](/images/creating-first-option/text-settings.png)
-*Configure character limits, placeholders, and validation rules*
-
-## Step 5: Set Up Assignment
-
-This is where you choose which products will show this option.
-
-### Assignment Type Options
-
-1. **All Products**: Shows on every product (rarely recommended)
-2. **Tagged Products**: Shows on products with specific tags
-3. **Collections**: Shows on products in specific collections
-4. **Individual Products**: Shows only on selected products
-
-For our gift message example, let's use **Tagged Products**:
-
-1. Select **Tagged Products**
-2. Enter tag: `gift-wrappable`
-3. Click **Add Tag**
-
-\![Assignment configuration screen](/images/creating-first-option/assignment-setup.png)
-*Choose where this option will appear in your store*
-
-
-### Tagging Products
-
-To add the tag to products:
-
-1. Go to **Products** in Shopify admin
-2. Select a product
-3. In the **Tags** field, add: `gift-wrappable`
-4. Save the product
-
-## Step 6: Configure Pricing (Optional)
-
-You can add a charge for this option if desired.
-
-For a free gift message:
-- **Add Price**: No
-
-For a paid service (like premium gift wrapping):
-- **Add Price**: Yes
-- **Price**: $5.00
-- **Price Label**: "Gift Wrapping Service"
-
-\![Pricing configuration options](/images/creating-first-option/pricing-config.png)
-*Optionally add extra charges for premium services*
-
-
-## Step 7: Set Display Order
-
-If you have multiple options on a product, control the order they appear:
-
-- **Display Order**: 1 (appears first)
-
-Lower numbers appear higher on the product page.
-
-## Step 8: Preview Your Option
-
-Before saving, use the preview panel to see how it will look:
-
-\![Live preview of the option](/images/creating-first-option/option-preview.png)
-*The preview shows exactly how customers will see your option*
-
-### Check:
-- Label displays correctly
-- Help text is clear
-- Placeholder text is helpful
-- Field accepts input properly
-
-## Step 9: Save and Activate
-
-When everything looks good:
-
-1. Click **Save Option**
-2. Toggle **Active** to ON
-3. Click **Publish**
-
-\![Save and activate buttons](/images/creating-first-option/save-activate.png)
-*Save your option and activate it to make it live on your store*
-
-
-## Step 10: Test Your Option
-
-Always test before announcing to customers:
-
-### Testing Checklist
-
-1. **Visit a Tagged Product**
-   - Go to your store's frontend
-   - Navigate to a product with the `gift-wrappable` tag
-   - Verify the option appears
-
-2. **Test Input**
-   - Type a test message
-   - Verify character counter works
-   - Check placeholder disappears
-
-3. **Add to Cart**
-   - Add the product to cart
-   - Verify the gift message shows in cart
-   - Check the option data persists
-
-4. **Place Test Order**
-   - Complete a test purchase
-   - Check the order confirmation
-   - Verify gift message appears in order details
-
-5. **Mobile Testing**
-   - Test on a mobile device
-   - Ensure responsive design works
-   - Verify input is easy to use
-
-\![Testing the option on a live product](/images/creating-first-option/testing-product.png)
-*Always test on your actual store before going live*
-
-
-## Viewing Option Data in Orders
-
-When customers place orders with your option:
-
-1. Go to **Orders** in Shopify admin
-2. Open an order
-3. Look for **Option Data** or **Custom Fields** section
-4. You'll see: "Gift Message: [customer's message]"
-
-\![Option data in Shopify order details](/images/creating-first-option/order-data.png)
-*Custom option data appears clearly in your order details*
-
-## Common Issues and Solutions
-
-### Option Doesn't Appear on Product
-
-**Possible causes:**
-- Option is not activated
-- Product doesn't have the correct tag/collection
-- Theme cache needs clearing
-
-**Solution:**
-1. Verify option is **Active**
-2. Check product has correct assignment
-3. Clear theme cache in Optionify settings
-
-### Character Counter Not Working
-
-**Solution:**
-- Refresh the page
-- Clear browser cache
-- Check that character limit is enabled
-
-### Option Data Not in Order
-
-**Solution:**
-- Ensure customer added product to cart AFTER entering option data
-- Verify option is saved properly
-- Check Shopify order timeline for custom attributes
-
-## Next Steps
-
-Congratulations! You've created your first option. Now you can:
-
-### Expand Your Options
-
-- Create options for other product types
-- Try different option types (checkbox, dropdown, etc.)
-- Set up conditional logic for advanced scenarios
-
-### Learn More
-
-- [Understanding Assign Types](/articles/understanding-assign-types) - Master product assignment
-- [Text Options Guide](/articles/text-options) - Deep dive into text options
-- [Pricing & Variants](/articles/pricing-variants) - Add charges to options
-
-### Explore Advanced Features
-
-- [Conditional Logic](/articles/conditional-logic) - Show/hide options dynamically
-- [Image Upload Options](/articles/image-options) - Let customers upload files
-- [Date Picker Options](/articles/datepicker-options) - Collect delivery dates
-
-
-## Quick Reference
-
-### Creating an Option Summary
-
-1. Click **Create New Option**
-2. Choose **Option Type**
-3. Set **Label** and **Internal Name**
-4. Configure **Option Settings**
-5. Choose **Assignment Method**
-6. Set **Pricing** (if applicable)
-7. **Preview** the option
-8. **Save** and **Activate**
-9. **Test** on your store
-
----
-
-**Having trouble?** Check our [Troubleshooting Guide](/articles/troubleshooting) or contact support through the app.
+Keep building with [understanding assign types](/articles/understanding-assign-types), add show/hide rules with [conditional logic](/articles/conditional-logic), or explore specific types like [date picker options](/articles/datepicker-options) and [file upload options](/articles/image-options).

@@ -1,83 +1,119 @@
 ---
-title: "Troubleshooting Common Issues"
-description: "Solutions to common problems and frequently asked questions about Optionify."
+title: "Optionify Options Not Showing: Fixes"
+description: "Optionify options not showing on your product page? Fix it fast: activate the set, enable the theme app embed, assign the set, and commit the save bar."
 category: "advanced"
-lastUpdated: "2026-02-01"
-tags: ["troubleshooting", "faq", "help", "support"]
+lastUpdated: "2026-07-05"
+tags: ["optionify options not showing", "options not appearing", "troubleshooting", "theme app embed", "support"]
 featured: false
 order: 18
+faq:
+  - question: "Why are my Optionify options not showing on the product page?"
+    answer: "The four usual causes are: the option set is still in Draft instead of Active, the theme app embed isn't enabled in your theme editor, the set isn't assigned to that product, or a change was never committed with Shopify's save bar. Fixing these four resolves almost every case."
+  - question: "How do I enable the Optionify theme app embed?"
+    answer: "In Shopify admin go to Online Store, Themes, Customize, then open Theme settings and the App embeds tab. Turn on the Optionify embed and click Save. Options render through this embed, so if it's off, nothing appears on the storefront no matter how the set is configured."
+  - question: "Why is my option set active but still not showing?"
+    answer: "An active set only appears on products it's assigned to. Check the set's assignment method — All Products, Tagged Products, Collections, or Individual Products — and confirm the product qualifies. Also make sure any edit was committed with the save bar, since uncommitted changes don't go live."
+  - question: "Why isn't the add-on price showing or being charged?"
+    answer: "Confirm the value has an add-on price set as Fixed or Percent, that the set is Active and saved, and that the theme app embed is enabled. Add-on charges reach checkout through a hidden companion product, so verify the total updates as you select the option on the live product page."
+  - question: "Where does option data appear in Shopify orders?"
+    answer: "Every selection a customer makes is saved as a line item property on the Shopify order. Open the order in Shopify admin to see each chosen option and any add-on charge. If data is missing, the customer likely selected options before the set was active or assigned."
 ---
 
-Quick solutions to the most common issues with Optionify.
+If your **Optionify options are not showing on the product page**, the cause is almost always one of four things — and each has a quick fix. This guide walks through them in the order to check, then covers add-on prices that don't appear and where option data shows up in orders. Work top to bottom and you'll resolve nearly every case in a couple of minutes.
 
-## Options Not Appearing on Products
+## Why are my Optionify options not showing on the product page?
 
-### Check 1: Option is Activated
-- Open the option in dashboard
-- Verify toggle is ON
-- Click Save
+The four usual causes are: the option set is still in **Draft** instead of Active, the **theme app embed** isn't enabled in your theme editor, the set **isn't assigned** to that product, or a change was **never committed** with Shopify's save bar. Fixing these four resolves almost every case. Check them in that order.
 
-### Check 2: Assignment is Correct
-- Verify product has correct tag
-- Or is in correct collection
-- Or is individually selected
+![A Shopify product page with Optionify options rendered below the price](/images/troubleshooting/options-on-product-page.png)
+*When all four conditions are met, options render on the live product page*
 
-### Check 3: Clear Cache
-1. Go to Settings
-2. Click "Clear Cache"
-3. Refresh product page
+## Fix 1: Set the option set to Active
 
+Optionify sets have two statuses: **Active** and **Draft**. A Draft set never appears on the storefront — there is no separate "Publish" button. Open the set in the Option Set Editor, change the status to **Active**, and commit the change with the save bar (see Fix 4). If you just created the set and it's not showing, this is the most common reason.
 
-## Option Data Not in Orders
+## Fix 2: Enable the theme app embed
 
-### Solution
-- Ensure customer entered data BEFORE adding to cart
-- Check order custom attributes section
-- Verify option was active when order placed
+Options render on the storefront through Optionify's **theme app embed**. If it's switched off, nothing appears no matter how the set is configured. To enable it:
 
-## Theme Compatibility Issues
+1. In Shopify admin, go to **Online Store → Themes**.
+2. Click **Customize** on your live theme.
+3. Open **Theme settings** (the gear icon) and the **App embeds** tab.
+4. Turn on the **Optionify** embed.
+5. Click **Save**.
 
-If options don't display correctly:
+![The Shopify theme editor App embeds panel with the Optionify embed toggled on](/images/troubleshooting/theme-app-embed-toggle.png)
+*Enable the Optionify theme app embed in the theme editor's App embeds tab*
 
-1. Disable app
-2. Re-enable app
-3. Click "Reinstall Theme Integration"
-4. Test on product page
+Do this on the theme you're actually publishing. If you've recently switched themes, the embed must be enabled on the new one.
 
+## Fix 3: Assign the set to the product
 
-## Character Counter Not Working
+An Active set only shows on products it's **assigned** to. Optionify offers four [assignment methods](/articles/understanding-assign-types):
 
-- Enable JavaScript
-- Update browser
-- Check theme compatibility
-- Contact support if persists
+- **All Products** — appears on every product.
+- **Tagged Products** — appears on products carrying a specific tag.
+- **Collections** — appears on products in chosen collections.
+- **Individual Products** — appears only on products you pick.
 
-## Upload Errors
+If you used Tagged Products, confirm the product actually has that tag. If you used Collections, confirm the product is in the collection. A mismatch here is a frequent reason an otherwise-correct set doesn't appear on one specific product.
 
-For image upload options:
+## Fix 4: Commit changes with the save bar
 
-- Check file size (must be under limit)
-- Verify file type is allowed
-- Ensure stable internet connection
+Optionify saves through **Shopify's save bar** — the bar that slides in at the top of the screen when you make an edit. If you change a status, add a value, or set a price and then navigate away without clicking **Save** in that bar, the change is never committed and won't go live. After any edit, look for the save bar and confirm you've saved. This step catches the "I definitely set it to Active but it's still not showing" cases.
 
-## Getting Help
+## Why isn't the add-on price showing or being charged?
 
-1. Search this help center
-2. Check documentation
-3. Contact support via app
-4. Email: support@optionify.com
+Work through these checks:
 
+- **The value has a price.** Open the option value and confirm an **add-on price** is set as **Fixed** or **Percent**. A value with no price simply adds nothing.
+- **The set is Active and saved.** A priced option in a Draft or uncommitted set won't charge anything (Fixes 1 and 4).
+- **The embed is on.** Prices render with the option, so the embed must be enabled (Fix 2).
+- **Test on the live page.** Select the option on the storefront and watch the total. Add-on charges reach checkout through a **hidden companion product**, so they also apply with Buy it Now and Shop Pay. See [product option pricing](/articles/pricing-variants) for how the total is built.
 
-## Common Questions
+If the option shows but the price doesn't, it's almost always a missing price on the value or an uncommitted save.
 
-**Q: Can I use Optionify with variants?**
-A: Yes! They work together perfectly.
+## Where does option data appear in orders?
 
-**Q: Is there a limit on options?**
-A: No, create unlimited options.
+Every selection a customer makes is saved as a **line item property** on the Shopify order. Open the order in Shopify admin to see each chosen option and any add-on charge applied. Your fulfillment team reads the customer's inputs — engraving text, uploaded files, chosen extras — directly from the order, with no separate spreadsheet.
 
-**Q: Does it work on mobile?**
-A: Yes, fully responsive.
+If option data is **missing** from an order, the most likely explanation is that the customer placed the order before the set was Active or assigned, or before the theme app embed was enabled. Data is only captured for options that were actually live when the customer checked out.
 
-**Q: Can I export option data?**
-A: Yes, included in order exports.
+## Still not showing? A quick checklist
+
+Run through this before reaching out:
+
+1. Set status is **Active** and saved via the save bar.
+2. **Theme app embed** is enabled on the published theme.
+3. The set is **assigned** to the product (right tag / collection / individual selection).
+4. You're viewing the **correct product** and the **published theme**.
+5. Use the editor's **Preview** action — it opens a product the set is assigned to on the storefront, which confirms the set is wired up correctly.
+
+## Getting help
+
+If you've worked through all four fixes and options still don't appear, contact support through the Optionify app in your Shopify admin. Include the product URL, the option set name, and which of the checks above you've already confirmed — that gets you a faster answer.
+
+## FAQ
+
+**Why are my Optionify options not showing on the product page?**
+Usually one of four things: the set is in Draft, the theme app embed is off, the set isn't assigned to that product, or a change wasn't committed with the save bar. Check them in that order.
+
+**How do I enable the Optionify theme app embed?**
+Go to Online Store → Themes → Customize, open Theme settings → App embeds, turn on the Optionify embed, and click Save. Options render through this embed.
+
+**Why is my option set active but still not showing?**
+An active set only appears on products it's assigned to. Check the assignment method and confirm the product qualifies, and make sure your edit was committed with the save bar.
+
+**Why isn't the add-on price showing or being charged?**
+Confirm the value has a Fixed or Percent price, the set is Active and saved, and the embed is enabled. Charges reach checkout through a hidden companion product.
+
+**Where does option data appear in Shopify orders?**
+Every selection is saved as a line item property on the order, visible in Shopify admin. Missing data usually means the set wasn't live when the customer checked out.
+
+## Get started with Optionify
+
+Not installed yet? Optionify is **free, forever**, with all 17 option types, conditional logic, and add-on pricing included — and options that reliably render once the four checks above are met.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [getting started with Optionify](/articles/getting-started-with-optionify), then [create your first product option](/articles/creating-your-first-product-option) and choose an [assignment type](/articles/understanding-assign-types).

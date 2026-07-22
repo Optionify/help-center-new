@@ -1,61 +1,110 @@
 ---
-title: "Conditional Logic & Dependencies"
-description: "Learn how to show or hide options based on customer selections using conditional logic in Optionify."
+title: "Shopify Conditional Product Options"
+description: "Show or hide Shopify product options based on customer choices. Build dependent, conditional product options on a visual flow canvas with Optionify — free."
 category: "advanced"
-lastUpdated: "2026-01-22"
-tags: ["conditional logic", "dependencies", "advanced"]
+lastUpdated: "2026-07-05"
+tags: ["shopify conditional product options", "dependent product options", "conditional logic", "show hide options", "advanced"]
 featured: false
 order: 15
+faq:
+  - question: "What are conditional product options in Shopify?"
+    answer: "Conditional product options show or hide fields based on a customer's earlier choices. For example, a 'Gift message' textarea appears only after the shopper turns on 'Add gift wrap'. Shopify variants can't do this, but Optionify builds it on a visual flow canvas for free."
+  - question: "How do I make one option depend on another in Shopify?"
+    answer: "In the Optionify Option Set Editor, open the conditional logic flow canvas and draw a rule: when a chosen option equals a specific value, reveal a dependent option. The rule evaluates live on the product page, so the second option only appears when the condition is met."
+  - question: "Can I show a text field only when a customer picks 'Yes'?"
+    answer: "Yes. Add a Switch or Radio option for the yes/no choice, then add a conditional rule so a Text input or Textarea appears only when that option is set to 'Yes'. The engraving or gift-message field stays hidden until the shopper opts in."
+  - question: "Do conditional options work with add-on pricing?"
+    answer: "Yes. A hidden option that carries an add-on price only charges the customer once it becomes visible and is selected. This lets you build upsell flows where a premium choice reveals paid extras, and every charge still reaches checkout and the order."
+  - question: "Does conditional logic slow down my product page?"
+    answer: "No. Rules evaluate in the browser as the customer makes selections, so options appear and disappear instantly. There are no page reloads, and hidden options add nothing to the cart until they are shown and chosen by the shopper."
 ---
 
-Conditional logic allows you to show or hide options based on previous customer selections, creating dynamic and intelligent product pages.
+Conditional product options let a Shopify field appear only when it is relevant — an engraving text box that shows up the moment a customer chooses "Add engraving: Yes," or a set of upload fields that unfold after they pick a custom design. If you searched for **Shopify conditional product options** or **dependent product options**, this guide shows why native variants can't do it and how to build it visually with [Optionify](https://apps.shopify.com/optionify), a free product options app.
 
-## What is Conditional Logic?
+## What are conditional product options in Shopify?
 
-Display options only when specific conditions are met:
+Conditional product options show or hide fields based on a customer's earlier choices. For example, a "Gift message" textarea appears only after the shopper turns on "Add gift wrap." Shopify's built-in variants can't react to selections like this, but Optionify builds dependent options on a **visual flow canvas** — free, with no code.
 
-```
-If: Customer selects "Gift Wrapping: Yes"
-Then: Show "Gift Message" textarea
-```
+![The Optionify visual flow canvas showing an engraving text field connected to an 'Add engraving = Yes' choice](/images/conditional-logic/flow-canvas-overview.png)
+*The visual flow canvas: dependent options branch off the choice that reveals them*
 
+## Why Shopify variants can't do conditional logic
 
-## Common Use Cases
+A Shopify variant is a fixed combination — one size, one color, one material. Every variant is always present; nothing can appear or disappear in response to what a customer clicks. Variants also stop at the **3-options-per-product limit**, which stayed in place even after Shopify raised the variant ceiling to 2,048 in October 2025.
 
-### Gift Wrapping Flow
+Conditional logic solves a different problem: **relevance**. A shopper who does not want engraving should never see an engraving text box. Cramming every possible field onto the page at once creates clutter, confusion, and abandoned carts. Because Optionify options live outside the variant system, they don't create SKUs and don't count against the [variant limit](/articles/shopify-variant-limit) — and any option can be made to depend on another.
 
-```
-1. Switch: "Add Gift Wrapping?" (+$5)
-   ↓ If YES
-2. Textarea: "Gift Message"
-3. Dropdown: "Gift Wrap Style"
-```
+## How do I make one option depend on another?
 
-### Custom Design Flow
+In the Option Set Editor, open the conditional logic flow canvas and draw a rule: when a chosen option equals a specific value, reveal a dependent option. The rule evaluates live on the product page, so the second option only appears when the condition is met — no reload, no flicker.
 
-```
-1. Radio: "Design Type"
-   - Standard
-   - Custom (+$50)
-   ↓ If Custom selected
-2. Image Upload: "Upload Your Design"
-3. Textarea: "Design Notes"
-```
+The building blocks are simple:
 
-## Configuration
+- **The trigger** — the option a customer interacts with first (a Switch, Radio, Dropdown, or Checkbox).
+- **The condition** — the value that must be selected (for example, "Yes" or "Custom").
+- **The target** — the option that becomes visible once the condition is true.
 
-Set up dependencies in the option builder:
+On the canvas you connect these visually rather than filling in a rigid form, which is what sets Optionify apart from form-based competitors: you can see the whole branching flow at a glance.
 
-```
-Show this option when:
-- "Gift Wrapping" is "Yes"
-- "Custom Design" is selected
-```
+## A concrete example: the engraving flow
 
-\![Conditional logic settings](/images/conditional-logic/conditions-setup.png)
+Say you sell watches and want to offer optional engraving without cluttering every product page. Here is the exact flow:
 
+1. Add a **Switch** option labeled "Add engraving?" — off by default.
+2. Add a **Text input** option labeled "Engraving text" with a character limit.
+3. Optionally add a **Dropdown** labeled "Font style" with a few choices.
+4. On the flow canvas, create a rule: **when "Add engraving?" = Yes, show "Engraving text" and "Font style."**
+5. Give the Switch or the text option an [add-on price](/articles/charge-extra-for-product-option) if engraving costs extra.
 
-## Related
+Now the watch page looks clean by default. The instant a customer flips the engraving switch on, the text field and font dropdown slide into view — and if you attached a price, that charge is applied only for customers who actually engrave.
 
-- [Text Options](/articles/text-options)
-- [Switch Options](/articles/switch-options)
+![A live product page where turning on the engraving switch reveals the engraving text field and font dropdown](/images/conditional-logic/engraving-reveal.png)
+*The engraving text field appears only after the customer turns the switch on*
+
+## Common conditional flows worth building
+
+**Gift wrap and message.** A Switch labeled "Add gift wrapping (+$5)" reveals a "Gift message" [textarea](/articles/textarea-options) and a wrap-style [dropdown](/articles/dropdown-options). Shoppers who skip the wrap never see the extra fields. See the full [gift wrapping setup](/articles/gift-wrapping-shopify).
+
+**Custom vs. standard design.** A [Radio](/articles/radio-options) option offering "Standard" or "Custom (+$50)" reveals an [image upload](/articles/image-options) and a design-notes textarea only when "Custom" is chosen — so you collect artwork exactly when you need it.
+
+**Personalization opt-in.** A Switch labeled "Personalize this item" unfolds name, date, and color fields, keeping the default page uncluttered for buyers who want the item as-is.
+
+**Tiered add-ons.** A first choice reveals a second [checkbox](/articles/checkbox-options) group of related extras, guiding customers through a larger menu one step at a time instead of overwhelming them.
+
+## Do conditional options work with add-on pricing?
+
+Yes. A hidden option that carries an add-on price only charges the customer once it becomes visible and is selected. This makes conditional logic a natural fit for upsells: a premium choice reveals paid extras, and every charge still reaches checkout — including **Buy it Now** and **Shop Pay** — through a hidden companion product. See [pricing product options](/articles/pricing-variants) for how totals reach the order.
+
+Because every selection a customer makes is saved as a line item property on the Shopify order, your fulfillment team sees exactly which conditional options were shown and chosen — the engraving text, the chosen font, the uploaded file — with no guesswork.
+
+## Tips for clean conditional flows
+
+- **Default to hidden.** Start advanced or paid options hidden and reveal them only when relevant. A clean page converts better.
+- **Keep chains short.** One or two levels of dependency is easy to follow; deep nesting confuses shoppers.
+- **Preview before going live.** Use the editor's **Preview** action to open a product the set is assigned to and confirm the flow behaves as expected. Preview requires the set to be **Active**.
+- **Label the trigger clearly.** "Add engraving?" tells the customer what turning it on will do.
+
+## FAQ
+
+**What are conditional product options in Shopify?**
+They show or hide fields based on a customer's earlier choices — for example, a "Gift message" box that appears only after "Add gift wrap" is turned on. Variants can't do this; Optionify builds it on a visual flow canvas.
+
+**How do I make one option depend on another in Shopify?**
+Open the conditional logic flow canvas in the Option Set Editor and draw a rule: when a chosen option equals a value, reveal a dependent option. It evaluates live on the product page.
+
+**Can I show a text field only when a customer picks "Yes"?**
+Yes. Add a Switch or Radio for the yes/no choice, then add a rule so a Text input appears only when it is set to "Yes." The field stays hidden until the shopper opts in.
+
+**Do conditional options work with add-on pricing?**
+Yes. A hidden priced option only charges the customer once it is shown and selected, and the charge still reaches checkout and the order.
+
+**Does conditional logic slow down my product page?**
+No. Rules evaluate in the browser instantly with no page reloads, and hidden options add nothing to the cart until they are shown and chosen.
+
+## Get started with Optionify
+
+Ready to build dependent, conditional product options without touching code? Install Optionify — it's **free, forever**, with a visual flow canvas, all 17 option types, and per-choice add-on pricing included.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), then explore [switch options](/articles/switch-options) and [pricing product options](/articles/pricing-variants) to power your first conditional flow.

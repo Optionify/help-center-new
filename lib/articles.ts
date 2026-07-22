@@ -60,15 +60,29 @@ export function getArticlesByCategory(category: string): Article[] {
   return allArticles.filter((article) => article.frontmatter.category === category);
 }
 
-// Get related articles (same category, excluding current)
+// Get related articles, ranked by shared-tag overlap (cross-category), then
+// same-category, so related links are genuinely relevant instead of just the
+// next few articles in the same category.
 export function getRelatedArticles(slug: string, limit: number = 3): Article[] {
   const currentArticle = getArticleBySlug(slug);
   if (!currentArticle) return [];
 
-  const sameCategory = getArticlesByCategory(currentArticle.frontmatter.category);
-  return sameCategory
+  const currentTags = new Set(
+    (currentArticle.frontmatter.tags || []).map((t) => t.toLowerCase())
+  );
+  const currentCategory = currentArticle.frontmatter.category;
+
+  return getAllArticles()
     .filter((article) => article.slug !== slug)
-    .slice(0, limit);
+    .map((article) => {
+      const tags = (article.frontmatter.tags || []).map((t) => t.toLowerCase());
+      const overlap = tags.filter((t) => currentTags.has(t)).length;
+      const sameCategory = article.frontmatter.category === currentCategory ? 1 : 0;
+      return { article, score: overlap * 2 + sameCategory };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((s) => s.article);
 }
 
 // Get previous and next articles

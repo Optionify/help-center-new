@@ -1,60 +1,119 @@
 ---
-title: "Pricing & Variants"
-description: "Learn how to add pricing to custom options and integrate with Shopify variants."
+title: "Shopify Product Option Pricing"
+description: "Add fixed or percentage add-on prices to Shopify product options. See how add-on charges reach checkout, Shop Pay, and the order with Optionify — free."
 category: "advanced"
-lastUpdated: "2026-01-15"
-tags: ["pricing", "variants", "charges", "advanced"]
+lastUpdated: "2026-07-05"
+tags: ["shopify product option pricing", "add-on price", "option pricing", "extra charges", "advanced"]
 featured: false
 order: 16
+faq:
+  - question: "How does Shopify product option pricing work in Optionify?"
+    answer: "Each option or value can carry an add-on price in one of two modes: Fixed (a set money amount) or Percent (a percentage of the product price). When a customer selects a priced option, the extra charge is added on top of the product price and carried through to checkout and the order."
+  - question: "What's the difference between fixed and percentage add-on pricing?"
+    answer: "Fixed pricing adds a flat amount, like +$10.00 for engraving. Percent pricing adds a share of the product price, like +15% for a warranty, so the charge scales with the item's cost. Both are live and both reach checkout the same way through a hidden companion product."
+  - question: "Do add-on charges work with Buy it Now and Shop Pay?"
+    answer: "Yes. Optionify applies add-on charges through a hidden companion product, so the extra amount is included even when a customer skips the cart and uses Buy it Now or Shop Pay express checkout. The total the customer pays always reflects the options they selected."
+  - question: "Where do add-on charges appear in the Shopify order?"
+    answer: "The customer's option selections appear as line item properties on the order, and the add-on amount is included in the order total through the companion product. Your fulfillment team sees which paid options were chosen and the charge that was applied for each."
+  - question: "Does option pricing create Shopify variants?"
+    answer: "No. Priced options are not variants, so they never create SKUs or count against Shopify's 3-options-per-product limit. You can offer many priced add-ons on a single product without inventory bloat or hitting the option cap."
 ---
 
-Add extra charges to custom options and understand how Optionify works with Shopify's variant system.
+Charging extra for a premium choice — engraving, gift wrap, rush service, a warranty — is one of the most requested things Shopify merchants can't do with native variants. **Shopify product option pricing** in [Optionify](https://apps.shopify.com/optionify) fixes that: attach a fixed or percentage **add-on price** to any option or value, and the charge follows the customer all the way to the order. This guide explains both pricing modes and exactly how the money reaches checkout.
 
-## Adding Pricing to Options
+## How does Shopify product option pricing work?
 
-Many option types support additional pricing:
+Each option or value can carry an add-on price in one of two modes: **Fixed** (a set money amount) or **Percent** (a percentage of the product price). When a customer selects a priced option, the extra charge is added on top of the product price and carried through to checkout and the order. There is no separate checkout step — the customer pays one total.
 
-```
-Gift Wrapping: +$5.00
-Express Shipping: +$15.00
-Custom Engraving: +$10.00
-```
+![The Optionify Option Set Editor showing a value with a Fixed add-on price field and a Percent toggle](/images/pricing-variants/add-on-price-editor.png)
+*Setting a fixed or percentage add-on price on an option value in the Option Set Editor*
 
-## Price Configuration
+## Fixed vs. percentage add-on pricing
 
-For each option:
+Both modes are live; choose based on how the charge should behave:
 
-```
-Enable Pricing: Yes
-Price Amount: $5.00
-Price Label: "Gift Wrapping Service"
-Tax: Apply store tax settings
-```
+- **Fixed** — a flat money amount, the same for every product the option is assigned to. Best for concrete services with a set cost: "Engraving (+$10.00)," "Gift wrap (+$5.00)," "Assembly (+$40.00)."
+- **Percent** — a percentage of the product's price, so the charge scales with the item. Best for value-based add-ons: "Extended warranty (+15%)" costs more on a $2,000 sofa than on a $200 chair, automatically.
 
+You can mix both across a single option set — a fixed charge on one value and a percentage on another — so each add-on is priced the way that makes sense for it. For a focused walkthrough of a single upsell charge, see [charging extra for a product option](/articles/charge-extra-for-product-option).
 
-## Working with Shopify Variants
+## How add-on charges reach checkout
 
-Optionify complements Shopify variants:
+This is the part most merchants worry about, so here is exactly what happens. When a customer selects a priced option, Optionify applies the add-on amount through a **hidden companion product**. That companion carries the extra charge and is added alongside the main item, so the customer's total reflects every option they chose.
 
-**Use Shopify Variants for:**
-- Size, Color, Material (standard variants)
-- Inventory tracking
-- Different SKUs
+Because the charge rides on a real product behind the scenes rather than a script that only runs in the cart, it survives the fast checkout paths:
 
-**Use Optionify Options for:**
-- Personalization (names, messages)
-- Add-ons and services
-- Customer preferences
-- File uploads
+- **Buy it Now** — the add-on is included even when the customer skips the cart entirely.
+- **Shop Pay** express checkout — the extra amount travels with the order.
+- **Standard cart and checkout** — the charge shows in the running total as expected.
 
-\![Pricing in cart](/images/pricing-variants/cart-pricing.png)
+The customer never sees a "companion product"; they see one clean line item with the price they expect. Multiple selected options simply **add together** into the total.
 
-## Price Display
+![A Shopify checkout showing the product plus its add-on charges combined into one order total](/images/pricing-variants/checkout-with-addons.png)
+*Add-on charges carried through to checkout, including Buy it Now and Shop Pay*
 
-```
-Product: Custom T-Shirt - $29.99
-+ Gift Wrapping - $5.00
-+ Express Shipping - $15.00
-Total: $49.99
-```
+## Where add-on charges appear in the order
 
+Every option a customer selects is saved as a **line item property** on the Shopify order, and the add-on amount is included in the order total through the companion product. When you open the order in Shopify admin, you see which paid options were chosen — the engraving text, the wrap style, the selected warranty — and the charge applied for each.
+
+This means your fulfillment team works from the order itself: no separate spreadsheet, no guessing which extras the customer paid for. Option data flowing straight into orders is core to how Optionify [adds options without variants](/articles/add-options-without-variants).
+
+## Option pricing vs. Shopify variants
+
+Optionify pricing complements variants rather than replacing them. The rule of thumb:
+
+| Use Shopify variants for | Use Optionify priced options for |
+|--------------------------|----------------------------------|
+| Size, Color, Material | Engraving, personalization |
+| Stock-tracked SKUs | Gift wrap, rush, assembly |
+| Inventory combinations | Warranties and services |
+| The 3 core product options | Everything beyond the 3-option cap |
+
+Priced options are **not variants**, so they never create SKUs or count against Shopify's 3-options-per-product limit — the cap that stayed in place even after Shopify raised the variant ceiling to 2,048 in October 2025 (see the [variant limit guide](/articles/shopify-variant-limit)). Keep variants for stock-tracked combinations like "Blue / XL," and hand every priced add-on to Optionify.
+
+## Which option types support add-on pricing?
+
+Add-on pricing works across choice and toggle types, so you can price the format that fits the sale:
+
+- **[Switch](/articles/switch-options)** — charge when toggled on (gift wrap, rush).
+- **[Checkbox](/articles/checkbox-options)** — price each stackable extra; selected boxes add up.
+- **[Radio](/articles/radio-options)** and **[Dropdown](/articles/dropdown-options)** — price individual choices in a single-select menu.
+- **Dimension** — area-based pricing (unit price × width × height) for made-to-measure items.
+- **Color and image swatches** — charge more for premium finishes or materials.
+
+Pair pricing with [conditional logic](/articles/conditional-logic) to reveal paid options only when relevant, keeping the page clean while still capturing the upsell.
+
+## Setting up an add-on price step by step
+
+1. Open or create your set with **Create option set**.
+2. Add an option and enter its values (for example, a Switch "Add gift wrap?").
+3. On the option or value, enter an **add-on price** and choose **Fixed** or **Percent**.
+4. Assign the set with the right [assignment method](/articles/understanding-assign-types).
+5. Set the set to **Active** and save with Shopify's save bar.
+6. Enable the **theme app embed** in your theme editor so options render on the storefront.
+7. Use the editor's **Preview** action to open an assigned product and confirm the charge appears.
+
+## FAQ
+
+**How does Shopify product option pricing work in Optionify?**
+Each option or value carries an add-on price in Fixed or Percent mode. When a customer selects it, the charge is added on top of the product price and carried through to checkout and the order.
+
+**What's the difference between fixed and percentage add-on pricing?**
+Fixed adds a flat amount, like +$10.00. Percent adds a share of the product price, like +15%, so it scales with the item's cost. Both are live and reach checkout the same way.
+
+**Do add-on charges work with Buy it Now and Shop Pay?**
+Yes. Charges apply through a hidden companion product, so the extra amount is included even when a customer uses Buy it Now or Shop Pay express checkout.
+
+**Where do add-on charges appear in the Shopify order?**
+Selections appear as line item properties on the order, and the add-on amount is included in the total. Fulfillment sees which paid options were chosen and the charge for each.
+
+**Does option pricing create Shopify variants?**
+No. Priced options aren't variants, so they never create SKUs or count against the 3-options-per-product limit.
+
+## Get started with Optionify
+
+Ready to charge extra for premium options the right way? Install Optionify — it's **free, forever**, with fixed and percentage add-on pricing, all 17 option types, and charges that reach Buy it Now and Shop Pay.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), then see [charging extra for a product option](/articles/charge-extra-for-product-option) for a single-upsell walkthrough.

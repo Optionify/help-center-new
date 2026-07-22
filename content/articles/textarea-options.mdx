@@ -1,426 +1,120 @@
 ---
-title: "How to Use Textarea Options"
-description: "Learn how to use multi-line textarea options in Optionify for longer messages, special instructions, and detailed customer input."
+title: "Add a Textarea to Shopify Products"
+description: "Add a free multi-line text field to your Shopify product page. Collect gift messages, engraving text, and instructions at add-to-cart with Optionify."
 category: "option-types"
-lastUpdated: "2025-12-13"
-tags: ["textarea", "multi-line", "messages", "option types"]
+lastUpdated: "2026-07-05"
+tags: ["shopify multi-line text field", "textarea", "gift message", "special instructions", "personalization", "option types"]
 featured: false
 order: 5
+faq:
+  - question: "How do I add a multi-line text field to a Shopify product?"
+    answer: "Shopify's product pages have no multi-line text input by default. Use a free app like Optionify: create an option set, add a Textarea option, label it something like Gift message, and it renders a resizable text box on the product page for longer customer input."
+  - question: "What is the difference between a text and a textarea option?"
+    answer: "A text option is a single line, best for names, initials, or short engraving. A textarea is multi-line and suits paragraphs like gift messages, delivery notes, or detailed design briefs. Choose textarea whenever a customer might reasonably write more than one short line."
+  - question: "Can I set a character limit on a textarea?"
+    answer: "Yes. You can cap how much a customer types so their message fits your gift card, engraving plate, or production template. Setting a sensible maximum, and stating it in the help text, prevents oversized submissions that will not print or fit the physical space you have."
+  - question: "Is the textarea option free in Optionify?"
+    answer: "Yes. Optionify is free forever. The Textarea option, all other 16 option types, conditional logic, and add-on pricing are included at no cost, with no premium tier, no locked features, and no transaction fees."
+  - question: "Where does the customer's message appear after checkout?"
+    answer: "The text is saved to the Shopify order as a line item property. Open the order in your admin and the full message appears next to the product the customer bought, ready for you to print, engrave, or pass to your fulfillment team."
 ---
 
-Textarea options provide multi-line text input fields perfect for collecting longer messages, detailed instructions, and customer notes that don't fit in a single-line text field.
+A **Shopify multi-line text field** lets customers write longer messages right on the product page, from gift notes to engraving text to detailed special instructions. Shopify's product pages do not include a multi-line input by default, so this guide shows how to add a **textarea** option for free with Optionify and use it well.
 
-## What Are Textarea Options?
+![Textarea option collecting a gift message on a Shopify product page](/images/textarea-options/textarea-product-page.png)
+*A Textarea option collecting a personalized gift message on the product page*
 
-Textarea options create a resizable, multi-line text box where customers can enter paragraphs of text. Ideal for:
+## How do I add a multi-line text field to a Shopify product?
 
-- Long gift messages or cards
-- Detailed special instructions
-- Custom design descriptions
-- Shipping notes and preferences
-- Customer requirements or specifications
+Shopify's product pages have no multi-line text input out of the box. You can add short text through line item properties with theme code, but there is no easy, resizable box for a customer to type a full message before add-to-cart. That gap forces personalization requests into the order notes or, worse, into follow-up emails.
 
-\![Textarea option on product page](/images/textarea-options/textarea-example.png)
-*A textarea option for detailed gift messages*
+A dedicated textarea option solves it cleanly. Here is the setup in Optionify:
 
-## When to Use Textarea vs Text
+1. Open Optionify and click **Create option set**.
+2. In the Option Set Editor, add an option and choose the **Textarea** type.
+3. Label it clearly, such as "Gift message" or "Engraving text".
+4. Add help text and, if you need it, a character limit so messages fit your card or product.
+5. Assign the set to your products, set the status to **Active**, and save from Shopify's save bar.
 
-| Use **Text** Option | Use **Textarea** Option |
-|---------------------|------------------------|
-| Names, initials | Paragraphs, multiple sentences |
-| Short phrases (< 50 chars) | Long messages (> 50 chars) |
-| Engraving text | Detailed instructions |
-| Product codes | Design descriptions |
-| Single-line input | Multi-line input |
+![Optionify Option Set Editor configuring a Textarea option](/images/textarea-options/textarea-option-editor.png)
+*Set the label, help text, and character limit for a Textarea in the Option Set Editor*
 
+Because Optionify uses **option sets**, one textarea can apply to many products at once. See [creating your first product option](/articles/creating-your-first-product-option) to get going.
 
-## Real-World Use Cases
+## What is the difference between a text and a textarea option?
 
-### 1. Gift Messages & Cards
+A [text option](/articles/text-options) is a single line, best for names, initials, or short engraving. A **textarea** is multi-line and suits paragraphs like gift messages, delivery notes, or design briefs. Choose textarea whenever a customer might reasonably write more than one short line.
 
-**Birthday Card Message**
-```
-Label: "Birthday Card Message"
-Placeholder: "Write your birthday wishes here..."
-Max Length: 500 characters
-```
+The rule of thumb: if the input is a few words, use a text option. If it is a sentence or a paragraph, use a textarea so customers can see and edit their whole message comfortably.
 
-**Wedding Gift Note**
-```
-Label: "Message for the Bride & Groom"
-Placeholder: "Share your congratulations and well wishes..."
-Max Length: 1000 characters
-```
+## What can I use a textarea option for?
 
-### 2. Special Instructions
+A multi-line field fits any longer, free-form input. Common uses include:
 
-**Delivery Instructions**
-```
-Label: "Special Delivery Instructions"
-Placeholder: "e.g., Leave package at back door, ring doorbell twice..."
-Max Length: 300 characters
-```
+- **Gift messages** — a personalized note printed on a card included with the order.
+- **Engraving and personalization text** — longer inscriptions that span multiple lines.
+- **Special instructions** — delivery notes, dietary requirements, or handling requests.
+- **Design briefs** — colors, style, and references for a custom-made product.
+- **Quote or event details** — the specifics you need before you can fulfill.
 
-**Custom Requirements**
-```
-Label: "Additional Requirements or Preferences"
-Placeholder: "Tell us anything else we should know..."
-Max Length: 500 characters
-```
+Pair the textarea with other options for a full customizer. Add a [file upload option](/articles/image-options) so customers attach reference artwork alongside their written brief, or a [date picker](/articles/datepicker-options) to schedule delivery.
 
-### 3. Design Specifications
+## Can I set a character limit on a textarea?
 
-**Custom Design Brief**
-```
-Label: "Describe Your Custom Design"
-Placeholder: "Include colors, style preferences, inspiration..."
-Max Length: 2000 characters
-```
+Yes. You can cap how much a customer types so their message fits your gift card, engraving plate, or production template. Setting a sensible maximum, and stating it in the help text, prevents oversized submissions that will not print or fit the physical space you have.
 
-\![Textarea for design specifications](/images/textarea-options/design-brief-textarea.png)
-*Collect detailed design requirements with a textarea*
+Match the limit to the real constraint. A gift card might hold a few hundred characters, while an engraving plate holds far fewer. Tell customers the limit up front so they write to fit rather than getting cut off later.
 
-## Creating a Textarea Option
+## How do I write good help text and placeholders?
 
-### Step 1: Basic Configuration
+Clear guidance dramatically improves the quality of what customers submit. Use help text to state the purpose and any limit, and use the field to invite a real message rather than a vague "type here".
 
-```
-Option Label: "Gift Card Message"
-Internal Name: "gift-card-message"
-Help Text: "Write a personalized message for your gift recipient"
-Option Type: Textarea
-```
+Good guidance sounds like: "Your message will be printed on a gift card included with the order. Up to 300 characters." Specific instructions reduce back-and-forth and mean fewer orders that need a correction before you can produce them.
 
-### Step 2: Textarea-Specific Settings
+## Can I show the textarea only when it is relevant?
 
-#### Rows (Height)
+Yes. Use [conditional logic](/articles/conditional-logic) so the textarea appears only after a relevant choice, keeping standard orders uncluttered. For example, reveal a "Gift message" textarea only when a customer turns on a [gift wrap switch](/articles/switch-options).
 
-Control the initial height:
+Conditional logic is built on Optionify's **visual flow canvas**, so you connect the trigger to the textarea without writing code. This is a cleaner experience than showing every field to every shopper.
 
-```
-Rows: 4 (Default - about 4 lines)
-Rows: 6 (Taller - about 6 lines)
-Rows: 10 (Very tall - for long content)
-```
+## Where does the customer's message appear after checkout?
 
-**Recommended heights:**
-- Gift messages: 4-6 rows
-- Instructions: 3-4 rows
-- Design briefs: 8-10 rows
+The text is saved to the Shopify order as a **line item property**. Open the order in your admin and the full message appears next to the product the customer bought, ready for you to print, engrave, or hand to fulfillment.
 
-\![Different textarea heights](/images/textarea-options/textarea-heights.png)
-*Choose the right height for your use case*
+![Shopify order showing a customer message as a line item property](/images/textarea-options/textarea-order-property.png)
+*The customer's full message appears as a line item property on the Shopify order*
 
-#### Character Limit
+Because the message is tied to its line item, multi-item orders stay organized. A customer ordering two personalized gifts with two different notes sends you two correctly matched messages.
 
-Always set a maximum:
+## Why the textarea must show on your storefront
 
-```
-Max Characters: 500 (Gift messages)
-Max Characters: 1000 (Detailed notes)
-Max Characters: 2000 (Design descriptions)
-```
+Optionify renders options through a **theme app embed** you enable once in the theme editor. If the embed is off, your textarea will not appear even when the option set is Active. Enabling it activates every option set across your store. If the field is missing, start with the [troubleshooting guide](/articles/troubleshooting).
 
+## FAQ
 
-#### Character Counter
+**How do I add a multi-line text field to a Shopify product?**
+Shopify has no native multi-line input. Use a free app like Optionify: create an option set, add a Textarea option, and label it. It renders a resizable text box on the product page.
 
-Show remaining characters:
+**What is the difference between a text and a textarea option?**
+Text is a single line for short input like names. Textarea is multi-line for paragraphs like gift messages and instructions.
 
-```
-Show Counter: Yes
-Update: Real-time (as customer types)
-Position: Below textarea
-```
+**Can I set a character limit?**
+Yes. Cap the length so messages fit your card or product, and state the limit in the help text.
 
-### Step 3: Validation & Requirements
+**Is the textarea free?**
+Yes. Optionify is free forever, including the Textarea, all 17 option types, conditional logic, and add-on pricing.
 
-```
-Required: No (for optional messages)
-Required: Yes (for critical specifications)
+**Where does the message appear?**
+On the Shopify order as a line item property, next to the product the customer bought.
 
-Minimum Characters: 10 (ensure meaningful input)
-Maximum Characters: 500
-```
+## Get started with Optionify
 
-### Step 4: Placeholder Examples
+Ready to collect longer messages right on your product page? Install Optionify from the Shopify App Store and add a **free** textarea in minutes.
 
-Good placeholders guide customers:
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)** — free forever.
 
-```
-✅ "e.g., Dear Sarah, Happy 30th Birthday! We hope this
-    year brings you joy and adventure. Love, Mom & Dad"
-
-✅ "Describe your ideal design including colors, style,
-    and any specific elements you want included..."
-
-❌ "Enter your message"
-❌ "Type here"
-```
-
-## Best Practices
-
-### 1. Set Appropriate Limits
-
-Match limits to use case:
-
-```
-Short notes: 200-300 characters
-Gift messages: 400-600 characters
-Instructions: 300-500 characters
-Detailed specs: 1000-2000 characters
-```
-
-### 2. Provide Clear Guidance
-
-```
-Help Text: "Your message will be printed on a gift card
-           included with your order. Maximum 500 characters."
-```
-
-### 3. Show Examples
-
-Include a sample message:
-
-```
-Placeholder: "Example: Dear Mom, Thank you for everything
-             you do. This gift is just a small token of
-             my appreciation. Love always, Sarah"
-```
-
-
-### 4. Consider Formatting
-
-Decide if you'll preserve:
-- Line breaks
-- Multiple spaces
-- Special characters
-
-```
-Preserve Formatting: Yes (keeps line breaks)
-Preserve Formatting: No (converts to single paragraph)
-```
-
-### 5. Mobile-Friendly Sizing
-
-Test on mobile devices:
-
-```
-Mobile Rows: 4 (smaller on mobile)
-Desktop Rows: 6 (larger on desktop)
-```
-
-\![Textarea on mobile device](/images/textarea-options/textarea-mobile.png)
-*Ensure textareas work well on mobile screens*
-
-## Advanced Features
-
-### Auto-Resize
-
-Allow textarea to grow as customer types:
-
-```
-Auto-Resize: Yes
-Max Height: 500px
-```
-
-### Word Count
-
-Show word count instead of character count:
-
-```
-Counter Type: Words
-Max Words: 100
-```
-
-### Spell Check
-
-Enable browser spell checking:
-
-```
-Spell Check: Enabled
-```
-
-### Rich Text (Premium)
-
-Some plans support basic formatting:
-
-```
-Bold: Yes
-Italics: Yes
-Line Breaks: Yes
-```
-
-## Styling Options
-
-### Width
-
-```
-Width: Full (100% of container)
-Width: Large (75%)
-Width: Medium (50%)
-```
-
-### Border Style
-
-```
-Border: Standard
-Border: Rounded
-Border: Minimal
-```
-
-### Focus State
-
-Highlight when customer clicks in:
-
-```
-Focus Color: Primary brand color
-Focus Effect: Subtle glow
-```
-
-## Common Use Cases by Industry
-
-### E-commerce Gifts
-
-```
-Option: "Gift Message"
-Rows: 5
-Max Characters: 400
-Required: No
-Placeholder: "Write your personal message..."
-```
-
-### Custom Products
-
-```
-Option: "Design Specifications"
-Rows: 8
-Max Characters: 1500
-Required: Yes
-Placeholder: "Describe colors, size, style..."
-```
-
-### Food & Catering
-
-```
-Option: "Dietary Requirements & Allergies"
-Rows: 4
-Max Characters: 300
-Required: No
-Placeholder: "List any allergies or dietary needs..."
-```
-
-### Event Planning
-
-```
-Option: "Event Details & Special Requests"
-Rows: 6
-Max Characters: 800
-Required: Yes
-Placeholder: "Describe your event, guest count, timing..."
-```
-
-\![Industry-specific textarea examples](/images/textarea-options/industry-examples.png)
-*Textarea options tailored to different industries*
-
-## Integration with Fulfillment
-
-### How Textarea Data Appears
-
-In Shopify orders:
-
-```
-Product: Custom T-Shirt
-Options:
-  - Gift Message: "Happy Birthday John! Hope you love
-                   this custom shirt. Wear it with pride!
-                   Love, Sarah"
-```
-
-### Printing & Display
-
-Consider how you'll use long messages:
-
-- Print on gift cards (set appropriate size limit)
-- Include in packing slips
-- Send to custom manufacturers
-- Display in customer service systems
-
-
-## Troubleshooting
-
-### Text Gets Cut Off
-
-**Problem:** Character limit too low
-**Solution:** Increase max characters or show warning
-
-### Textarea Too Small
-
-**Problem:** Not enough rows
-**Solution:** Increase row count or enable auto-resize
-
-### Formatting Lost
-
-**Problem:** Line breaks disappear
-**Solution:** Enable "Preserve Formatting"
-
-### Mobile Issues
-
-**Problem:** Textarea unusable on phone
-**Solution:** Set appropriate mobile row count
-
-### No Character Counter
-
-**Problem:** Counter not showing
-**Solution:** Enable in settings, check theme compatibility
-
-## Comparison with Other Options
-
-### Textarea vs Text
-
-```
-Textarea: Multi-line, paragraphs
-Text: Single line, short phrases
-```
-
-### Textarea vs Dropdown
-
-```
-Textarea: Free-form input
-Dropdown: Predefined choices
-```
-
-### Textarea vs File Upload
-
-```
-Textarea: Text descriptions
-File Upload: Actual documents/images
-```
-
-## Examples with Conditional Logic
-
-Show textarea based on previous choice:
-
-```
-If customer selects: "Yes, add gift wrapping"
-Then show: "Gift Message" textarea
-```
-
-Learn more: [Conditional Logic Guide](/articles/conditional-logic)
-
-## Related Option Types
-
-- [Text Options](/articles/text-options) - For single-line input
-- [Dropdown Options](/articles/dropdown-options) - For predefined choices
-- [Email Options](/articles/email-options) - For email addresses
-
-## Next Steps
-
-Explore more option types:
-- [Checkbox Options](/articles/checkbox-options) - Multiple selections
-- [Radio Options](/articles/radio-options) - Single choice from list
-- [Image Upload Options](/articles/image-options) - File uploads
-
+New to the app? Start with [getting started with Optionify](/articles/getting-started-with-optionify), then explore [text options](/articles/text-options) for short input and [checkbox options](/articles/checkbox-options) for multiple choices.
 
 ---
 
-**Questions?** Check our [Troubleshooting Guide](/articles/troubleshooting) or contact support.
+**Need help?** Check the [Troubleshooting Guide](/articles/troubleshooting) or contact support.

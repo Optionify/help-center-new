@@ -1,0 +1,127 @@
+---
+title: "Add a Custom Text Field in Shopify"
+description: "Add a custom text field to a Shopify product page: the native Custom Liquid method plus an easier no-code way with character limits and add-on pricing."
+category: "getting-started"
+lastUpdated: "2026-07-05"
+tags: ["custom text field shopify", "shopify product page text field", "line item property", "personalization", "custom fields"]
+featured: false
+order: 3
+faq:
+  - question: "How do I add a custom text field to a Shopify product page?"
+    answer: "Natively, add a Custom Liquid block to your product template with an input named properties[Your label] so Shopify saves it as a line item property. For character limits, validation, and pricing without code, use Optionify's Text input option instead."
+  - question: "Can I add a custom text field in Shopify without code?"
+    answer: "Yes. The native Custom Liquid method needs HTML, but Optionify adds a Text input option with no code. Create an option set, add a Text input, assign it to products, and enable the theme app embed. It works on Dawn, Craft, and other themes."
+  - question: "Can I charge extra for a custom text field?"
+    answer: "Not with the native method — a line item property cannot change the price. Optionify lets you attach an add-on price to a Text input as a fixed amount or a percentage, and the charge reaches checkout through a hidden companion product."
+  - question: "How do I limit the number of characters in a Shopify text field?"
+    answer: "The native input has no built-in limit unless you hand-write validation. Optionify's Text input has a character limit setting, so you can cap engraving at 20 characters or a gift message at 150 without touching theme code."
+  - question: "Where does the text a customer enters appear?"
+    answer: "Whether you use the native method or Optionify, the entered text is saved to the Shopify order as a line item property. Your fulfillment team sees the exact text on the order detail page, ready for engraving, printing, or personalization."
+---
+
+A custom text field lets a shopper type their own text on a product page — a name to engrave, a gift message, a monogram, or a special instruction. If you searched for **how to add a custom text field to a Shopify product page**, this guide covers the native Custom Liquid method (and its real limits), then a faster no-code way with [Optionify](https://apps.shopify.com/optionify), a free product options app. For the full reference on the option type itself, see [text options](/articles/text-options).
+
+## How do I add a custom text field to a Shopify product page?
+
+Natively, add a **Custom Liquid** block to your product template containing an input named `properties[Your label]`. Shopify saves anything named that way as a **line item property** on the order. For character limits, validation, and add-on pricing without writing code, use Optionify's **Text input** option instead.
+
+![A custom text field on a Shopify product page where a shopper types engraving text](/images/add-custom-text-field-shopify/text-field-product-page.png)
+*A custom text field on a live product page, ready for the customer's input*
+
+## The native method: Custom Liquid + line item property
+
+Shopify doesn't have a point-and-click "add a text field" button, but its add-to-cart form captures any input named `properties[...]` as a line item property. You can wire that up in the theme editor without a developer, as long as you're comfortable pasting a small HTML snippet.
+
+1. Go to **Online Store → Themes → Customize**.
+2. In the theme editor, open a **product template** from the top page selector.
+3. In the **Product information** section, click **Add block → Custom Liquid**.
+4. Paste an input into the block, for example:
+
+```liquid
+<label for="custom-text">Custom text</label>
+<input
+  type="text"
+  id="custom-text"
+  name="properties[Custom text]"
+  placeholder="e.g. Happy Birthday Sam">
+```
+
+5. Drag the block so it sits **inside the product form** (near the Add to cart button), then **Save**.
+
+Because the input's name is `properties[Custom text]`, whatever the shopper types is attached to the order line and shows up in the order details after checkout — no app required.
+
+## The limits of the native text field
+
+The Custom Liquid approach works, but it's bare-bones. In practice you'll run into four walls:
+
+- **No add-on pricing.** A line item property is just a note; it can't change what the customer pays. If you want to charge $10 for engraving, the native field can't do it.
+- **No validation.** There's no character limit, no required flag, and no "letters only" rule unless you hand-write JavaScript. A shopper can leave it blank or paste 500 characters.
+- **No conditional logic.** The field is always visible. You can't reveal it only when someone picks "Add engraving."
+- **Fragile and per-template.** You repeat the snippet on every template you want it on, the raw input rarely matches your theme's styling, and a theme update or a block placed **outside** the product form silently stops the property from saving. That last one is a common cause of [line item properties not showing](/articles/line-item-properties-not-showing).
+
+For a single, optional, unpriced note, the native field is fine. The moment you need pricing, limits, or logic, it stops being enough.
+
+## The easier way: Optionify Text input
+
+Optionify adds a **Text input** option that does everything the native field can't — with no theme code and no per-template editing. It renders through a theme app embed, so the same field can appear across your catalog and works on **Dawn, Craft**, and other Online Store 2.0 themes out of the box.
+
+Here's how to add one:
+
+1. Click **Create option set** and give it a name, such as "Engraving."
+2. Add an option and choose the **Text input** type.
+3. Enter the label customers see, e.g. "Engraving text (max 20 characters)."
+4. Set a **character limit** and mark the field **required** if the product can't ship without it.
+5. Optionally add an **add-on price** (covered below).
+6. Choose an [assignment method](/articles/understanding-assign-types) — All Products, Tagged Products, Collections, or Individual Products.
+7. Set the set to **Active** and save with Shopify's save bar.
+
+![The Optionify Option Set Editor showing a Text input with a character limit and add-on price](/images/add-custom-text-field-shopify/text-input-editor.png)
+*Configuring a Text input option with a character limit and add-on price in the Option Set Editor*
+
+Options only appear on the storefront once the **theme app embed** is enabled in your theme editor. Turn it on once and every active option set shows on the products it's assigned to.
+
+## Can I charge extra for a custom text field?
+
+Yes — with Optionify, not with the native method. A native line item property can't alter the price, but an Optionify **Text input** can carry an **add-on price** in one of two modes:
+
+- **Fixed** — a set amount, e.g. "Engraving (+$10.00)."
+- **Percent** — a percentage of the product price, e.g. "Personalization (+15%)."
+
+The charge reaches checkout through a hidden companion product, so it works with **Buy it Now** and **Shop Pay** too. See [pricing variants](/articles/pricing-variants) for how the total lands on the order.
+
+## How do I limit characters or validate the input?
+
+The native `<input>` has no limit unless you write validation yourself. Optionify's Text input includes a **character limit** setting, so you can cap engraving at 20 characters or a gift message at 150 — and mark the field required so shoppers can't skip it. That prevents the classic problem of a customer pasting a paragraph into a field meant for a monogram.
+
+## Showing the field only when it's needed
+
+A native field is always on screen. With Optionify's [conditional logic](/articles/conditional-logic), you build a visual flow so the text field appears only after a relevant choice — for example, reveal "Engraving text" only when the shopper toggles "Add engraving." That keeps the product page clean and stops irrelevant fields from confusing buyers.
+
+## Where does the entered text appear?
+
+Both methods save the text to the Shopify order as a **line item property**, visible on the order detail page. So your fulfillment team sees the exact text to engrave, print, or personalize — no separate spreadsheet, no guesswork. The difference is that Optionify guarantees the property is captured correctly, since it doesn't depend on you placing a Custom Liquid block inside the product form.
+
+## FAQ
+
+**How do I add a custom text field to a Shopify product page?**
+Natively, add a Custom Liquid block with an input named `properties[Your label]` so Shopify saves it as a line item property. For character limits, validation, and pricing without code, use Optionify's Text input option instead.
+
+**Can I add a custom text field in Shopify without code?**
+Yes. The native method needs HTML, but Optionify adds a Text input with no code — create an option set, add the field, assign it, and enable the theme app embed. It works on Dawn, Craft, and other themes.
+
+**Can I charge extra for a custom text field?**
+Not natively — a line item property can't change the price. Optionify lets you attach a fixed or percentage add-on price to a Text input, and the charge reaches checkout including Buy it Now and Shop Pay.
+
+**How do I limit the number of characters?**
+The native input has no built-in limit. Optionify's Text input has a character limit setting, so you can cap engraving at 20 characters or a gift message at 150 without touching theme code.
+
+**Where does the entered text appear?**
+On the Shopify order as a line item property, visible on the order detail page — ready for engraving, printing, or personalization.
+
+## Get started with Optionify
+
+Ready to add a custom text field without wrestling with theme code? Install Optionify — it's **free, forever**, with all 17 option types, character limits, conditional logic, and add-on pricing included.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [getting started with Optionify](/articles/getting-started-with-optionify), then read the full [text options](/articles/text-options) reference.

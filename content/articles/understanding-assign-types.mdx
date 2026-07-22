@@ -1,416 +1,123 @@
 ---
-title: "Understanding Assign Types"
-description: "Master the four different ways to assign options to products in Optionify: All Products, Tags, Collections, and Individual Products."
+title: "Assign Product Options to Shopify Products"
+description: "Learn how to assign product options to products in Shopify with Optionify's 4 methods: All Products, Tagged Products, Collections, and Individual Products."
 category: "getting-started"
-lastUpdated: "2025-12-20"
-tags: ["assign types", "configuration", "products", "organization"]
+lastUpdated: "2026-07-05"
+tags: ["assign product options to products in Shopify", "product options", "assignment methods", "tagged products", "collections"]
 featured: false
 order: 3
+faq:
+  - question: "How do I assign product options to products in Shopify?"
+    answer: "In Optionify, open your option set in the Option Set Editor and choose an assignment method: All Products, Tagged Products, Collections, or Individual Products. Set the option set to Active and save with Shopify's save bar. Enable the theme app embed so options render."
+  - question: "Can one option set apply to multiple products?"
+    answer: "Yes. All Products applies a set to your whole catalog, Tagged Products targets every product carrying a tag, and Collections applies to every product in the chosen collections. Individual Products lets you hand-pick specific items instead."
+  - question: "What is the difference between tags and collections for assignment?"
+    answer: "Tags target product characteristics that cross categories, like engravable or gift-wrappable, and update as you tag products. Collections follow your existing store categories and automatically include new products added to that collection. Use tags for attributes, collections for categories."
+  - question: "Can I change how an option set is assigned later?"
+    answer: "Yes. Open the option set in the Option Set Editor, switch the assignment method, adjust the tags, collections, or products, and save with the save bar. The change takes effect on the storefront once saved and the set is Active."
+  - question: "Why isn't my option showing on a product?"
+    answer: "Check that the option set is Active, that the product actually matches the assignment (correct tag or collection membership), and that the Optionify theme app embed is enabled in your theme editor. Options only render when the embed is turned on."
 ---
 
-One of Optionify's most powerful features is the flexibility in how you assign options to products. Understanding the four assignment methods will help you organize and manage your product options efficiently.
+Deciding where your custom fields appear is half the work of setting up product options. This guide explains how to **assign product options to products in Shopify** using [Optionify](https://apps.shopify.com/optionify), a free product options app, and which of its four assignment methods fits each situation. Every option set you build in the **Option Set Editor** carries an assignment that controls exactly which products show it.
 
-## The Four Assignment Methods
+![The assignment section of the Optionify Option Set Editor showing the four assignment methods](/images/understanding-assign-types/assignment-methods-overview.png)
+*Choose an assignment method for each option set in the Option Set Editor*
 
-Optionify offers four ways to control where your custom options appear:
+## How do I assign product options to products in Shopify?
 
-1. **All Products** - Global application
-2. **Tagged Products** - Tag-based targeting
-3. **Collections** - Collection-based assignment
-4. **Individual Products** - Specific product selection
+Open your option set in the Option Set Editor and pick an assignment method: **All Products**, **Tagged Products**, **Collections**, or **Individual Products**. Set the option set to **Active** and save with Shopify's save bar. Options render on the storefront once the theme app embed is enabled in your theme editor.
 
-Each method has specific use cases, advantages, and best practices.
+## The four assignment methods
 
-\![Assignment methods overview diagram](/images/assign-types/assignment-methods-overview.png)
-*Choose the assignment method that best fits your product organization*
+Optionify gives every option set one of four ways to reach your products. Each trades scope for precision differently, so the right choice depends on whether you're applying a store-wide field or a one-off customization.
 
-## 1. All Products Assignment
+### 1. All Products
 
-### What It Does
+**What it does:** applies the option set to every product in your store, and automatically includes any new products you add later.
 
-Applies the option to every single product in your store, automatically including any new products you add in the future.
+**When to use it:** store-wide fields that make sense everywhere — a "gift message" textarea, a "special delivery instructions" note, or an optional [gift wrapping switch](/articles/gift-wrapping-shopify). Because it's global, you set it once and never revisit it as your catalog grows.
 
-### When to Use
+The trade-off is that you can't exclude individual products, so reserve All Products for genuinely universal fields. Anything category- or attribute-specific belongs in one of the targeted methods below.
 
-- **Store-wide policies**: Delivery instructions, gift messages
-- **Universal requirements**: Terms acceptance, special requests
-- **Global preferences**: Newsletter signup at checkout
+### 2. Tagged Products
 
-### Example Use Cases
+**What it does:** shows the option set only on products carrying one of the tags you specify. This is the most flexible method and usually the one merchants reach for most.
 
-```
-"Special Delivery Instructions"
-→ Applied to ALL products
-→ Customers can add delivery notes on any purchase
-```
+**When to use it:** characteristics that cut across your categories. A tag like `engravable` can span rings, watches, and leather goods at once; `custom-size` can span shirts and jackets. You add or remove products from the option set simply by editing their tags in the Shopify admin — no need to touch the option set again.
 
-```
-"Add Gift Receipt?"
-→ Applied to ALL products
-→ Appears on every product page
-```
+![Entering tags in the Tagged Products assignment field in the Option Set Editor](/images/understanding-assign-types/tagged-products-interface.png)
+*Target products by tag, then tag items in your Shopify admin to activate the set*
 
-\![All Products assignment example](/images/assign-types/all-products-example.png)
-*An option assigned to all products appears on every product page*
+To use it, choose **Tagged Products**, enter one or more tags, and save. Then tag the matching products in **Shopify admin → Products → Tags**. A product that carries any one of the listed tags will show the option set. Keep tag names lowercase, hyphenated, and consistent (`gift-wrap`, `personalizable`, `custom-text`) so they stay easy to manage.
 
-### Configuration Steps
+### 3. Collections
 
-1. Create your option
-2. In **Assignment** section, select **All Products**
-3. Save and activate
+**What it does:** applies the option set to every product inside the Shopify collections you select, including products added to those collections later.
 
+**When to use it:** when your options line up with categories you already maintain. A "Rings" collection can carry a ring-size [dropdown](/articles/dropdown-options); a "Wedding" collection can carry a [delivery date picker](/articles/datepicker-options). Because it rides on your existing merchandising, there's no extra tagging to manage — membership in the collection is the trigger.
 
-### Advantages
+Collections are less granular than tags: a product has to actually belong to the collection, and you can't target an attribute that spans several collections without adding the set to each one.
 
-✅ Set it once, applies everywhere
-✅ Automatically includes new products
-✅ Easiest to maintain
-✅ Consistent across entire store
+### 4. Individual Products
 
-### Disadvantages
+**What it does:** shows the option set only on the specific products you hand-pick.
 
-❌ Can't exclude specific products
-❌ May not be relevant for all products
-❌ Can create page clutter
-❌ Less targeted approach
+**When to use it:** precise, low-volume targeting — a bespoke product, a limited edition, or a controlled test before you roll an option out more widely. You search for and select each product directly, giving you complete control and zero risk of the option appearing where it shouldn't.
 
+The cost is maintenance: you manage each product manually, and you have to remember to add new products yourself. It doesn't scale, so it's best for a handful of items rather than a category.
 
-## 2. Tagged Products Assignment
+## Which assignment method should I use?
 
-### What It Does
+Use **All Products** for universal fields, **Tagged Products** for characteristics that cross categories, **Collections** when options match your existing store categories, and **Individual Products** for a small, hand-picked set. Most stores combine several — a global gift message plus tag-based engraving, for example.
 
-Applies options only to products with specific tags. This is the most flexible and commonly used method.
+| Method | Best for | Scales as you grow | Precision |
+|--------|----------|-------------------|-----------|
+| **All Products** | Universal fields | Automatic | Low |
+| **Tagged Products** | Attributes across categories | High | High |
+| **Collections** | Category-based options | Automatic | Medium |
+| **Individual Products** | Specific or test items | Manual | Highest |
 
-### When to Use
+## Tags vs. collections: what's the real difference?
 
-- **Product characteristics**: "Customizable", "Engravable", "Gift-wrappable"
-- **Material types**: "Leather goods", "Metal products"
-- **Size flexibility**: "Custom-sized items"
-- **Personalization**: "Personalizable"
+Tags describe **attributes** and can span any category — `engravable` applies to a ring and a wallet alike, and you control it product by product. Collections describe **categories** and follow your existing merchandising, automatically including new products you add to them. Choose tags for cross-category traits, collections for category-wide rules.
 
-### Example Use Cases
+## How to combine methods in a real store
 
-```
-Tag: "engravable"
-Option: "Engraving Text (max 20 characters)"
-→ Only shows on jewelry, watches, accessories tagged "engravable"
-```
+A single store usually mixes methods. For example, a jewelry store might run:
 
-```
-Tag: "custom-size"
-Option: "Enter Your Measurements"
-→ Only appears on clothing items tagged "custom-size"
-```
+- **Gift message** (All Products) — available on every item
+- **Engraving text** with a [character limit](/articles/text-options) (Tagged: `engravable`) — only on pieces that can be engraved
+- **Ring size** (Collection: "Rings") — every product in the rings category
+- **Bespoke design consultation** (Individual Products) — one premium made-to-order piece
 
-\![Tagged products assignment interface](/images/assign-types/tagged-products-interface.png)
-*Add multiple tags to target specific product groups*
+Layering assignments this way keeps each product page showing only the fields that belong on it. Pair this with [conditional logic](/articles/conditional-logic) to hide sub-options until they're relevant, and you avoid cluttered pages entirely.
 
-### Configuration Steps
+## Can I change an assignment after saving?
 
-1. Create your option
-2. Select **Tagged Products** assignment
-3. Enter one or more tags (comma-separated)
-4. Save the option
-5. Tag your products in Shopify admin
+Yes. Open the option set in the Option Set Editor, switch the assignment method or edit its tags, collections, or product list, and save with Shopify's save bar. Changes take effect on the storefront immediately once the set is **Active**. There's no separate publish step — Active status plus a saved change is all it takes.
 
-### Tagging Products in Shopify
+## FAQ
 
-1. Go to **Products** in Shopify admin
-2. Select a product
-3. Scroll to **Tags** field
-4. Add tags (e.g., `engravable, gift-wrappable`)
-5. Click **Save**
+**How do I assign product options to products in Shopify?**
+Open your option set in the Option Set Editor, choose All Products, Tagged Products, Collections, or Individual Products, set the set to Active, and save with the save bar. Options render once the theme app embed is enabled.
 
-\![Adding tags to products in Shopify](/images/assign-types/shopify-add-tags.png)
-*Add tags to products to activate assigned options*
+**Can one option set apply to multiple products?**
+Yes. All Products covers your whole catalog, Tagged Products covers every product with a matching tag, and Collections covers every product in the chosen collections. Individual Products lets you hand-pick items instead.
 
-### Multiple Tags
+**What is the difference between tags and collections for assignment?**
+Tags target attributes that cross categories and update as you tag products. Collections follow your existing store categories and include new products automatically. Use tags for characteristics, collections for categories.
 
-You can assign an option to products with ANY of multiple tags:
+**Can I change how an option set is assigned later?**
+Yes. Reopen the set in the Option Set Editor, change the method or its targets, and save. The update applies on the storefront as soon as it's saved and the set is Active.
 
-```
-Tags: "leather, fabric, canvas"
-→ Option appears if product has leather OR fabric OR canvas tag
-```
+**Why isn't my option showing on a product?**
+Confirm the set is Active, that the product matches the assignment (right tag or collection), and that the Optionify theme app embed is enabled in your theme editor. Options only appear when the embed is on.
 
+## Get started with Optionify
 
-### Advantages
+Ready to control exactly where your options appear? Install Optionify — it's **free, forever**, with all 17 option types, visual conditional logic, and per-choice pricing included.
 
-✅ Highly flexible
-✅ Easy to add/remove products
-✅ Can target multiple product types
-✅ Great for product characteristics
-✅ Scalable as store grows
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
 
-### Disadvantages
-
-❌ Requires manual tagging
-❌ Need to remember tag names
-❌ Tags must be consistent
-❌ Can create tag clutter
-
-### Best Practices for Tags
-
-**Use descriptive, consistent names:**
-- ✅ `gift-wrappable`, `personalizable`, `custom-size`
-- ❌ `g`, `option1`, `special`
-
-**Create a tagging system:**
-- Document your tags
-- Use prefixes: `opt-gift`, `opt-custom`, `opt-size`
-- Keep tags lowercase
-- Use hyphens instead of spaces
-
-**Common tag examples:**
-- `engravable` - For engraving options
-- `gift-wrap` - For gift wrapping
-- `custom-text` - For text personalization
-- `uploadable` - For image uploads
-- `dated` - For delivery date selection
-
-## 3. Collections Assignment
-
-### What It Does
-
-Applies options to all products within specific Shopify collections.
-
-### When to Use
-
-- **Product categories**: All jewelry, all apparel, all home decor
-- **Seasonal items**: Holiday collection, summer collection
-- **Special campaigns**: Valentine's Day, Mother's Day
-- **Product lines**: Premium line, budget line
-
-### Example Use Cases
-
-```
-Collection: "Jewelry"
-Option: "Ring Size Selector"
-→ Appears on all products in Jewelry collection
-```
-
-```
-Collection: "Wedding Collection"
-Option: "Preferred Delivery Date for Wedding"
-→ Only shows on wedding-related products
-```
-
-\![Collections assignment selection](/images/assign-types/collections-assignment.png)
-*Select one or more collections to target specific product groups*
-
-### Configuration Steps
-
-1. Create your option
-2. Select **Collections** assignment
-3. Choose collection(s) from dropdown
-4. Save and activate
-
-### Multiple Collections
-
-Assign to multiple collections:
-
-```
-Collections: "Men's Apparel", "Women's Apparel", "Kids' Apparel"
-Option: "Add Monogram"
-→ Appears on products in ANY of these collections
-```
-
-### Advantages
-
-✅ Follows your existing organization
-✅ Automatically includes new collection products
-✅ Easy to manage in Shopify admin
-✅ Natural grouping by product type
-✅ No manual tagging needed
-
-### Disadvantages
-
-❌ Less granular than tags
-❌ Product must be IN the collection
-❌ Can't target characteristics across collections
-❌ Limited by collection structure
-
-
-### Collections vs Tags
-
-**Use Collections when:**
-- Options align with product categories
-- You already organize by collections
-- You want automatic inclusion of new products
-- The grouping is product-type based
-
-**Use Tags when:**
-- Options target product characteristics
-- You need cross-category targeting
-- You want fine-grained control
-- The grouping is attribute-based
-
-## 4. Individual Products Assignment
-
-### What It Does
-
-Assigns options to specific products you manually select.
-
-### When to Use
-
-- **Limited editions**: Specific one-off products
-- **High-value items**: Custom luxury goods
-- **Test options**: Before broader rollout
-- **Unique products**: Items with special requirements
-
-### Example Use Cases
-
-```
-Products: "Custom Wedding Album", "Bespoke Suit"
-Option: "Custom Design Consultation"
-→ Only these two products have this option
-```
-
-```
-Product: "Limited Edition Sneakers"
-Option: "Reserve Your Size"
-→ Only this specific product
-```
-
-\![Individual products selection interface](/images/assign-types/individual-products-selection.png)
-*Manually select specific products for precise targeting*
-
-### Configuration Steps
-
-1. Create your option
-2. Select **Individual Products** assignment
-3. Search and select specific products
-4. Save and activate
-
-### Advantages
-
-✅ Maximum precision
-✅ Perfect for testing
-✅ No tagging or collection needed
-✅ Complete control
-
-### Disadvantages
-
-❌ Must manually manage each product
-❌ Doesn't scale well
-❌ Time-consuming for many products
-❌ Easy to forget to add new products
-
-
-## Comparison Table
-
-| Method | Best For | Scalability | Maintenance | Precision |
-|--------|----------|-------------|-------------|-----------|
-| **All Products** | Universal options | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐ |
-| **Tagged Products** | Characteristic-based | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **Collections** | Category-based | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| **Individual Products** | Specific items | ⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-
-## Real-World Examples
-
-### Example 1: Jewelry Store
-
-**Gift Message** (All Products)
-- Every product can include a gift message
-
-**Engraving** (Tagged: `engravable`)
-- Only rings, bracelets, watches with engraving capability
-
-**Ring Sizing** (Collection: "Rings")
-- All products in Rings collection
-
-**Custom Design** (Individual: "Bespoke Engagement Ring")
-- Only this one premium product
-
-### Example 2: Apparel Store
-
-**Delivery Instructions** (All Products)
-- Universal across all items
-
-**Monogramming** (Tagged: `monogrammable`)
-- Selected shirts, bags, robes
-
-**Size Guide** (Collections: "Shirts", "Pants", "Jackets")
-- Category-specific sizing
-
-**Prototype Feedback** (Individual: "Beta Test T-Shirt")
-- Testing on one product only
-
-## Changing Assignment Methods
-
-You can change an option's assignment method anytime:
-
-1. Edit the option
-2. Change **Assignment** type
-3. Configure new settings
-4. Save changes
-
-
-## Best Practices
-
-### Start Specific, Then Expand
-
-Begin with individual products or tags to test:
-1. Create option for 2-3 products
-2. Test thoroughly
-3. Expand to more products/collections
-4. Monitor results
-
-### Document Your System
-
-Keep a spreadsheet of:
-- Tag names and purposes
-- Which options use which assignments
-- Product coverage
-
-### Audit Regularly
-
-Every quarter:
-- Review which products have which options
-- Remove outdated tags
-- Update collections
-- Clean up assignments
-
-### Naming Conventions
-
-Use consistent prefixes:
-- `opt-` for option-related tags
-- `custom-` for customizable items
-- `gift-` for gift-related features
-
-## Troubleshooting
-
-### Option Doesn't Appear on Product
-
-**Check:**
-1. Option is activated
-2. Product has correct tag/is in collection
-3. Assignment type is correct
-4. Clear cache
-
-### Too Many Options on Product
-
-**Solution:**
-- Review all assignments
-- Be more specific with tags/collections
-- Remove from "All Products" if possible
-
-### Option Appears on Wrong Products
-
-**Solution:**
-- Check tag spelling (case-sensitive)
-- Verify collection membership
-- Review assignment settings
-
-## Next Steps
-
-Now that you understand assignment types:
-
-- [Create Your First Option](/articles/creating-your-first-product-option) - Put this into practice
-- [Text Options](/articles/text-options) - Explore option types
-- [Conditional Logic](/articles/conditional-logic) - Advanced option behavior
-
-
----
-
-**Questions?** Visit our [Troubleshooting Guide](/articles/troubleshooting) or explore more advanced features.
+New here? Start by [creating your first product option](/articles/creating-your-first-product-option), then learn how to [charge extra for a product option](/articles/charge-extra-for-product-option) and why options let you [add more than 3 options per product](/articles/shopify-variant-limit).

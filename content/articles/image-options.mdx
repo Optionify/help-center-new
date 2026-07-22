@@ -1,29 +1,119 @@
 ---
-title: "How to Use Image Upload Options"
-description: "Guide to allowing customers to upload images and files for custom products."
+title: "Add File Upload to Shopify Products"
+description: "Let Shopify customers upload artwork, logos, and photos on the product page with a free file upload option. Setup guide for print-on-demand orders."
 category: "option-types"
-lastUpdated: "2026-01-12"
-tags: ["image", "upload", "files", "option types"]
+lastUpdated: "2026-07-05"
+tags: ["shopify file upload", "image upload", "file upload", "print on demand", "custom products", "option types"]
 featured: false
 order: 10
+faq:
+  - question: "Does Shopify support file uploads on the product page?"
+    answer: "Shopify has no built-in file upload field on product pages. Line item properties can store text, but not a real upload button. To let customers attach artwork or photos before adding to cart, you need an app such as Optionify, which adds a file upload option for free."
+  - question: "What file types can customers upload?"
+    answer: "Optionify's file upload option accepts common formats customers actually send for custom work, including images like JPG and PNG plus documents like PDF. Add clear help text telling shoppers exactly which formats and sizes you accept so their upload matches your production workflow."
+  - question: "Where does the uploaded file go after checkout?"
+    answer: "Each uploaded file attaches to the Shopify order as a line item property. When you open the order in your admin, the customer's file is linked to that exact line item, so fulfillment and print partners can download the correct artwork without emailing back and forth."
+  - question: "Is the file upload option free in Optionify?"
+    answer: "Yes. Optionify is completely free forever. The file upload option, all other 16 option types, conditional logic, and add-on pricing are included at no cost, with no premium tier, no per-upload fee, and no transaction charges."
+  - question: "Can I charge extra when a customer uploads a file?"
+    answer: "Yes. Add an add-on price to the option so uploading custom artwork adds a fixed amount or a percentage of the product price. The charge reaches checkout through a hidden companion product, so it also works with Buy it Now and Shop Pay."
 ---
 
-Image upload options let customers upload photos, logos, and design files for custom products.
+Adding a **Shopify file upload** to your product page lets customers send you artwork, logos, and photos before they check out. It is essential for print-on-demand, engraving, and any custom product where you need the customer's own image to fulfill the order. Shopify does not offer this natively, so this guide shows the honest limits of the platform and how to add a free file upload option with Optionify.
 
-## Use Cases
+![File upload option shown on a Shopify product page with a drop zone](/images/image-options/upload-product-page.png)
+*A file upload option lets customers attach artwork directly on the product page*
 
-- Custom photo printing
-- Logo for embroidery
-- Design files for printing
-- Reference images
+## Does Shopify support file uploads on the product page?
 
+Shopify has no built-in file upload field on product pages. You can store short text in line item properties, but there is no native upload button, no drop zone, and no way to attach a real file before add-to-cart. Merchants typically resort to asking customers to email files after ordering, which is slow and error-prone.
 
-## Configuration
+That workaround creates real problems: files get lost in inboxes, orders ship without the right artwork, and you cannot match a design to a specific line item. A dedicated file upload option solves all of this by capturing the file at the moment of purchase.
 
-```
-Allowed Types: JPG, PNG, PDF
-Max File Size: 10MB
-Preview: Yes
-```
+## How do I add a file upload option with Optionify?
 
-\![Image upload interface](/images/image-options/upload-example.png)
+Optionify adds a **File / Image upload** option type that renders directly on the product page. Customers pick a file, it uploads, and the file attaches to their order. Here is the full setup:
+
+1. Open Optionify and click **Create option set**.
+2. In the Option Set Editor, add an option and choose the **File / Image upload** type.
+3. Give it a clear label such as "Upload your artwork" and add help text listing the formats and sizes you accept.
+4. Set whether the upload is required so customers cannot check out without sending a file.
+5. Assign the set to the right products, then set the status to **Active** and save from Shopify's save bar.
+
+![Optionify Option Set Editor configuring a File / Image upload option](/images/image-options/upload-option-editor.png)
+*Configure the file upload label, help text, and required setting in the Option Set Editor*
+
+Because Optionify uses **option sets**, one file upload configuration can apply to many products at once. To reuse it across a catalog, see [understanding assign types](/articles/understanding-assign-types).
+
+## Where should the file upload option appear?
+
+Assign the option set to the products that need artwork. Optionify offers four assignment methods, so you control exactly where the upload shows.
+
+You can target **All Products**, specific **Tagged Products**, whole **Collections**, or hand-picked **Individual Products**. For a print shop, tagging every customizable item and assigning by tag is usually the fastest approach. Read [understanding assign types](/articles/understanding-assign-types) for the full breakdown.
+
+## What file types can customers upload?
+
+The file upload option accepts the formats customers actually send for custom work: images such as **JPG and PNG**, and documents such as **PDF**. State your accepted formats and any size guidance in the option's help text so shoppers upload the right file the first time.
+
+Being specific in help text saves you fulfillment headaches. If your engraver needs vector artwork, say so. If your printer needs high-resolution images, tell customers the minimum. Clear instructions at upload time mean fewer reprints and refunds later.
+
+## Real use cases for file uploads
+
+Print-on-demand and custom manufacturing rely on customer files. Common setups include:
+
+- **Custom apparel and posters** — customers upload the photo or design they want printed.
+- **Engraving and embroidery** — customers send a logo or monogram file for the machine.
+- **Design mockups** — agencies and sign shops collect a brand asset before production.
+- **Personalized gifts** — shoppers upload a family photo for a mug, canvas, or ornament.
+
+Pair the upload with other option types for a complete customizer. Add a [textarea option](/articles/textarea-options) for placement notes, or a [dropdown option](/articles/dropdown-options) for size, so every detail arrives with the order.
+
+## How does the uploaded file reach my order?
+
+Every uploaded file attaches to the Shopify order as a **line item property**. When you open the order in your admin, the customer's file is linked to that exact line item, so your team downloads the correct artwork for the correct product without chasing emails.
+
+![Shopify order showing an uploaded file linked to a line item](/images/image-options/upload-order-property.png)
+*The uploaded file appears as a line item property on the Shopify order*
+
+This keeps fulfillment clean even on multi-item orders. Each line item carries its own file, so a customer ordering three custom shirts with three different designs sends you three correctly matched uploads.
+
+## Can I charge for custom uploads?
+
+Yes. Add an **add-on price** to the file upload option so requesting custom artwork adds a **fixed** amount or a **percentage** of the product price. Both pricing modes are live. The charge reaches checkout through a hidden companion product, so it works even with Buy it Now and Shop Pay. See [pricing variants](/articles/pricing-variants) for details.
+
+You can also combine uploads with [conditional logic](/articles/conditional-logic) so the upload field only appears after a customer chooses a "custom design" option, keeping simpler orders uncluttered.
+
+## Why the file upload must show on your storefront
+
+Optionify renders options through a **theme app embed** you enable in the theme editor. If the embed is off, your file upload option will not appear on the product page even though the option set is Active. Enabling it once activates every option set across your store.
+
+If your upload field is not showing, the embed is the first thing to check. See [troubleshooting](/articles/troubleshooting) for the full checklist.
+
+## FAQ
+
+**Does Shopify support file uploads on the product page?**
+Shopify has no built-in file upload field on product pages. Line item properties store text only. To let customers attach artwork or photos before add-to-cart, you need an app such as Optionify, which adds a file upload option for free.
+
+**What file types can customers upload?**
+The file upload option accepts common formats like JPG, PNG, and PDF. Add help text naming the exact formats and sizes you accept so uploads match your production workflow.
+
+**Where does the uploaded file go after checkout?**
+Each file attaches to the order as a line item property, linked to the exact line item, so fulfillment can download the right artwork.
+
+**Is the file upload option free?**
+Yes. Optionify is free forever, including the file upload option, all 17 option types, conditional logic, and add-on pricing.
+
+**Can I charge extra for a custom upload?**
+Yes. Add a fixed or percentage add-on price; the charge reaches checkout via a hidden companion product and works with Buy it Now and Shop Pay.
+
+## Get started with Optionify
+
+Ready to let customers upload their own artwork? Install Optionify from the Shopify App Store and add a **free** file upload option to your product pages in minutes.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)** — free forever.
+
+New to the app? Start with [getting started with Optionify](/articles/getting-started-with-optionify) and [creating your first product option](/articles/creating-your-first-product-option).
+
+---
+
+**Need help?** Check the [Troubleshooting Guide](/articles/troubleshooting) or contact support.

@@ -24,8 +24,26 @@ export default function Footer() {
             </div>
             <p className="text-gray-600 text-sm max-w-md">
               Add custom product options to your Shopify store with ease.
-              11 option types, 4 assignment methods, unlimited possibilities.
+              17 option types, 4 assignment methods, unlimited possibilities.
             </p>
+            {/* Official Built for Shopify badge — Optionify holds BFS status.
+                Renders Shopify's unaltered light asset (footer is a light surface),
+                one instance per page, links to the App Store listing. */}
+            <a
+              href="https://apps.shopify.com/optionify"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex mt-6"
+              aria-label="Optionify is Built for Shopify — view on the Shopify App Store"
+            >
+              <img
+                src="/badge-built-for-shopify-light.svg"
+                alt="Built for Shopify"
+                width={166}
+                height={44}
+                style={{ height: 36, width: 'auto' }}
+              />
+            </a>
           </div>
 
           {/* Quick Links */}

@@ -1,434 +1,116 @@
 ---
-title: "How to Use Date Picker Options"
-description: "Complete guide to using date picker options for delivery dates, event planning, and time-sensitive customizations. Learn to set date ranges, block weekdays, and configure custom validation messages."
+title: "How to Add a Date Picker to Shopify"
+description: "Add a date picker to Shopify for delivery dates, appointments, and events. Set date ranges, block weekdays, collect a delivery date. Free with Optionify."
 category: "option-types"
-lastUpdated: "2026-02-05"
-tags: ["date", "calendar", "option types", "scheduling", "date picker", "delivery date", "pickup date", "shopify calendar", "date selection", "event planning"]
-featured: true
+lastUpdated: "2026-07-05"
+tags: ["add a date picker to shopify", "shopify delivery date", "date picker", "option types", "delivery date"]
+featured: false
 order: 11
+faq:
+  - question: "How do I add a date picker to Shopify?"
+    answer: "Shopify has no built-in date field. With Optionify, create an option set, add a Date picker option, set the allowed date range and any blocked weekdays, assign the set to your products, and enable the theme app embed. Customers then choose a date on the product page."
+  - question: "How do I collect a delivery date on Shopify?"
+    answer: "Add a Date picker option in Optionify and label it 'Delivery date.' Set a minimum number of days for processing and block days you don't ship. The chosen delivery date saves to the order as a line item property so fulfillment sees it clearly."
+  - question: "Can I block weekends or specific days in the date picker?"
+    answer: "Yes. The Date picker supports blocked weekdays, so you can disable Sundays, weekends, or any days you don't deliver or operate. Blocked days appear unselectable in the calendar, preventing customers from choosing a date you can't fulfill."
+  - question: "Can I limit how far ahead customers can book a date?"
+    answer: "Yes. Set a minimum number of days from today to protect processing time and a maximum to cap how far ahead customers book. For example, a 3-day minimum and 90-day maximum keeps orders within a realistic planning window."
+  - question: "Does the date picker create Shopify variants?"
+    answer: "No. The Date picker is not a variant, so it never creates SKUs or counts against Shopify's 3-options-per-product limit. You can add a delivery or event date to any product without affecting inventory or variant combinations."
 ---
 
-Date picker options provide an intuitive calendar interface for customers to select dates. Perfect for scheduling deliveries, planning events, and managing time-sensitive customizations.
+Shopify has no built-in way to let customers pick a date, so stores that need a **Shopify delivery date**, an appointment slot, or an event date have to reach for an app. If you searched for how to **add a date picker to Shopify**, this guide shows how to add a calendar field — with date-range limits and blocked days — in a few minutes using [Optionify](https://apps.shopify.com/optionify), a free product options app.
 
-## What Are Date Picker Options?
+## How do I add a date picker to Shopify?
 
-Date picker options create a calendar input field where customers can select specific dates. The date picker provides a user-friendly interface that prevents invalid date entries and allows you to control which dates are available for selection.
+Shopify products can't collect a date natively. With Optionify, create an option set, add a **Date picker** option, set the allowed date range and any blocked weekdays, assign the set to your products, and enable the theme app embed. Customers then choose a valid date from a calendar right on the product page.
 
-![Date picker on product page](/images/datepicker-options/date-field-product-page.png)
-*A date picker field for selecting shipping dates on a product page*
+![Date picker calendar open on a Shopify product page with a delivery date selected](/images/datepicker-options/date-product-page.png)
+*A Date picker field collecting a delivery date on a live product page*
 
-## Real-World Use Cases
+## How do I collect a delivery date on Shopify?
 
-### 1. Delivery & Shipping
+Add a **Date picker** option and label it clearly, such as "Preferred delivery date." Set a minimum number of days so customers can't choose a date inside your processing window, and block any days you don't ship. The selected date is saved to the Shopify order, so your fulfillment team sees the target delivery date on every order.
 
-**Preferred Delivery Date**
-```
-Label: "Select Shipping Date"
-Min Days: 3 (processing time)
-Max Days: 90 (planning window)
-Blocked: Sundays (no delivery)
-```
+This is the pattern most stores want: not a free-text box where someone types "next Tuesdayish," but a real calendar that only allows dates you can actually fulfill.
 
-**Rush Order Pickup**
-```
-Label: "Pick Up Date"
-Min Days: 1 (next day pickup)
-Blocked: Weekends
-```
+## Setting the allowed date range
 
-### 2. Event Planning
+The Date picker lets you fence off which dates are selectable so customers can only choose dates you can honor:
 
-**Custom Event Items**
-```
-Label: "Event Date"
-Use Case: Wedding favors, party supplies
-Min Days: 14 (production time)
-```
+- **Minimum days from today** — protects your processing and production time. A value of 3 means the earliest selectable date is three days out. Same-day is 0, next-day is 1.
+- **Maximum days from today** — caps how far ahead customers can book. A value of 90 keeps orders inside a three-month planning window; rentals or event orders might use 365.
 
-**Personalized Gifts**
-```
-Label: "Birthday Date"
-Use Case: Track when gift should arrive
-```
-
-### 3. Reservations
+A sensible range prevents both problems at once: customers choosing tomorrow when you need a week, and customers booking a year out when you can't plan that far.
 
-**Product Rentals**
-```
-Label: "Rental Start Date"
-Min Days: 2
-Max Days: 365
-```
+## Blocking weekends and unavailable days
 
-### 4. Perishable Goods
+The Date picker supports **blocked weekdays** so you can disable any days you don't deliver or operate — Sundays only, full weekends, or a custom set that matches your carrier and shop schedule. Blocked days render as unselectable in the calendar, so a customer simply can't pick a date you can't fulfill.
 
-**Fresh Flowers**
-```
-Label: "Delivery Date"
-Min Days: 1
-Blocked: Sundays, Mondays (shop closed)
-```
+![Date picker settings in the Optionify Option Set Editor showing the date range and blocked weekdays](/images/datepicker-options/date-range-settings.png)
+*Configuring the minimum/maximum date range and blocked weekdays in the Option Set Editor*
 
-## Creating a Date Picker Option
+Use the option's help text to explain the rules in plain language, for example: "We deliver Tuesday–Saturday. Orders need three business days to prepare."
 
-### Step 1: Basic Setup
+## How to set up a date picker in Optionify
 
-1. Click **Create New Option**
-2. Select **Date** option type
-3. Enter option details:
+1. Click **Create option set** and name the set (e.g. "Delivery scheduling").
+2. Add an option and choose the **Date picker** type.
+3. Enter the option label, such as "Preferred delivery date."
+4. Set the **minimum** and **maximum** days from today for the allowed range.
+5. Add any **blocked weekdays** you can't fulfill.
+6. Decide whether the date is **required** — usually yes for time-sensitive orders.
+7. Assign the set with the right [assignment method](/articles/understanding-assign-types) — All Products, Tagged Products, Collections, or Individual Products.
+8. Set the set to **Active** and save with Shopify's save bar.
 
-```
-Option Label: "Pick Up Date"
-Internal Name: "pickup-date"
-Help Text: "Select your preferred pickup date (available 3 days from today)"
-```
+Options only appear on the storefront once the **theme app embed** is enabled in your theme editor. If the calendar isn't showing, check that first.
 
-![Date picker configuration](/images/datepicker-options/date-range-settings.png)
-*Configure date range settings, blocked days, and custom error messages*
-
-### Step 2: Configure Date Range Settings
+## Can I charge extra for rush or weekend dates?
 
-#### Minimum Days from Today
-
-Control how soon customers can select dates:
+Yes — pair the Date picker with another option that carries an add-on price. A common setup is a [radio buttons](/articles/radio-options) or [switch](/articles/switch-options) option offering "Standard," "Rush (+$10)," or "Weekend delivery (+$15)," where each choice adds its charge in one of two modes:
 
-```
-Minimum Days: 3
-Result: Today + 3 days minimum
-Example: If today is Jan 1, earliest date is Jan 4
-```
+- **Fixed** — a set amount, e.g. "Rush delivery (+$10.00)."
+- **Percent** — a percentage of the product price.
 
-**Common scenarios:**
-- Same day service: 0 days
-- Next day: 1 day
-- Standard processing: 3-5 days
-- Custom production: 7-14 days
-- Pre-orders: 30+ days
+The charge carries to checkout through a hidden companion product, so it works with **Buy it Now** and **Shop Pay** too. See [add-on pricing](/articles/pricing-variants) for the details. You can also use [conditional logic](/articles/conditional-logic) to reveal the rush option only after a date is chosen.
 
-#### Maximum Days from Today
+## Does a date picker create Shopify variants?
 
-Limit how far ahead customers can book:
+No. A date is a customer preference, not stock-tracked inventory, so it doesn't belong in variants at all. The Date picker creates no SKUs and doesn't count against Shopify's **3-options-per-product limit** — which stayed at 3 even after Shopify raised the [variant ceiling](/articles/shopify-variant-limit) to 2,048 in October 2025. Your Size and Color stay as variants; the delivery date lives alongside them without using one of your three slots.
 
-```
-Maximum Days: 90
-Result: Today + 90 days maximum
-Example: If today is Jan 1, latest date is Apr 1
-```
+## Real use cases for date picker options
 
-**When to set limits:**
-- Inventory planning: 60-90 days
-- Event bookings: 365 days (1 year)
-- Seasonal products: Match season
-- No limit: Leave empty for "No maximum"
+**Delivery scheduling.** A florist collects a delivery date with a 1-day minimum and blocks the days the shop is closed, so bouquets always arrive when the shop can dispatch them.
 
-**Important:** Setting appropriate date ranges helps with:
-- Inventory management
-- Production scheduling
-- Preventing unrealistic expectations
-- Managing seasonal availability
+**Appointments and pickups.** A bakery lets customers choose a pickup date for custom cakes, with a 3-day minimum for decorating time.
 
-### Step 3: Block Unavailable Days
+**Event dates.** A party-supplies store asks for the event date on personalized items, using a 14-day minimum to guarantee production and shipping.
 
-#### Blocked Weekdays
+**Rentals.** An equipment rental store collects a start date with a longer maximum window for advance bookings.
 
-Prevent selection of specific days of the week:
+Every chosen date is saved as a line item property on the order, so your team sees the exact date the customer needs — no back-and-forth emails.
 
-```
-Blocked Weekdays: 0, 6
-Format: 0=Sunday, 1=Monday, ..., 6=Saturday
-Example: "0, 6" blocks Sundays and Saturdays
-```
+## FAQ
 
-**Common patterns:**
-- Block weekends: `0, 6`
-- Block Sundays only: `0`
-- Block Mondays and Wednesdays: `1, 3`
-- Business days only: `0, 6` (block weekends)
+**How do I add a date picker to Shopify?**
+Shopify has no built-in date field. With Optionify, create an option set, add a Date picker option, set the date range and blocked weekdays, assign it to your products, and enable the theme app embed.
 
-**Use cases:**
-- Match delivery schedules
-- Respect shop hours
-- Account for shipping carrier schedules
-- Align with production days
+**How do I collect a delivery date on Shopify?**
+Add a Date picker option labeled "Delivery date," set a minimum for processing time, and block days you don't ship. The chosen date saves to the order as a line item property.
 
-### Step 4: Validation & Error Messages
+**Can I block weekends or specific days?**
+Yes. The Date picker supports blocked weekdays, so you can disable Sundays, full weekends, or any days you don't operate. Blocked days appear unselectable in the calendar.
 
-#### Custom Error Messages
+**Can I limit how far ahead customers can book?**
+Yes. Set a minimum number of days from today to protect processing time and a maximum to cap how far ahead customers book.
 
-Provide clear feedback when customers select invalid dates:
+**Does the date picker create Shopify variants?**
+No. It isn't a variant, so it never creates SKUs or counts against Shopify's 3-options-per-product limit.
 
-```
-Custom Error Message: "Please select a valid date"
-```
+## Get started with Optionify
 
-**Better examples:**
-- ✅ "Please select a date at least 3 days from today"
-- ✅ "Sorry, we don't deliver on weekends. Please choose a weekday"
-- ✅ "Pickup dates must be within the next 90 days"
-- ❌ "Invalid date"
-- ❌ "Error"
+Ready to let customers choose a delivery, appointment, or event date? Install Optionify — it's **free, forever**, with all 17 option types, conditional logic, and add-on pricing included.
 
-The error message appears when:
-- Date is too soon (before minimum)
-- Date is too far (after maximum)
-- Date falls on blocked weekday
-- Customer tries to proceed without selecting a date (if required)
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
 
-### Step 5: Required vs Optional
-
-**Make it required when:**
-- Date is critical for fulfillment
-- You need to plan production/delivery
-- The product is time-sensitive
-
-**Make it optional when:**
-- Date is just a preference
-- Flexible fulfillment timing
-- Customer may not know exact date
-
-```
-Required: Yes (for critical scheduling)
-Required: No (for flexible preferences)
-```
-
-## Advanced Features
-
-### Date Format Display
-
-Dates display in customer's local format:
-- US: MM/DD/YYYY
-- Europe: DD/MM/YYYY
-- ISO: YYYY-MM-DD
-
-Optionify automatically handles localization based on customer location.
-
-### Calendar Interface
-
-The date picker provides:
-- Visual calendar view
-- Month/year navigation
-- Disabled date indicators
-- Today highlight
-- Clear visual feedback
-
-### Mobile Optimization
-
-On mobile devices:
-- Native date picker integration
-- Touch-friendly calendar
-- Optimized for small screens
-- Accessible keyboard input
-
-## Best Practices
-
-### 1. Clear Labels
-
-**Good labels:**
-- ✅ "Preferred Delivery Date"
-- ✅ "Event Date for Your Custom Order"
-- ✅ "Pick Up Date (available 3+ days out)"
-
-**Poor labels:**
-- ❌ "Date"
-- ❌ "Select Date"
-- ❌ "Date Option 1"
-
-### 2. Helpful Help Text
-
-Explain what the date means:
-
-```
-Help Text: "Select your preferred delivery date.
-Orders require 3 business days processing.
-We don't deliver on weekends."
-```
-
-### 3. Realistic Minimums
-
-Set minimums that account for:
-- Production time
-- Shipping time
-- Processing time
-- Buffer for issues
-
-**Example:** If you need 2 days to make a product and 1 day to ship, set minimum to 3-4 days for safety.
-
-### 4. Communicate Blocked Days
-
-Tell customers why days are blocked:
-
-```
-Help Text: "We don't deliver on Sundays or Mondays.
-Please select Tuesday-Saturday."
-```
-
-### 5. Plan for Holidays
-
-Consider blocking major holidays:
-- Add to help text: "Holiday shipping may be delayed"
-- Use maximum date to avoid holiday rush
-- Communicate processing times clearly
-
-## Common Mistakes to Avoid
-
-### ❌ Minimum Too Short
-
-**Problem:** Customer selects tomorrow, but you need 5 days
-**Solution:** Set minimum days accurately
-
-### ❌ No Maximum Set
-
-**Problem:** Customer books 2 years ahead
-**Solution:** Set realistic maximum based on planning horizon
-
-### ❌ Unclear Blocked Days
-
-**Problem:** Customer doesn't know why certain days are disabled
-**Solution:** Explain in help text and error messages
-
-### ❌ No Buffer Time
-
-**Problem:** Minimum is exactly production time with no margin
-**Solution:** Add 1-2 day buffer for unexpected issues
-
-### ❌ Wrong Option Type
-
-**Problem:** Need date AND time
-**Solution:** Consider adding a separate time picker or text field
-
-## Integration with Orders
-
-### How Dates Appear in Orders
-
-In Shopify order details:
-
-```
-Product: Custom Cake
-Options:
-  - Pick Up Date: 2024-02-15
-  - Flavor: Chocolate
-```
-
-### Date Format in Orders
-
-Dates are stored in ISO format (YYYY-MM-DD) for consistency and easy processing:
-- Easy to parse and sort
-- No timezone issues
-- Compatible with all systems
-
-### Exporting Data
-
-Date picker data exports to:
-- Shopify order CSV
-- Third-party fulfillment apps
-- Production scheduling systems
-- Calendar integrations
-
-## Pricing with Date Options
-
-Add pricing for rush delivery or date-specific services:
-
-```
-Add Price: Yes
-Price: $10.00
-Price Label: "Express Delivery"
-```
-
-**Use cases:**
-- Rush processing (dates sooner than standard)
-- Weekend delivery premium
-- Holiday delivery surcharge
-- Peak season pricing
-
-## Styling & Display
-
-### Field Width
-
-Date fields can be sized appropriately:
-- Full width for mobile
-- Medium width for desktop
-- Inline with other options
-
-### Calendar Appearance
-
-Calendar inherits your theme styling:
-- Matches your store colors
-- Responsive design
-- Accessible to screen readers
-
-### Validation Feedback
-
-Visual indicators show:
-- Available dates (clickable)
-- Blocked dates (grayed out)
-- Selected date (highlighted)
-- Current date (marked)
-
-## Troubleshooting
-
-### Calendar Doesn't Open
-
-**Cause:** Theme compatibility issue
-**Fix:** Ensure theme JavaScript is loading, or contact support
-
-### Wrong Dates Blocked
-
-**Cause:** Incorrect weekday numbers
-**Fix:** Remember: 0=Sunday, 6=Saturday
-
-### Customer Sees Different Date Format
-
-**Cause:** Browser locale settings
-**Fix:** This is normal - dates localize automatically
-
-### Minimum Days Not Working
-
-**Cause:** Calculation based on today's date
-**Fix:** Verify "today" is being calculated correctly in your timezone
-
-### Dates Not Saving to Orders
-
-**Cause:** Form submission issue
-**Fix:** Ensure date is selected before "Add to Cart"
-
-## SEO Benefits
-
-Date pickers enhance SEO by:
-- Enabling time-sensitive product offerings
-- Creating urgency for seasonal items
-- Improving user experience metrics
-- Reducing cart abandonment
-- Providing structure data for events
-
-## Related Option Types
-
-- **Text Options**: For flexible date entry → [Learn more](/articles/text-options)
-- **Dropdown Options**: For predefined date choices → [Learn more](/articles/dropdown-options)
-- **Number Options**: For quantity based on dates → [Learn more](/articles/number-options)
-
-## Next Steps
-
-Now that you understand date picker options:
-
-- Explore [Conditional Logic](/articles/conditional-logic) to show dates only when relevant
-- Learn about [Pricing Variants](/articles/pricing-variants) to charge for rush dates
-- Try [Radio Options](/articles/radio-options) for predefined date slots
-
-## Get Started with Optionify
-
-Ready to add date picker options to your Shopify store? Install Optionify today from the Shopify App Store and start accepting delivery dates, event dates, and scheduling preferences in minutes.
-
-**[Install Optionify on Shopify App Store](https://apps.shopify.com/optionify)**
-
-With Optionify's date picker options, you can:
-- Let customers select delivery and pickup dates
-- Set minimum and maximum date ranges
-- Block unavailable weekdays automatically
-- Display custom error messages
-- Integrate seamlessly with your fulfillment process
-
-Join thousands of Shopify merchants who trust Optionify for product customization and scheduling.
-
----
-
-**Need help?** Check our [Troubleshooting Guide](/articles/troubleshooting) or contact support
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), then explore [conditional logic](/articles/conditional-logic) to reveal date-related options only when relevant.

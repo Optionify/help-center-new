@@ -12,8 +12,8 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex items-center">
+          {/* Logo + Built for Shopify badge */}
+          <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/images/optionify-logo.png"
@@ -27,6 +27,22 @@ export default function Header() {
                 Optionify Help
               </span>
             </Link>
+            {/* Official Built for Shopify badge — next to the wordmark, light asset. */}
+            <a
+              href="https://apps.shopify.com/optionify"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center pl-3 border-l border-gray-200"
+              aria-label="Optionify is Built for Shopify — view on the Shopify App Store"
+            >
+              <img
+                src="/badge-built-for-shopify-light.svg"
+                alt="Built for Shopify"
+                width={166}
+                height={44}
+                style={{ height: 30, width: 'auto' }}
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}

@@ -1,0 +1,107 @@
+---
+title: "Shopify Select Box Option Guide"
+description: "Add a Shopify select box option — a custom-styled single-select dropdown with per-choice add-on pricing and no variants — using free Optionify."
+category: "option-types"
+lastUpdated: "2026-07-05"
+tags: ["shopify select box option", "select box", "custom dropdown", "single-select", "add-on pricing"]
+featured: false
+order: 10
+faq:
+  - question: "What is a select box option in Shopify?"
+    answer: "A select box is a custom-styled single-select control from Optionify. Like a dropdown, the customer picks one choice from a menu, but the styling is rendered by Optionify to match your theme consistently across browsers, rather than using the browser's native dropdown control."
+  - question: "How is a select box different from a dropdown?"
+    answer: "Both let a customer choose exactly one value from a menu. A Dropdown uses the browser's native select control, so its look changes per device. A Select box is custom-styled by Optionify, giving you a consistent, on-brand appearance across all browsers and devices."
+  - question: "Can each select box choice add to the price?"
+    answer: "Yes. Every select box value can carry an add-on price, either a fixed money amount or a percentage of the product price. The charge is applied at cart and reaches checkout, so it works with Buy it Now and Shop Pay as well as the normal cart."
+  - question: "Do select box options create Shopify variants?"
+    answer: "No. Select box options are not Shopify variants, so they never create SKUs or count against the 3-options-per-product limit or the 2,048 variant cap. You can add as many select box options to a product as you need."
+  - question: "Will select box choices appear on the order?"
+    answer: "Yes. The value a customer selects is saved as a line item property on the Shopify order, along with any add-on price applied. Your fulfillment team sees exactly what was chosen without any back-and-forth."
+---
+
+A **Shopify select box option** lets a customer pick one choice from a menu — like a dropdown, but custom-styled to match your theme. If you want a single-select control that looks consistent across every browser and device, this guide explains what the Select box type is, how it differs from a plain dropdown and from radio buttons, and how to set one up in [Optionify](https://apps.shopify.com/optionify), a free product options app.
+
+## What is a select box option in Shopify?
+
+A select box is a **custom-styled single-select control**. The customer opens the menu and picks exactly one value, just like a dropdown — but instead of the browser's native select element, Optionify renders the control itself. That gives you a consistent, on-brand appearance across Chrome, Safari, Firefox and mobile, where native dropdowns otherwise look different on each.
+
+![Shopify select box option open on a product page showing custom-styled choices](/images/select-box-options/select-box-product-page.png)
+*A custom-styled select box on a live product page, matching the store theme*
+
+## Select box vs. dropdown: which should I use?
+
+Both the Select box and the [Dropdown](/articles/dropdown-options) do the same job — the customer chooses **one** value from a menu — so the decision is purely about styling and control:
+
+- **[Dropdown](/articles/dropdown-options)** uses the browser's **native** select control. It's lightweight and familiar, but its look is decided by the browser, so it changes between devices.
+- **Select box** is **custom-styled by Optionify**. You get a consistent, themed appearance everywhere, which matters when native dropdowns clash with a carefully designed product page.
+
+If the exact look of the control matters to your brand, choose the select box. If you just need a functional menu and don't mind the native styling, the dropdown is fine. Functionally — single choice, per-value pricing, line item properties — they behave the same.
+
+## Select box vs. radio buttons
+
+A select box and [radio buttons](/articles/radio-options) also both capture a single choice, but they present it differently:
+
+- **Radio buttons** show every choice **at once**, laid out on the page. Best when you have a few options and want them all visible for quick comparison — a shipping speed, a finish, a size band.
+- **Select box** keeps choices **tucked inside a menu** until opened. Best when you have many choices, or when a long list would take up too much vertical space on the page.
+
+A rough rule: up to about five choices, radio buttons read well; beyond that, a select box keeps the page tidy.
+
+## How to set up a select box option in Optionify
+
+1. Click **Create option set** and name the set (e.g. "Frame style").
+2. Add an option and choose the **Select box** type.
+3. Enter the option label, such as "Choose a finish" or "Select your plan."
+4. Add each choice as a **value** — "Matte," "Gloss," "Brushed metal."
+5. Give any value an add-on price if it costs more (details below).
+6. Decide whether the option is **required** so the customer must choose before adding to cart.
+7. Assign the set with the right [assignment method](/articles/understanding-assign-types) — All Products, Tagged Products, Collections, or Individual Products.
+8. Set the set to **Active** and save with Shopify's save bar.
+
+![Select box option configuration in the Optionify Option Set Editor with values and per-choice pricing](/images/select-box-options/select-box-editor.png)
+*Adding select box values with optional per-choice pricing in the Option Set Editor*
+
+Options only appear on the storefront once the **theme app embed** is enabled in your theme editor. If the select box doesn't show up after saving, that's almost always the reason — the [troubleshooting guide](/articles/troubleshooting) covers it in one step.
+
+## Can each select box choice add to the price?
+
+Yes. Every select box value can carry an **add-on price** in one of two modes:
+
+- **Fixed** — a set amount, e.g. "Brushed metal (+$8.00)."
+- **Percent** — a percentage of the product price, e.g. "Premium finish (+10%)."
+
+When the customer picks a priced choice, the charge is applied at cart and reaches checkout through a hidden companion product — so it works with **Buy it Now** and **Shop Pay** too, not just the standard cart. See [add-on pricing](/articles/pricing-variants) for how the total reaches the order. Because a select box is single-select, only one choice's price applies at a time.
+
+## Real use cases for select box options
+
+**Product finishes and materials.** A furniture store offers "Oak," "Walnut," and "Painted (+$25)" as a themed select box, keeping the control on-brand rather than falling back to the browser default.
+
+**Plan or tier selection.** A subscription product presents "Monthly," "Quarterly," and "Annual (−? via discount)" in a clean, custom-styled menu that matches the rest of the page.
+
+**Long single-choice lists.** A print shop with fifteen paper stocks uses a select box so the list stays compact instead of pushing the Add to cart button far down the page.
+
+Because every selection becomes a line item property on the order, your fulfillment team sees the exact choice a customer made — no guesswork.
+
+## FAQ
+
+**What is a select box option in Shopify?**
+A select box is a custom-styled single-select control from Optionify. The customer picks one choice from a menu, but Optionify renders the styling to match your theme consistently across browsers, instead of using the browser's native dropdown.
+
+**How is a select box different from a dropdown?**
+Both let a customer choose one value from a menu. A Dropdown uses the browser's native select control, so its look changes per device. A Select box is custom-styled by Optionify for a consistent, on-brand appearance everywhere.
+
+**Can each select box choice add to the price?**
+Yes. Every value can carry a fixed amount or a percentage of the product price. The charge is applied at cart and reaches checkout, including Buy it Now and Shop Pay.
+
+**Do select box options create Shopify variants?**
+No. Select box options aren't variants, so they never create SKUs or count against Shopify's 3-options-per-product limit.
+
+**Will select box choices appear on the order?**
+Yes. The selected value is saved as a line item property on the order, along with any add-on price, visible in the order details.
+
+## Get started with Optionify
+
+Want a single-select control that matches your theme? Install Optionify — it's **free, forever**, with all 17 option types, conditional logic, and per-choice pricing included.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), then compare [dropdown options](/articles/dropdown-options) for the native menu and [radio buttons](/articles/radio-options) for choices shown all at once.

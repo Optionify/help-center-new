@@ -16,7 +16,7 @@ export const categories: (ArticleCategory & { articles?: { slug: string; title: 
   {
     name: 'Option Types',
     slug: 'option-types',
-    description: 'Detailed guides for each of the 11 option types available in Optionify',
+    description: 'Detailed guides for each of the 17 option types available in Optionify',
     icon: '⚙️',
     order: 2,
     articles: [

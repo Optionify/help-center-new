@@ -1,0 +1,117 @@
+---
+title: "Add a Gift Wrapping Option on Shopify"
+description: "Add a gift wrapping option on Shopify with a priced checkbox and a gift message field. Conditional logic shows the message box only when gift wrap is selected."
+category: "advanced"
+lastUpdated: "2026-07-05"
+tags: ["add a gift wrapping option on Shopify", "gift wrapping", "gift message", "gift wrap add-on", "conditional logic", "product options"]
+featured: false
+order: 22
+faq:
+  - question: "How do I add a gift wrapping option on Shopify?"
+    answer: "Use a product options app. With Optionify you create an option set, add a switch or checkbox labelled Add gift wrapping with a price like +$5, then assign it to your products. The option appears on the product page and the charge carries through to checkout."
+  - question: "Does Shopify have gift wrapping built in?"
+    answer: "No. Shopify has no native gift-wrapping feature. Merchants usually fake it with a separate 'gift wrap' product or a variant, which is clumsy and can't attach a gift message. A product options app adds a proper priced option on the product page."
+  - question: "Can customers add a gift message with the wrapping?"
+    answer: "Yes. Add an Optionify Text input or Textarea for the gift message alongside the gift-wrap toggle. Use conditional logic so the message box only appears after the customer turns gift wrapping on, keeping the product page clean for everyone else."
+  - question: "Does the gift wrap charge work with Shop Pay?"
+    answer: "Yes. Optionify sends the gift-wrap charge to checkout through a hidden companion product, so it's collected correctly with the standard cart and with Buy it Now and Shop Pay express checkout."
+  - question: "Will the gift message show up on the order for fulfillment?"
+    answer: "Yes. The gift-wrap selection and the message text are saved on the Shopify order as line item properties, so whoever packs the order sees to wrap it and exactly what to write on the card."
+---
+
+Gift wrapping is one of the highest-margin add-ons in retail — customers happily pay a few dollars, and it costs you paper and a minute. The catch: Shopify has no built-in gift-wrap feature. This guide shows how to **add a gift wrapping option on Shopify** as a proper priced choice, with an optional gift message, on any theme.
+
+## Does Shopify have gift wrapping built in?
+
+No — Shopify has no native gift-wrapping feature. The usual workarounds are clumsy: merchants create a separate "Gift Wrap" product the customer has to find and add on its own, or bury it as a variant. Neither can attach a **gift message**, and a separate product breaks the connection to the item being wrapped. To do it properly you need a gift-wrap option that lives on the product page itself.
+
+## How to add a gift wrapping option on Shopify
+
+The clean way to add a gift wrapping option on Shopify is a product options app that puts a priced toggle on the product page. [Optionify](https://apps.shopify.com/optionify) is free and does this in a few minutes — no theme code, and it works on any theme.
+
+### Step 1: Gift wrap as a priced switch
+
+Add a **Switch** (a single on/off toggle) or a **Checkbox**, label it "Add gift wrapping," and give it an [add-on price](/articles/pricing-variants) such as **+$5.00**. When the customer turns it on, the price updates live on the page.
+
+```
+◻ Add gift wrapping   +$5.00
+```
+
+The [Switch type](/articles/switch-options) is ideal here — one tidy yes/no toggle. Use a [Checkbox](/articles/checkbox-options) instead if you offer several wrap styles the customer might combine.
+
+![Optionify gift-wrapping switch on a Shopify product page with a +$5 price](/images/gift-wrapping-shopify/gift-wrap-switch.png)
+*A single priced switch turns gift wrapping into a live add-on on the product page.*
+
+### Step 2: Add a gift message field
+
+Gift-givers usually want a card message. Add a **Text input** for a short message or a **[Textarea](/articles/textarea-options)** for a longer one, labelled "Gift message." Whatever the customer types is saved with the order.
+
+```
+Gift message:  [ Happy birthday, Sam! ]
+```
+
+### Step 3: Show the message box only when gift wrap is on
+
+You don't want the message field cluttering the page for every shopper — only for the ones actually sending a gift. This is where Optionify's [conditional logic](/articles/conditional-logic) earns its keep. On the visual flow canvas you set a rule:
+
+```
+IF  "Add gift wrapping" = On
+THEN show "Gift message"
+```
+
+Now the message box **appears only after the customer enables gift wrapping**, and stays hidden otherwise. It's the small touch that makes the option feel native rather than bolted on.
+
+![Optionify conditional-logic flow showing the gift message field revealed when the gift-wrap switch is turned on](/images/gift-wrapping-shopify/conditional-flow.png)
+*Conditional logic reveals the gift-message field only when gift wrapping is selected.*
+
+## Does the charge reach checkout correctly?
+
+Yes. Optionify sends the gift-wrap charge to checkout through a **hidden companion product**, so the +$5.00 is collected properly — not just displayed on the page. It works with the standard cart and with **Buy it Now / Shop Pay** express checkout, so you don't lose the charge on fast checkouts.
+
+## How does it show up on the order?
+
+When the order comes in, the gift-wrap selection and the message text are saved as **line item properties** on the Shopify order. Whoever packs the parcel opens the order and sees, right on the line item:
+
+```
+Gift wrapping: Yes  (+$5.00)
+Gift message:  "Happy birthday, Sam!"
+```
+
+No separate spreadsheet, no guessing — the packer knows to wrap it and exactly what to write on the card. Because the selection also flows through, it's captured whether the customer used the cart or Shop Pay.
+
+## Works on any theme
+
+Options render through Optionify's **theme app embed**, which you enable once in the theme editor. That means the gift-wrap option is **theme-agnostic** — it works on Dawn, on premium themes and on custom builds, with no Liquid edits. If the option doesn't appear after setup, the embed usually just needs enabling; the [troubleshooting guide](/articles/troubleshooting) covers it.
+
+## How to set it up
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — free, all option types included.
+2. Click **Create option set** and open the Option Set Editor.
+3. Add a **Switch** labelled "Add gift wrapping" and set its price (e.g. +$5.00). Add a **Text input** or **Textarea** labelled "Gift message."
+4. Open the conditional-logic canvas and add a rule: show "Gift message" only when "Add gift wrapping" is On.
+5. [Assign the set](/articles/understanding-assign-types) — all products, a giftable collection, tagged products, or specific items.
+6. Set the set to **Active**, save via the save bar, and use **Preview** to test it on your storefront.
+
+## FAQ
+
+### How do I add a gift wrapping option on Shopify?
+
+Install Optionify, create an option set, add a **switch** labelled "Add gift wrapping" with a price like +$5, add a **text field** for the message, and assign it to your products. The option appears on the product page and the charge carries through to checkout.
+
+### Does Shopify have gift wrapping built in?
+
+No. Shopify has no native gift-wrap feature. Merchants usually improvise with a separate gift-wrap product or a variant, which can't attach a gift message. A product options app adds a proper priced option directly on the product page.
+
+### Can customers add a gift message too?
+
+Yes. Add a **Text input** or **Textarea** for the message and use **conditional logic** so it only appears once the customer turns gift wrapping on — keeping the product page clean for everyone else. The message saves to the order.
+
+## Get started
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — free
+2. **[Learn switch options](/articles/switch-options)** — the gift-wrap toggle
+3. **[Set up conditional logic](/articles/conditional-logic)** — reveal the message field on demand
+
+---
+
+**Need help?** See the [Troubleshooting Guide](/articles/troubleshooting) or contact support.

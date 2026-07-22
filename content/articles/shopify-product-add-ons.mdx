@@ -1,0 +1,120 @@
+---
+title: "Shopify Product Add-Ons on the Product Page"
+description: "Add Shopify product add-ons on the product page — chargeable accessories, warranties and gift wrap — without variants. Works with Shop Pay, data flows to the order."
+category: "advanced"
+lastUpdated: "2026-07-05"
+tags: ["Shopify product add-ons on the product page", "product add-ons", "chargeable add-ons", "product reference", "upsell", "accessories"]
+featured: false
+order: 21
+faq:
+  - question: "How do I add product add-ons on the Shopify product page?"
+    answer: "Use a product options app. With Optionify you create an option set, add a checkbox or switch with an add-on price, then assign it to the products that should show it. The add-on appears on the product page and its charge carries through to checkout."
+  - question: "What's the difference between an add-on and a bundle?"
+    answer: "An add-on is an optional extra a customer ticks on a product page, like a warranty or gift wrap, priced on top of the main item. A bundle is a fixed group of products sold together as one package. Optionify handles add-ons; bundles are a separate use case."
+  - question: "Can I offer another product as an add-on?"
+    answer: "Yes. Optionify's Product reference option type lets you link a real product from your store as an add-on choice, so a customer buying a camera can add a memory card or case directly from the product page without leaving it."
+  - question: "Do add-on charges work with Shop Pay?"
+    answer: "Yes. Optionify sends add-on charges to checkout through a hidden companion product, so they're collected correctly with the normal cart and with Buy it Now and Shop Pay express checkout, not just the standard flow."
+  - question: "Do add-ons create Shopify variants?"
+    answer: "No. Optionify add-ons are custom options, not variants, so they don't count against Shopify's 3-option limit, don't need SKUs, and don't inflate your variant count. You can add as many add-ons as a product needs."
+---
+
+Accessories, warranties, gift wrap, priority handling — the extras a customer taps "yes" to on the way to checkout are some of the easiest revenue you'll ever add. This guide shows how to offer **Shopify product add-ons on the product page** with real prices, without variants and without touching your theme code.
+
+## What counts as a product add-on?
+
+A product add-on is an **optional, usually chargeable extra** a customer can select on a product page, on top of the main item — a warranty for a laptop, a memory card for a camera, gift wrap for a present. It's the customer's choice, and it adds to the line price.
+
+Before you build, scope it correctly: an add-on is **not** a bundle. A bundle is a fixed set of products sold together as a single package at one price. An add-on is optional and per-order. If you want optional extras on a product page, that's an add-on — and that's what Optionify does. Bundles are a different tool.
+
+## Why Shopify variants can't do add-ons
+
+Shopify variants describe fixed versions of one product — Blue / Large, 128 GB / Space Grey. They're built for inventory combinations, not optional extras. Trying to model "add a $99 warranty?" as a variant doubles your variant count, needs a SKU, and even then it can't offer a **different product** as the add-on. And every product is still capped at [3 options](/articles/shopify-variant-limit), so warranty + gift wrap + engraving simply won't fit.
+
+Add-ons aren't inventory combinations — they're extra choices. That's exactly what a product options app is for.
+
+## How to add product add-ons on the product page
+
+[Optionify](https://apps.shopify.com/optionify) adds chargeable add-ons as custom options that render on the product page and never become variants. It's free, and there are two ways to build them.
+
+### 1. Simple chargeable add-ons (checkbox or switch)
+
+For extras that are just "yes, add it," use a **Switch** (a single on/off toggle) or a **Checkbox** (a list where the customer can tick several). Give each one an [add-on price](/articles/charge-extra-for-product-option) — a fixed amount or a percentage of the product price — and it's charged when selected.
+
+```
+☑ Add 2-year warranty        +$49.00
+☑ Gift wrap this item        +$6.00
+☑ Priority handling          +$9.00
+```
+
+The [Switch type](/articles/switch-options) suits a single yes/no add-on; the [Checkbox type](/articles/checkbox-options) suits a menu of optional extras a customer can combine. Both update the price live on the page.
+
+![Optionify add-ons on a product page: a switch for warranty and a checkbox list of accessories with prices](/images/shopify-product-add-ons/product-page-addons.png)
+*Chargeable add-ons render directly on the product page, each with its own price.*
+
+### 2. Offer a real product as an add-on (Product reference)
+
+Sometimes the add-on is an actual product you stock — a case, a memory card, a spare filter. Optionify's **Product reference** option type lets you **link a real product from your store** as an add-on choice. The customer adds it straight from the main product page, and it's carried through as a companion item at checkout.
+
+```
+Buying: Mirrorless Camera
+  ↳ Add-on (Product reference): 64 GB SD Card
+  ↳ Add-on (Product reference): Padded Camera Case
+```
+
+This is the honest way to upsell a genuine SKU without redirecting the customer to another page.
+
+## How do add-ons behave in the cart and checkout?
+
+This is where a lot of options apps get sloppy, so it's worth being precise. Optionify sends the add-on charge to checkout through a **hidden companion product**. The practical results:
+
+- The add-on price is **collected correctly at checkout**, not just shown on the page.
+- It works with the standard cart **and** with **Buy it Now / Shop Pay** express checkout.
+- The customer's selections are saved on the Shopify order as **line item properties**, so fulfillment sees exactly which add-ons were chosen.
+
+Because the data lands on the order, your team knows to include the warranty registration, the gift wrap, or the extra product when they pack it.
+
+## Common add-on use cases
+
+| Use case | Best Optionify type |
+|----------|---------------------|
+| Warranty / protection plan | Switch or Checkbox (priced) |
+| Accessories from your catalog | Product reference |
+| Gift wrapping | Switch (priced) — see the [gift wrapping guide](/articles/gift-wrapping-shopify) |
+| Assembly / installation service | Switch (priced) |
+| Add-on consumables (filters, refills) | Product reference or Checkbox |
+| Rush / priority handling | Switch (priced) |
+
+Pair add-ons with [conditional logic](/articles/conditional-logic) to keep them relevant — for example, only show "add installation" when the customer picks a "professional install" delivery choice.
+
+## How to set it up
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — free, all option types included.
+2. Click **Create option set** and open the Option Set Editor.
+3. Add a **Switch** or **Checkbox** for simple extras, or a **Product reference** to link an existing product. Set each add-on's price (fixed or percent).
+4. [Assign the set](/articles/understanding-assign-types) to the right products — a single item, a collection, tagged products, or all products.
+5. Set the set to **Active**, save via the save bar, and use **Preview** to check it on the storefront.
+
+## FAQ
+
+### How do I add product add-ons on the Shopify product page?
+
+Install Optionify, create an option set, add a **checkbox** or **switch** with an add-on price (or a **Product reference** to link a real product), then assign it to the relevant products. The add-on renders on the product page and its charge carries through to checkout.
+
+### What's the difference between an add-on and a bundle?
+
+An add-on is an optional extra a customer ticks on the product page — a warranty, gift wrap, an accessory — priced on top of the main item. A bundle is a fixed group of products sold together as one package. Optionify handles add-ons.
+
+### Do add-ons create variants?
+
+No. Optionify add-ons are custom options, not variants, so they don't count against the 3-option limit, don't need SKUs, and don't inflate your variant count. Add as many as a product needs.
+
+## Get started
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — free
+2. **[Charge extra for an option](/articles/charge-extra-for-product-option)** — pricing setup
+3. **[Add gift wrapping](/articles/gift-wrapping-shopify)** — a ready-made add-on example
+
+---
+
+**Need help?** See the [Troubleshooting Guide](/articles/troubleshooting) or contact support.

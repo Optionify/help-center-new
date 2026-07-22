@@ -1,30 +1,107 @@
 ---
-title: "How to Use Number Options"
-description: "Learn how to create numeric input fields with validation and constraints."
+title: "Shopify Number Input Field Guide"
+description: "Add a Shopify number input field for quantities and measurements. Set min/max validation and pricing without variants using free Optionify."
 category: "option-types"
-lastUpdated: "2025-12-22"
-tags: ["number", "numeric", "option types"]
+lastUpdated: "2026-07-05"
+tags: ["shopify number input field", "number option", "quantity field", "measurement field", "numeric input"]
 featured: false
 order: 13
+faq:
+  - question: "How do I add a number input field to a Shopify product?"
+    answer: "Shopify has no native custom number field beyond the cart quantity box. With Optionify, create an option set, add a Number input option, set minimum and maximum limits, assign it to your products, and enable the theme app embed so the field appears on the product page."
+  - question: "Can I set a minimum and maximum on a number field?"
+    answer: "Yes. Optionify's Number input lets you set a minimum and maximum value so customers can only enter numbers in the range you allow. This is useful for measurements, monogram character counts, or custom quantities with realistic limits."
+  - question: "What is the difference between a number field and the cart quantity box?"
+    answer: "The cart quantity box multiplies the whole product. A Number input option captures a specific value, like a length in centimeters or a count of characters, and is stored as its own line item property without changing how many units are purchased."
+  - question: "Can a number field affect the price?"
+    answer: "A number input value can be paired with an add-on price on the option. For area or size-based pricing where price scales with the value entered, use the Dimension option type, which multiplies a unit price by the width times height."
+  - question: "Does the number entered show in the order?"
+    answer: "Yes. The value a customer types is saved as a line item property on the Shopify order, so your fulfillment or production team sees the exact measurement, quantity, or count without any back-and-forth."
 ---
 
-Number options provide numeric input with validation, perfect for quantities and measurements.
+A number input field lets customers type a precise numeric value — a length in centimeters, how many characters to engrave, or a custom quantity. If you searched for **Shopify number input field** or a **quantity / measurement field**, this guide explains why Shopify has no native custom number field, and how to add one with validation in minutes using [Optionify](https://apps.shopify.com/optionify), a free product options app.
 
-## Use Cases
+## How do I add a number input field to a Shopify product?
 
-- Custom quantities
-- Measurements (height, width)
-- Age or year
-- Numeric codes
+Shopify has no native custom number field beyond the cart quantity box. With Optionify, create an option set, add a **Number input** option, set the minimum and maximum values you allow, assign the set to your products, and enable the theme app embed. A validated number field then appears on the product page where customers can enter their value.
 
+![Number input field on a Shopify product page with a measurement entered](/images/number-options/number-field-product-page.png)
+*A number input field on a live product page, capturing a custom measurement*
 
-## Configuration
+## Why the cart quantity box isn't enough
 
-```
-Min Value: 1
-Max Value: 100
-Step: 1 (integers)
-Default: 1
-```
+Every Shopify product already has a quantity box, but it only controls **how many units** a customer buys. It can't capture a measurement, a character count, or any value that isn't "number of items." There's no built-in way to add a second, custom numeric field with its own label and validation.
 
-\![Number input field](/images/number-options/number-example.png)
+That's the gap the Number input fills. It captures a specific value — separate from purchase quantity — and stores it as its own line item property. Because it isn't a variant, it creates no SKUs and doesn't touch the **3-options-per-product limit**, which stayed fixed even after Shopify raised the variant cap to 2,048 in October 2025. See the [variant limit explainer](/articles/shopify-variant-limit) for why that ceiling still matters.
+
+## How to set up a number field in Optionify
+
+1. Click **Create option set** and name the set (e.g. "Custom length").
+2. Add an option and choose the **Number input** type.
+3. Enter the option label customers see, such as "Enter length in cm" or "Number of characters."
+4. Set a **minimum** and **maximum** value so entries stay within a realistic range.
+5. Add help text explaining the unit and any limits, e.g. "Enter a length between 10 and 200 cm."
+6. Assign the set with the right [assignment method](/articles/understanding-assign-types) — All Products, Tagged Products, Collections, or Individual Products.
+7. Set the set to **Active** and save with Shopify's save bar.
+
+![Number input configuration in the Optionify Option Set Editor showing min and max values](/images/number-options/number-editor-validation.png)
+*Setting minimum and maximum validation limits in the Option Set Editor*
+
+As with all option types, the field only renders once the **theme app embed** is enabled in your theme editor.
+
+## Can I set a minimum and maximum?
+
+Yes — and you should. Validation limits prevent invalid or unrealistic entries at the source. If you can only produce a banner up to 300 cm wide, set the maximum to 300 so a customer can't order 3,000. If a monogram allows at most 10 characters, cap it there. Clear help text plus min/max validation keeps orders clean and avoids costly production mistakes.
+
+## Number input vs. range slider vs. dimension
+
+Optionify has three numeric option types. Pick by how the customer should enter the value and whether price scales with it:
+
+- **Number input** — the customer types an exact value. Best when precision matters and the range is wide, like a measurement in millimeters.
+- **Range slider** — the customer drags a slider between a min and max you set, with a step you define. Best for approximate choices where a visual control feels natural.
+- **Dimension** — width × height inputs with **area-based pricing**: the price is a unit price multiplied by the area. Best for made-to-measure goods like fabric, wallpaper, or signage where cost scales with size.
+
+## Can a number field affect the price?
+
+A number input can be paired with an **add-on price** on the option — a fixed amount or a percentage of the product price — which is carried to checkout through a hidden companion product and works with **Buy it Now** and **Shop Pay**. If you need the price to **scale with the number entered** (for example, per square meter), use the **Dimension** type instead, which multiplies a unit price by width × height. See [pricing variants](/articles/pricing-variants) for how add-on charges reach the order.
+
+## Real use cases for number input fields
+
+**Measurements.** A custom blinds shop asks for "Width (cm)" and "Drop (cm)" with min/max limits matched to what they can manufacture.
+
+**Custom quantities.** A print shop lets customers enter an exact sheet count — "Number of copies (50–5,000)" — instead of forcing them into fixed pack sizes.
+
+**Monogram character count.** An embroidery service caps a "Number of characters" field at the maximum the design allows, preventing over-long monograms.
+
+**Age, year, or numeric codes.** A personalized gift store captures a birth year or jersey number as a validated numeric field.
+
+Because the entered value is saved as a line item property, your production team reads the exact number straight from the order — no follow-up messages, no guesswork.
+
+## Show a number field only when relevant
+
+Keep product pages tidy by revealing a number field only after a related choice. With [conditional logic](/articles/conditional-logic) on Optionify's visual flow canvas, you can show "Number of characters" only when the customer selects "Add engraving," so the field never clutters the page when it doesn't apply.
+
+## FAQ
+
+**How do I add a number input field to a Shopify product?**
+Shopify has no native custom number field beyond the cart quantity box. With Optionify, create an option set, add a Number input option, set min and max limits, assign it, and enable the theme app embed.
+
+**Can I set a minimum and maximum on a number field?**
+Yes. Set a minimum and maximum so customers can only enter values in the range you allow — useful for measurements, monogram counts, or custom quantities.
+
+**What is the difference between a number field and the cart quantity box?**
+The quantity box multiplies the whole product. A Number input captures a specific value, like a length or a character count, stored as its own line item property.
+
+**Can a number field affect the price?**
+A number value can be paired with an add-on price. For price that scales with size, use the Dimension option type, which multiplies a unit price by width times height.
+
+**Does the number entered show in the order?**
+Yes. The value is saved as a line item property on the order, visible to fulfillment and production.
+
+## Get started with Optionify
+
+Ready to add validated number fields to your Shopify store? Install Optionify — it's **free, forever**, with all 17 option types, conditional logic, and per-choice pricing included.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New to the app? Start with [creating your first product option](/articles/creating-your-first-product-option), then explore [dropdown options](/articles/dropdown-options) and [text options](/articles/text-options) for other custom inputs.

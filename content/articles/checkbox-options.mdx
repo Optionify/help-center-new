@@ -1,31 +1,110 @@
 ---
-title: "How to Use Checkbox Options"
-description: "Guide to using checkbox options for multiple-choice selections in Optionify."
+title: "Shopify Checkbox Options for Add-Ons"
+description: "Add Shopify checkbox options for product add-ons. Set per-checkbox pricing, min/max rules, and multi-select extras without variants using Optionify."
 category: "option-types"
-lastUpdated: "2025-12-08"
-tags: ["checkbox", "multiple choice", "option types"]
+lastUpdated: "2026-07-05"
+tags: ["shopify checkbox options", "product add-on checkboxes", "checkbox", "multi-select", "add-ons"]
 featured: false
 order: 8
+faq:
+  - question: "How do I add product add-on checkboxes in Shopify?"
+    answer: "Shopify variants can't do multi-select add-ons. With Optionify, create an option set, add a Checkbox option, list each add-on as a value with its own price, assign the set to your products, and enable the theme app embed. Customers can then tick multiple extras."
+  - question: "Can each checkbox have its own price?"
+    answer: "Yes. Every checkbox value can carry an add-on price as a fixed money amount or a percentage of the product price. Selected checkboxes add their charges together and carry through to checkout, including Buy it Now and Shop Pay."
+  - question: "Can I require a minimum or maximum number of checkboxes?"
+    answer: "Yes. You can make a checkbox option required so customers must pick at least one, and you can combine checkboxes with conditional logic to guide selections. This is useful for 'choose any 3 toppings' style add-ons."
+  - question: "Do checkbox add-ons create Shopify variants?"
+    answer: "No. Checkbox options are not variants, so they never create SKUs or count against Shopify's 3-options-per-product limit. You can offer dozens of add-on checkboxes on a single product without inventory bloat."
+  - question: "Where do checkbox selections appear after checkout?"
+    answer: "Each ticked checkbox is saved as a line item property on the Shopify order, along with its add-on price. Your fulfillment team sees every extra the customer selected directly in the order details."
 ---
 
-Checkbox options let customers select multiple items from a list. Ideal for add-ons, extras, and multi-select preferences.
+Checkbox options let a customer tick **multiple** add-ons on the same product — extra batteries, gift wrap, a warranty, an extra topping. If you searched for **Shopify checkbox options** or **product add-on checkboxes**, this guide shows why native variants can't do multi-select, and how to build priced, multi-select add-ons in a few minutes with [Optionify](https://apps.shopify.com/optionify), a free product options app.
 
-## Use Cases
+## How do I add product add-on checkboxes in Shopify?
 
-- Product add-ons (batteries, cables, cases)
-- Toppings and extras
-- Service selections
-- Feature preferences
+Shopify's built-in variants only let a customer pick one value per option, so they can't power true multi-select add-ons. With Optionify, create an option set, add a **Checkbox** option, list each add-on as a value with its own price, assign the set to your products, and enable the theme app embed. Customers can then tick as many extras as they want.
 
+![Checkbox add-ons on a Shopify product page with several extras selected and prices shown](/images/checkbox-options/checkbox-product-page.png)
+*Multi-select checkbox add-ons on a live product page, each with its own price*
 
-## Configuration
+## Why variants can't handle multi-select add-ons
 
-Create multiple checkbox options with individual pricing:
+A Shopify variant represents one fixed combination — one size, one color. If you tried to offer five independent add-ons as variants, you'd need a separate SKU for every possible combination, and you'd still hit the **3-options-per-product limit** that remained unchanged even after Shopify raised the variant cap to 2,048 in October 2025.
 
-```
-☐ Extra Batteries (+$10)
-☐ Carrying Case (+$15)
-☐ Screen Protector (+$8)
-```
+Checkboxes solve a different problem: **independent, stackable choices**. A customer should be able to select "gift wrap" AND "warranty" AND "engraving" together. Optionify checkboxes live outside the variant system, so they don't create SKUs and don't count against the [variant limit](/articles/shopify-variant-limit). You can add as many add-on checkboxes to a product as you like.
 
-\![Checkbox options](/images/checkbox-options/checkbox-example.png)
+## Checkbox vs. radio buttons: which to use
+
+The distinction is simple but easy to get wrong:
+
+- **Checkbox** — customers select **any number** of choices, including none or all. Use it for add-ons and extras that stack: accessories, toppings, upgrade services.
+- **[Radio buttons](/articles/radio-options)** — customers select **exactly one** mutually exclusive choice. Use it for things like a single shipping speed or a single finish.
+
+If the answer to "can they pick more than one?" is yes, you want a checkbox.
+
+## How to set up checkbox add-ons in Optionify
+
+1. Click **Create option set** and name the set (e.g. "Camera add-ons").
+2. Add an option and choose the **Checkbox** type.
+3. Enter the option label, such as "Add extras" or "Choose your toppings."
+4. Add each add-on as a **value** — "Extra battery," "Carrying case," "Screen protector."
+5. Give each value an add-on price (details below).
+6. Decide whether the option is **required**, and set a minimum expectation in the help text if needed.
+7. Assign the set with the right [assignment method](/articles/understanding-assign-types) — All Products, Tagged Products, Collections, or Individual Products.
+8. Set the set to **Active** and save with Shopify's save bar.
+
+![Checkbox option configuration in the Optionify Option Set Editor with per-checkbox add-on prices](/images/checkbox-options/checkbox-editor-pricing.png)
+*Adding checkbox values with per-checkbox fixed or percentage pricing in the Option Set Editor*
+
+Remember that options only show on the storefront once the **theme app embed** is enabled in your theme editor.
+
+## Can each checkbox have its own price?
+
+Yes — and each can price differently. Every checkbox value carries an **add-on price** in one of two modes:
+
+- **Fixed** — a set amount, e.g. "Extra battery (+$10.00)."
+- **Percent** — a percentage of the product price, e.g. "Extended warranty (+15%)."
+
+When a customer ticks several boxes, the add-on charges **add together** and carry to checkout through a hidden companion product — so they work with **Buy it Now** and **Shop Pay** too. See [pricing variants](/articles/pricing-variants) for how the totals reach the order.
+
+## Setting minimum and maximum selections
+
+For "choose any 3" style bundles, make the checkbox option **required** so the customer can't skip it, and spell out the rule in the help text, for example "Pick up to 3 free toppings; each additional is +$1." You can go further with [conditional logic](/articles/conditional-logic) on the visual flow canvas — revealing a second checkbox group only after a first choice is made — to guide larger add-on menus without overwhelming the page.
+
+## Real use cases for checkbox add-ons
+
+**Accessories and bundles.** An electronics store offers "Extra battery (+$10)," "Carrying case (+$15)," and "Screen protector (+$8)" as ticks on the product page — no bundle SKUs required.
+
+**Food toppings and extras.** A bakery lets customers add "Sprinkles (free)," "Extra frosting (+$2)," and "Candles (+$1)" to a custom cake.
+
+**Add-on services.** A furniture retailer offers "Assembly (+$40)," "Old-item removal (+$25)," and "Extended warranty (+12%)" that customers combine freely.
+
+**Feature preferences.** A software or subscription product surfaces optional modules as checkboxes, each with its own recurring or one-time add-on price.
+
+Because every ticked box becomes a line item property on the order, your fulfillment team sees the exact extras a customer chose — no guesswork, no separate spreadsheet.
+
+## FAQ
+
+**How do I add product add-on checkboxes in Shopify?**
+Shopify variants can't do multi-select. With Optionify, create an option set, add a Checkbox option, list each add-on as a value with its price, assign it to your products, and enable the theme app embed.
+
+**Can each checkbox have its own price?**
+Yes. Every checkbox value can carry a fixed amount or a percentage of the product price. Selected checkboxes add their charges together and carry to checkout, including Buy it Now and Shop Pay.
+
+**Can I require a minimum or maximum number of checkboxes?**
+Yes. Make the option required so customers pick at least one, state limits in the help text, and use conditional logic to guide larger add-on menus.
+
+**Do checkbox add-ons create Shopify variants?**
+No. Checkboxes aren't variants, so they never create SKUs or count against Shopify's 3-options-per-product limit.
+
+**Where do checkbox selections appear after checkout?**
+Each ticked checkbox is saved as a line item property on the order, along with its add-on price, visible in the order details.
+
+## Get started with Optionify
+
+Ready to offer priced, multi-select add-ons? Install Optionify — it's **free, forever**, with all 17 option types, conditional logic, and per-choice pricing included.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), then compare [dropdown options](/articles/dropdown-options) for single-select menus.

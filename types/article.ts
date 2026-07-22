@@ -7,6 +7,8 @@ export interface ArticleFrontmatter {
   tags?: string[];
   featured?: boolean;
   order?: number;
+  /** Optional Q&A pairs — emitted as FAQPage structured data for rich results. */
+  faq?: { question: string; answer: string }[];
 }
 
 export interface Article {

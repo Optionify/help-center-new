@@ -1,444 +1,118 @@
 ---
-title: "How to Use Text Options"
-description: "Complete guide to using single-line text input options in Optionify for names, short messages, and custom text personalization. Learn validation patterns, character limits, and custom error messages."
+title: "Add a Custom Text Field to Shopify"
+description: "Add a custom text field to Shopify for names, engraving, and personalization. Set character limits and charge for the service. Free with Optionify."
 category: "option-types"
-lastUpdated: "2026-02-05"
-tags: ["text", "input", "personalization", "option types", "validation", "custom fields", "text input", "engraving", "shopify text field"]
-featured: true
+lastUpdated: "2026-07-05"
+tags: ["add a custom text field to shopify", "shopify text input", "text input", "personalization", "engraving"]
+featured: false
 order: 4
+faq:
+  - question: "How do I add a custom text field to Shopify?"
+    answer: "Shopify has no built-in text input for products. With Optionify, create an option set, add a Text input option, set a character limit if needed, assign the set to your products, and enable the theme app embed. Customers can then type a name or message on the product page."
+  - question: "Can I set a character limit on a Shopify text field?"
+    answer: "Yes. A Text input option can enforce a maximum length, which is essential for engraving and monograms where only so many characters physically fit. Set a limit that matches your product, such as 20 characters for a ring or 3 for initials."
+  - question: "Can I charge for personalization or engraving?"
+    answer: "Yes. A Text input option can carry an add-on price as a fixed money amount or a percentage of the product price. The charge is added when the customer fills in the field and carries through to checkout, including Buy it Now and Shop Pay."
+  - question: "Does a custom text field create Shopify variants?"
+    answer: "No. A Text input is not a variant, so it never creates SKUs or counts against Shopify's 3-options-per-product limit. You can add engraving or a gift message to any product without inventory bloat or extra variant combinations."
+  - question: "Where does the customer's text appear after they order?"
+    answer: "The text the customer types is saved as a line item property on the Shopify order. Your fulfillment team sees the exact name, message, or engraving in the order details, so nothing gets lost between the product page and production."
 ---
 
-Text options are the most versatile and commonly used option type in Optionify. They allow customers to enter short, single-line text for personalization, customization, and special requests.
+Shopify's built-in product options can't collect free text, so stores that need engraving, a monogram, or a gift message have to reach for an app. If you searched for how to **add a custom text field to Shopify**, this guide shows how to add a **Shopify text input** with a character limit — and optionally charge for the service — in a few minutes using [Optionify](https://apps.shopify.com/optionify), a free product options app.
 
-## What Are Text Options?
+## How do I add a custom text field to Shopify?
 
-Text options create a single-line input field where customers can type text. Perfect for:
+Shopify variants only handle preset choices, not typed input. With Optionify, create an option set, add a **Text input** option, set a character limit if you need one, assign the set to your products, and enable the theme app embed. Customers can then type a name, message, or code directly on the product page.
 
-- Names and initials
-- Short messages (up to ~200 characters)
-- Product codes or references
-- Custom identifiers
-- Single-line instructions
+![A custom text input field on a Shopify product page with a name typed in](/images/text-options/text-field-product-page.png)
+*A Text input option collecting personalization text on a live product page*
 
-\![Text option example on product page](/images/text-options/text-field-product-page.png)
-*A text option field for custom text on a product page*
+## When should you use a text input?
 
-## Real-World Use Cases
+Use a **Text input** for short, single-line text that's unique to each order and can't be a preset choice: a name, initials, an engraving line, a short gift message, or a reference code. Anything you couldn't reasonably list as a dropdown value belongs in a text field.
 
-### 1. Personalization & Engraving
+For longer, multi-line content like detailed instructions or a paragraph-length message, use a [textarea](/articles/textarea-options) instead. For a validated email address, use an [email input](/articles/email-options).
 
-**Jewelry Engraving**
-```
-Label: "Engraving Text (max 20 characters)"
-Example: "Love Always, Mom"
-```
+## Setting a character limit
 
-**Monogramming**
-```
-Label: "Enter Initials (3 letters)"
-Example: "JKL"
-```
+Character limits are the most important setting for a text input, because personalization is usually **physically constrained** — only so many characters fit on a ring, a pendant, or a bracelet. A Text input option can enforce a maximum length so customers can't submit text that won't fit.
 
-### 2. Gift Messages
+Match the limit to the product:
 
-**Gift Card Message**
-```
-Label: "Gift Message (optional)"
-Example: "Happy Birthday Sarah!"
-```
+- **Initials / monogram** — 1–5 characters
+- **Jewelry engraving** — 15–30 characters
+- **Names on apparel** — 20–40 characters
+- **Short gift messages** — 100–150 characters
 
-### 3. Custom References
+Setting an accurate limit up front prevents a support ticket later, when a customer submits 60 characters for a space that fits 20.
 
-**Order Reference**
-```
-Label: "PO Number or Reference"
-Example: "PO-2024-001"
-```
+![Text input settings in the Optionify Option Set Editor showing the label and character limit](/images/text-options/text-settings.png)
+*Configuring the Text input label, character limit, and required toggle in the Option Set Editor*
 
+## How to add a custom text field in Optionify
 
-## Creating a Text Option
+1. Click **Create option set** and name the set (e.g. "Engraving").
+2. Add an option and choose the **Text input** type.
+3. Enter the option label, such as "Engraving text" or "Name on jersey."
+4. Set a **character limit** that matches what physically fits.
+5. Add a **price** if personalization is a paid service (details below).
+6. Decide whether the field is **required** so customers can't skip it.
+7. Assign the set with the right [assignment method](/articles/understanding-assign-types) — All Products, Tagged Products, Collections, or Individual Products.
+8. Set the set to **Active** and save with Shopify's save bar.
 
-### Step 1: Basic Setup
+Options only appear on the storefront once the **theme app embed** is enabled in your theme editor. If the field isn't showing, check that first.
 
-1. Click **Create New Option**
-2. Select **Text** option type
-3. Enter option details:
+## Can I charge for personalization?
 
-```
-Option Label: "Engraving Text"
-Internal Name: "engraving-text"
-Help Text: "Enter text for engraving (max 20 characters)"
-```
+Yes. A Text input option can carry an **add-on price** in one of two modes:
 
-\![Text option validation patterns](/images/text-options/validation-patterns.png)
-*Choose from multiple validation patterns to control input*
+- **Fixed** — a set amount, e.g. "Engraving (+$15.00)."
+- **Percent** — a percentage of the product price.
 
-### Step 2: Configure Text Settings
+The charge is added when the customer fills in the field, and it carries to checkout through a hidden companion product — so it works with **Buy it Now** and **Shop Pay** too. See [add-on pricing](/articles/pricing-variants) for how the total reaches the order. You can also use [conditional logic](/articles/conditional-logic) to reveal the text field only after a customer chooses "Add engraving."
 
-#### Character Limit
+## Does a custom text field create Shopify variants?
 
-**Always set a character limit** to prevent issues:
+No. Typed text is unique to each order and isn't inventory, so it doesn't belong in variants at all. A Text input creates no SKUs and doesn't count against Shopify's **3-options-per-product limit** — which stayed at 3 even after Shopify raised the [variant ceiling](/articles/shopify-variant-limit) to 2,048 in October 2025. Your Size and Color stay as variants; the engraving field lives alongside them without using a slot.
 
-```
-Enable Character Limit: Yes
-Maximum Characters: 20
-Show Counter: Yes
-```
+## Where does the text appear after checkout?
 
-**Recommended limits by use case:**
-- Engraving: 15-30 characters
-- Initials: 1-5 characters
-- Gift messages: 100-150 characters
-- Names: 30-50 characters
+Whatever the customer types is saved as a **line item property** on the Shopify order. Your fulfillment or production team sees the exact name, message, or engraving in the order details — no separate spreadsheet, no copy-and-paste from emails. Because the text travels with the order, print-on-demand and fulfillment integrations that read line item properties pick it up automatically.
 
+## Real use cases for text input options
 
-#### Placeholder Text
+**Jewelry engraving.** A jeweler adds an "Engraving text" field with a 20-character limit and a $15 add-on price, assigned to products tagged "engravable."
 
-Show customers what format you expect:
+**Monogramming.** A leather-goods store collects 3-letter initials on bags and wallets with a strict 3-character limit.
 
-```
-Placeholder: "e.g., John & Sarah 2024"
-```
+**Names on apparel.** A sports store adds a "Name on jersey" field with a 30-character limit, assigned to the custom-jerseys collection.
 
-**Good placeholder examples:**
-- ✅ "e.g., Happy Birthday!"
-- ✅ "Enter your initials (ABC)"
-- ✅ "Your name here"
-- ❌ "Text"
-- ❌ "Enter text here"
+**Gift messages.** A gift shop adds an optional "Gift message" field across all products so buyers can include a short note.
 
-\![Validation settings with custom error messages](/images/text-options/validation-settings.png)
-*Configure validation rules, min/max length, and custom error messages*
+Each of these is one Text input option, assigned to the right products, with the exact text flowing straight into the order.
 
-### Step 3: Validation Rules
+## FAQ
 
-#### Required vs Optional
+**How do I add a custom text field to Shopify?**
+Shopify has no built-in text input for products. With Optionify, create an option set, add a Text input option, set a character limit if needed, assign it to your products, and enable the theme app embed.
 
-**Make it required when:**
-- The product NEEDS this information
-- You can't fulfill without it
-- It's critical to the order
+**Can I set a character limit on a Shopify text field?**
+Yes. A Text input option can enforce a maximum length, essential for engraving and monograms where only so many characters fit. Set a limit that matches your product.
 
-**Make it optional when:**
-- It's a nice-to-have
-- You can proceed without it
-- Not all customers need it
+**Can I charge for personalization or engraving?**
+Yes. A Text input can carry a fixed amount or a percentage of the product price. The charge is added when the field is filled in and carries to checkout, including Buy it Now and Shop Pay.
 
-```
-Required: No (for optional features)
-Required: Yes (for critical personalization)
-```
+**Does a custom text field create Shopify variants?**
+No. A Text input isn't a variant, so it never creates SKUs or counts against Shopify's 3-options-per-product limit.
 
-#### Input Validation
+**Where does the customer's text appear after they order?**
+The text is saved as a line item property on the Shopify order, visible to your fulfillment team in the order details.
 
-**Character Type Restrictions:**
+## Get started with Optionify
 
-```
-Allow All Characters: Default
-Letters Only: For names, initials
-Numbers Only: For quantities, codes
-Alphanumeric: For mixed inputs
-```
+Ready to collect names, engraving, and personalization? Install Optionify — it's **free, forever**, with all 17 option types, conditional logic, and add-on pricing included.
 
-**Pattern Matching (Advanced):**
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
 
-```
-Pattern: [A-Z]{3}
-Use Case: Three uppercase letters for initials
-```
-
-
-### Step 4: Assignment & Pricing
-
-Assign to relevant products:
-
-```
-Assignment: Tagged Products
-Tags: "engravable", "personalizable"
-```
-
-Add pricing if applicable:
-
-```
-Add Price: Yes
-Price: $10.00
-Price Label: "Engraving Service"
-```
-
-\![Text option with pricing](/images/text-options/text-pricing.png)
-*Add charges for premium personalization services*
-
-## Advanced Text Option Features
-
-### Input Transformation
-
-**Automatic Capitalization:**
-
-```
-Transform: UPPERCASE
-Input: "hello world"
-Stored As: "HELLO WORLD"
-```
-
-**Use cases:**
-- `UPPERCASE`: Initials, codes
-- `lowercase`: Email addresses, usernames
-- `Capitalize Each Word`: Names, titles
-
-### Prefix & Suffix
-
-Add automatic text before or after customer input:
-
-```
-Prefix: "Engraved: "
-Customer enters: "Mom"
-Displays as: "Engraved: Mom"
-```
-
-### Default Values
-
-Pre-fill common choices:
-
-```
-Default Value: "Gift"
-```
-
-Customers can change it, but it saves time for common inputs.
-
-## Best Practices
-
-### 1. Clear Labeling
-
-**Good labels:**
-- ✅ "Engraving Text (max 20 characters)"
-- ✅ "Your Name for Certificate"
-- ✅ "Gift Message (optional)"
-
-**Poor labels:**
-- ❌ "Text 1"
-- ❌ "Enter here"
-- ❌ "Custom"
-
-### 2. Helpful Help Text
-
-Explain what customers should enter:
-
-```
-Help Text: "Enter the exact text you want engraved.
-Check spelling carefully - we engrave exactly as typed."
-```
-
-### 3. Character Limits
-
-Set realistic limits:
-
-```
-Jewelry engraving: 15-25 characters
-Shirt text: 30-50 characters
-Gift messages: 100-200 characters
-```
-
-
-### 4. Examples in Placeholders
-
-Show, don't just tell:
-
-```
-❌ Placeholder: "Enter text"
-✅ Placeholder: "e.g., Sarah & John Est. 2024"
-```
-
-### 5. Validation Messages
-
-Customize error messages:
-
-```
-Error (too long): "Engraving text must be 20 characters or less"
-Error (empty): "Please enter text for engraving"
-```
-
-## Common Mistakes to Avoid
-
-### ❌ No Character Limit
-
-**Problem:** Customer enters 500 characters
-**Solution:** Always set maximum length
-
-### ❌ Unclear Purpose
-
-**Problem:** Label says "Text Option"
-**Solution:** Be specific: "Engraving Text"
-
-### ❌ No Examples
-
-**Problem:** Customers don't know what format to use
-**Solution:** Add placeholder examples
-
-### ❌ Too Restrictive
-
-**Problem:** Blocks common characters like apostrophes
-**Solution:** Allow all characters unless necessary
-
-### ❌ Wrong Option Type
-
-**Problem:** Using text for long messages
-**Solution:** Use Textarea for multi-line input
-
-## Styling & Display
-
-### Input Field Width
-
-Text fields can be sized:
-
-```
-Width: Full (100%)
-Width: Half (50%)
-Width: Small (30%)
-```
-
-**Sizing guidelines:**
-- Initials (3 chars): Small width
-- Names: Medium width
-- Messages: Full width
-
-\![Different text field widths](/images/text-options/field-widths.png)
-*Match field width to expected input length*
-
-### Character Counter
-
-Show remaining characters:
-
-```
-Show Counter: Yes
-Position: Below field
-Format: "15 characters remaining"
-```
-
-### Live Preview
-
-Some themes support live preview:
-
-```
-Enable Preview: Yes
-Preview Format: "Engraved: {input}"
-```
-
-## Integration with Orders
-
-### How Text Appears in Orders
-
-In Shopify order details:
-
-```
-Product: Gold Ring
-Options:
-  - Engraving Text: "Love Always"
-  - Font Style: Script
-```
-
-### Exporting Data
-
-Text option data exports to:
-- Order CSV exports
-- Third-party apps
-- Fulfillment systems
-
-Make sure your fulfillment team knows where to find this data!
-
-
-## Troubleshooting
-
-### Customer Can't Type Special Characters
-
-**Cause:** Too restrictive validation
-**Fix:** Change to "Allow All Characters"
-
-### Character Counter Doesn't Update
-
-**Cause:** Theme incompatibility
-**Fix:** Disable and re-enable in settings, or contact support
-
-### Text Not Appearing in Orders
-
-**Cause:** Customer added to cart before entering text
-**Fix:** Add validation to require text before "Add to Cart"
-
-### Text Gets Cut Off
-
-**Cause:** Character limit too high for product
-**Fix:** Reduce limit to what actually fits
-
-## Examples by Industry
-
-### Jewelry Store
-
-```
-Option: "Engraving Text"
-Limit: 20 characters
-Required: Yes
-Price: $15.00
-Assignment: Tagged "engravable"
-```
-
-### Apparel Store
-
-```
-Option: "Custom Team Name"
-Limit: 30 characters
-Required: No
-Transform: UPPERCASE
-Assignment: Collection "Custom Jerseys"
-```
-
-### Gift Shop
-
-```
-Option: "Gift Card Message"
-Limit: 100 characters
-Required: No
-Placeholder: "e.g., Happy Birthday!"
-Assignment: All Products
-```
-
-### Print Shop
-
-```
-Option: "Custom Text Line 1"
-Limit: 40 characters
-Required: Yes
-Assignment: Tagged "customizable"
-```
-
-## Related Option Types
-
-- **Textarea Options**: For longer, multi-line text → [Learn more](/articles/textarea-options)
-- **Email Options**: For validated email addresses → [Learn more](/articles/email-options)
-- **Number Options**: For numeric input only → [Learn more](/articles/number-options)
-
-## Next Steps
-
-Now that you understand text options:
-
-- Try [Textarea Options](/articles/textarea-options) for longer messages
-- Learn [Conditional Logic](/articles/conditional-logic) to show text fields conditionally
-- Explore [Radio Options](/articles/radio-options) for predefined text choices
-
-
-## Get Started with Optionify
-
-Ready to add powerful text input options to your Shopify store? Install Optionify today from the Shopify App Store and start offering customizable text fields in minutes.
-
-**[Install Optionify on Shopify App Store](https://apps.shopify.com/optionify)**
-
-With Optionify's text input options, you can:
-- Collect personalized text from customers
-- Validate inputs with built-in patterns
-- Set custom error messages
-- Control text length and format
-- Seamlessly integrate with your store theme
-
-Join thousands of Shopify merchants who trust Optionify for product customization.
-
----
-
-**Need help?** Check our [Troubleshooting Guide](/articles/troubleshooting) or contact support.
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), then compare [textarea options](/articles/textarea-options) for longer messages and [email options](/articles/email-options) for validated addresses.

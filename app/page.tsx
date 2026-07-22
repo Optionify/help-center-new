@@ -136,7 +136,7 @@ export default function HomePage() {
           Ready to Add Custom Options to Your Store?
         </h2>
         <p className="text-primary-50 text-lg mb-6 max-w-2xl mx-auto">
-          Install Optionify from the Shopify App Store and start customizing your products in minutes. 11 option types, unlimited possibilities.
+          Install Optionify from the Shopify App Store and start customizing your products in minutes. 17 option types, unlimited possibilities.
         </p>
         <a
           href="https://apps.shopify.com/optionify"

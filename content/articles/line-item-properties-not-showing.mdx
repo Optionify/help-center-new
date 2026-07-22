@@ -1,0 +1,100 @@
+---
+title: "Line Item Properties Not Showing in Cart"
+description: "Line item properties not showing in cart or checkout? Why they vanish, the honest theme fixes, and how a product options app avoids the whole bug class."
+category: "advanced"
+lastUpdated: "2026-07-05"
+tags: ["line item properties not showing", "cart properties missing", "checkout", "troubleshooting", "product options"]
+featured: false
+order: 19
+faq:
+  - question: "Why are my line item properties not showing in the cart?"
+    answer: "Usually the theme's cart template doesn't render line item properties. Many themes only loop over item title and variant, so any properties[...] you captured on the product page are saved but never displayed. Editing the cart template or using a product options app fixes it."
+  - question: "Why do line item properties show in the cart but not at checkout?"
+    answer: "Property names that begin with an underscore, like _hidden, are intentionally hidden from the cart and checkout by Shopify. Rename the property without the leading underscore to make it visible, or the value stays attached to the order but isn't shown to the shopper."
+  - question: "Do line item properties appear on the order?"
+    answer: "Yes. Even when a property isn't rendered in the cart, it's still attached to the order line and visible on the order detail page in your admin. Underscore-prefixed properties are the exception in some displays, but the data is stored either way."
+  - question: "How do I stop line item properties from disappearing?"
+    answer: "Use a product options app like Optionify instead of hand-coded properties[...] inputs. The app renders and captures its own fields through a theme app embed, so it doesn't depend on your cart template looping over properties, which removes the whole class of bug."
+  - question: "Why is my custom text field value missing from the order?"
+    answer: "The input was likely placed outside the product form, so the browser never submitted it, or the property name was malformed. Confirm the input sits inside the add-to-cart form and is named properties[Label], or use an app that handles capture for you."
+---
+
+You added a custom text field, a customer typed into it, and now **line item properties are not showing in cart or checkout** — even though the value seems to save. This is one of the most common Shopify theme quirks. Below: what line item properties are, the real reasons they vanish, the honest fixes, and why a product options app like [Optionify](https://apps.shopify.com/optionify) sidesteps the whole class of bug.
+
+## Why are my line item properties not showing in the cart?
+
+The most common reason is that your **theme's cart template doesn't render properties**. Many themes only display each item's title and variant and never loop over its `properties`, so the value is captured and attached to the order but simply isn't shown. The data isn't lost — the template just doesn't print it.
+
+![A Shopify cart line item that has a custom property saved but not displayed](/images/line-item-properties-not-showing/cart-missing-property.png)
+*A cart line where the custom property is stored on the order but not rendered in the theme*
+
+## What are line item properties?
+
+Line item properties are extra key–value notes attached to a product when it's added to the cart — an engraving text, a gift message, a delivery date. In a theme, they come from form inputs named `properties[Label]` inside the add-to-cart form. Shopify stores each one on the order line, so fulfillment can read exactly what the customer asked for. They're the mechanism behind almost every "custom field" you see on a product page, including the [native custom text field method](/articles/add-custom-text-field-shopify).
+
+## The common reasons they vanish
+
+Line item properties can look "missing" in several different places for different reasons. Diagnosing which one you're hitting is half the fix.
+
+### 1. The cart template doesn't loop over properties
+
+Out of the box, many themes render only the product title and variant in the cart. Unless the cart template explicitly iterates over `item.properties`, your custom values won't appear on the cart page — even though they're saved.
+
+### 2. The property name starts with an underscore
+
+Shopify treats any property whose name begins with an underscore, like `_internal_id`, as **hidden**. These are intentionally kept out of the cart and checkout display. Apps use them for private data. If you named your own property `_Custom text`, that's why it disappears from view.
+
+### 3. The input sits outside the product form
+
+If a Custom Liquid block with your `<input>` is placed **outside** the `<form>` that submits to the cart, the browser never sends it. Nothing is captured, so nothing appears anywhere — cart, checkout, or order. This is a frequent side effect of dragging a Custom Liquid block to the wrong spot.
+
+### 4. Checkout display differs from the cart
+
+The cart page and the checkout are rendered separately. A property can show in the cart but not on the checkout summary depending on how the checkout displays line items. The value still reaches the order; it's a display gap, not data loss.
+
+## The honest fixes
+
+None of these are magic — they're the real, sometimes tedious, corrections.
+
+- **Render properties in the cart template.** Edit the cart template (or `cart-item` snippet) to loop over each item's properties and print any whose name doesn't start with an underscore. This requires editing theme Liquid.
+- **Drop the underscore.** If you control the property name and you *want* it visible, rename `_Label` to `Label`. Keep the underscore only for data you deliberately want hidden.
+- **Move the input inside the form.** Confirm every `properties[...]` input lives inside the add-to-cart `<form>`. If it doesn't submit, it can't save.
+- **Check the order first.** Before debugging the cart, open a test order in your admin. If the property is on the order line, the data pipeline works and you only have a display problem in the cart or checkout — a narrower fix. Our [troubleshooting guide](/articles/troubleshooting) walks through more checks.
+
+## Why a product options app avoids the whole class of bug
+
+Every problem above comes from hand-wiring `properties[...]` inputs into a theme you don't fully control. A product options app removes that dependency. [Optionify](https://apps.shopify.com/optionify) renders and captures its own fields through a **theme app embed**, so it doesn't rely on your cart template looping over properties, doesn't depend on you placing an input inside the form, and manages hidden versus visible data itself.
+
+The practical result: every option a customer fills in is reliably saved to the Shopify order as a line item property and shown where it should be. You stop debugging Liquid and get back to selling. If you're currently maintaining a Custom Liquid text field that keeps breaking, replacing it with an [Optionify Text input](/articles/add-custom-text-field-shopify) also gives you character limits, add-on pricing, and conditional logic the native property never had.
+
+![The Optionify theme app embed enabled in the Shopify theme editor](/images/line-item-properties-not-showing/theme-app-embed.png)
+*Enabling the Optionify theme app embed so options render and save reliably*
+
+## Do line item properties still appear on the order?
+
+Yes. Even when a property isn't rendered in the cart or checkout, it's still attached to the order line and visible on the **order detail page** in your admin. The exception is intentionally hidden, underscore-prefixed properties in some displays — but the value is stored regardless. So a "missing" property is almost always a display issue, not lost data.
+
+## FAQ
+
+**Why are my line item properties not showing in the cart?**
+Usually the theme's cart template doesn't render them — it only loops over title and variant. The `properties[...]` value is saved but never displayed. Editing the cart template or using a product options app fixes it.
+
+**Why do they show in the cart but not at checkout?**
+Property names starting with an underscore are intentionally hidden by Shopify, and the checkout renders line items separately from the cart. Rename the property without the leading underscore to make it visible.
+
+**Do line item properties appear on the order?**
+Yes. Even when not rendered in the cart, they're attached to the order line and visible on the order detail page in your admin. The data is stored either way.
+
+**How do I stop them from disappearing?**
+Use a product options app like Optionify instead of hand-coded `properties[...]` inputs. It renders and captures its own fields through a theme app embed, removing the dependency on your cart template.
+
+**Why is my custom text field value missing from the order?**
+The input was likely placed outside the product form, so it never submitted, or the name was malformed. Confirm it sits inside the add-to-cart form and is named `properties[Label]`, or use an app that handles capture for you.
+
+## Get started with Optionify
+
+Tired of chasing properties that won't render? Install Optionify and let the app handle capture and display for you — it's **free, forever**, with all 17 option types, conditional logic, and add-on pricing included.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [getting started with Optionify](/articles/getting-started-with-optionify), or learn the reliable way to [add a custom text field in Shopify](/articles/add-custom-text-field-shopify).

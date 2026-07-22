@@ -1,0 +1,118 @@
+---
+title: "Sell Made-to-Measure Products on Shopify"
+description: "Learn how to sell made to measure products on Shopify with size-based and area-based pricing — no variants, no spreadsheets. Price by width × height automatically."
+category: "advanced"
+lastUpdated: "2026-07-05"
+tags: ["sell made to measure products on Shopify", "made to measure", "area-based pricing", "custom size", "dimension option", "cut to size"]
+featured: false
+order: 20
+faq:
+  - question: "Can you sell made to measure products on Shopify natively?"
+    answer: "Not really. Shopify variants are fixed, pre-set combinations, so you can only list sizes you build in advance. They can't price by a width and height a customer types in, which is what made-to-measure needs. A product options app handles the live calculation."
+  - question: "How do I price a Shopify product by width and height?"
+    answer: "Use Optionify's Dimension option type. The customer enters width and height, Optionify multiplies them to get the area, then multiplies the area by your unit price. The add-on price updates live on the product page before add to cart."
+  - question: "How do I sell fabric or material by the meter on Shopify?"
+    answer: "Add an Optionify Range slider set to your minimum length, maximum length and step (for example 0.5 m). The price scales with the length the customer chooses. It works for fabric, rope, cable, timber and any per-unit material."
+  - question: "Do made-to-measure prices reach Shopify checkout correctly?"
+    answer: "Yes. Optionify sends the calculated add-on charge to checkout through a hidden companion product, so the made-to-measure price is collected correctly and it works with Buy it Now and Shop Pay as well as the normal cart."
+  - question: "Does the measurement show up on the order?"
+    answer: "Yes. Every dimension and slider value the customer enters is saved on the Shopify order as line item properties, so your production team sees the exact width, height or length to cut without asking the customer."
+---
+
+If you sell blinds, curtains, fabric by the meter, cut-to-size acrylic or custom signage, you already know the problem: the price depends on the size the customer wants, and Shopify has no way to work that out. This guide shows how to **sell made to measure products on Shopify** with real size-based and area-based pricing — no variants and no manual quotes.
+
+## Why can't Shopify variants price by size?
+
+Shopify variants are fixed, pre-built combinations — you create "120 × 90 cm" or "Large" in advance and attach a set price. They cannot take a **width and height a shopper types in** and calculate a price from them. For made-to-measure that is fatal: a blind could be any size between 30 cm and 300 cm, so you would need thousands of variants and still miss most sizes.
+
+Even after Shopify raised the variant ceiling to 2,048 in October 2025, the [3-options-per-product limit is unchanged](/articles/shopify-variant-limit), and every variant still needs its own SKU and inventory record. Made-to-measure isn't inventory — it's a calculation. That's a different tool.
+
+## How do you sell made-to-measure products on Shopify?
+
+The reliable way to sell made to measure products on Shopify is a product options app that calculates price from customer measurements. [Optionify](https://apps.shopify.com/optionify) adds a **Dimension** option type for area-based pricing and a **Range slider** for length or quantity, both live on the product page. It's free, and neither creates a variant.
+
+### The Dimension type: price by area (width × height)
+
+The **Dimension** option gives the customer a width input and a height input. Optionify multiplies them to get the area, then multiplies that area by the **unit price** you set. The add-on charge updates on the page instantly, before the customer adds to cart.
+
+This is the exact model made-to-measure needs:
+
+- **Roller blinds and curtains** — priced per square metre of fabric
+- **Cut-to-size glass, acrylic and mirrors** — priced per square metre or square foot
+- **Signage, banners and vinyl** — priced per square metre of print
+- **Rugs, tarpaulins and upholstery panels** — priced by area
+
+![Optionify Dimension option on a product page showing width and height inputs with a live area-based price total](/images/made-to-measure-shopify/dimension-inputs.png)
+*The Dimension type turns two measurements into a live area-based price.*
+
+### A worked area-pricing example
+
+Say you sell made-to-measure roller blinds at **$45 per square metre**. In the Optionify editor you set the Dimension option's unit price to `$45`. On the storefront:
+
+```
+Customer enters:  Width 1.2 m  ×  Height 1.5 m
+Area:             1.2 × 1.5   = 1.8 m²
+Add-on price:     1.8 × $45   = $81.00
+```
+
+The customer sees **+$81.00** update the moment they finish typing. Change the height to 2.0 m and the area becomes 2.4 m², so the price jumps to $108.00 — automatically, with no variant and no spreadsheet lookup. You set one unit price; Optionify handles every size.
+
+### The Range slider: sell by the meter or per unit
+
+For products priced by a single dimension — **fabric by the meter, rope, cable, timber lengths, wallpaper rolls** — use the **Range slider**. You set the minimum, maximum and step, and attach a per-step price. For fabric you might set:
+
+```
+Min 1 m   Max 20 m   Step 0.5 m   Price $12 per meter
+```
+
+The shopper drags to, say, 4.5 m and the option adds **$54.00**. The slider keeps them inside the range you can actually cut, and the step stops awkward values. Use a [Number input](/articles/number-options) instead when you'd rather have a typed quantity field than a slider.
+
+## How to set it up
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — it's free forever, all 17 option types included.
+2. Click **Create option set** and open the Option Set Editor.
+3. Add a **Dimension** option, label it (e.g. "Enter your size"), and set the **unit price** to your rate per m² or per ft². For per-length products, add a **Range slider** instead and set min, max, step and price.
+4. Choose where it appears using one of the four [assignment methods](/articles/understanding-assign-types) — All Products, by tag, by collection, or specific products (assign your made-to-measure range only).
+5. Set the option set to **Active** and save via Shopify's save bar.
+6. Use the editor's **Preview** action to open an assigned product on your storefront and test a few sizes.
+
+If the options don't appear, the theme app embed probably isn't enabled — the [troubleshooting guide](/articles/troubleshooting) covers that in one step.
+
+## Does the size reach fulfillment?
+
+Yes — and this is what makes it usable in production. Every width, height and slider value the customer enters is written to the Shopify order as **line item properties**. Your workshop opens the order and sees "Width 1.2 m × Height 1.5 m" without emailing the customer. The calculated charge also reaches checkout through a hidden companion product, so it's collected correctly and works with **Buy it Now and Shop Pay**, not just the standard cart.
+
+## Add material and finish choices too
+
+Made-to-measure usually comes with more than size. Because a single option set holds many options, you can add, in the same set:
+
+- **[Image swatches](/articles/image-options)** for fabric textures or material samples
+- A **[Dropdown](/articles/dropdown-options)** for finish, mount type or edge profile
+- A priced **[Switch](/articles/switch-options)** for extras like blackout lining or rush production
+- **[Conditional logic](/articles/conditional-logic)** so a "chain side" question only appears for corded blinds
+
+Each choice can carry its own [add-on price](/articles/pricing-variants), fixed or as a percentage, all combining into the final line price.
+
+## FAQ
+
+### Can you sell made to measure products on Shopify natively?
+
+Not properly. Variants are fixed, pre-set combinations, so you can only sell sizes you build in advance — they can't price by a width and height a customer types in. For live size-based or area-based pricing you need a product options app like Optionify.
+
+### How do I price by width and height?
+
+Add Optionify's **Dimension** option. The customer enters width and height, Optionify multiplies them into an area, then multiplies the area by your unit price. For example 1.2 m × 1.5 m at $45/m² adds $81.00, calculated live on the page.
+
+### How do I sell fabric by the meter?
+
+Use the **Range slider**, set to your minimum and maximum length with a sensible step (like 0.5 m) and a per-meter price. The charge scales with the length chosen, and it works for any per-unit material — rope, cable, timber, wallpaper.
+
+## Get started
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — free
+2. **[Create your first option](/articles/creating-your-first-product-option)** — step-by-step
+3. **[Learn add-on pricing](/articles/pricing-variants)** — fixed and percentage charges
+
+---
+
+**Need help?** See the [Troubleshooting Guide](/articles/troubleshooting) or contact support.

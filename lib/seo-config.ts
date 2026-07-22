@@ -89,7 +89,7 @@ export function generateTitle(title: string, includeTemplate = true): string {
     return title.length > 60 ? `${title.substring(0, 57)}...` : title;
   }
 
-  const fullTitle = `${title} | Shopify Guide`;
+  const fullTitle = `${title} | Optionify`;
   return fullTitle.length > 60 ? title : fullTitle;
 }
 

@@ -1,0 +1,103 @@
+---
+title: "Charge Extra for a Product Option"
+description: "Charge extra for a product option on Shopify with fixed or percentage add-on pricing. Works with Buy it Now and Shop Pay — free with Optionify."
+category: "advanced"
+lastUpdated: "2026-07-05"
+tags: ["charge extra for a product option on Shopify", "add-on pricing", "option pricing", "extra charge", "gift wrap price"]
+featured: false
+order: 3
+faq:
+  - question: "How do I charge extra for a product option on Shopify?"
+    answer: "Native line-item properties and custom fields add no price. To charge extra, use a product options app like Optionify: add an add-on price to any option — a fixed amount or a percentage of the product price — and it's collected at checkout."
+  - question: "Can I charge a percentage instead of a fixed amount?"
+    answer: "Yes. Optionify supports both pricing modes. Fixed adds a set money amount, and Percent adds a percentage of the product's price — useful for premium materials or upgrades that should scale with the base price. Both are live."
+  - question: "Does the extra charge work with Buy it Now and Shop Pay?"
+    answer: "Yes. Optionify sends add-on charges to checkout through a hidden companion product, so the extra amount is collected correctly even on express checkouts like Buy it Now and Shop Pay, not just the standard cart flow."
+  - question: "Does charging extra for options cost money?"
+    answer: "No. Optionify is free forever, including add-on pricing with both fixed and percentage modes. There are no paid tiers, premium plans, or transaction fees on the extra charges you collect."
+---
+
+You added a gift-wrap toggle or a "premium material" choice to your product page — but the price never changes at checkout. That's because native Shopify custom fields don't carry a price. Here's how to **charge extra for a product option on Shopify**, using fixed or percentage add-on pricing that reaches checkout correctly.
+
+## Why native custom fields can't charge extra
+
+Shopify's built-in way to collect option input is **line-item properties** — custom fields you add to the product form in your theme. They're great at capturing text like "Engraving: Sofia," but they have one hard limitation: **they add no price.**
+
+A line-item property is just a label and a value attached to the order. There's no field for money, so however you build it — gift wrap, rush service, premium fabric — the customer pays the base price and nothing more. To actually charge for an option, the extra amount has to become a real line on the order that checkout can total. That's exactly what an app handles.
+
+## The fix: Optionify add-on pricing
+
+[Optionify](https://apps.shopify.com/optionify) lets you attach an **add-on price** to any option or value. When a customer selects it, the extra amount is added to their total at checkout. You set this per option in the **Option Set Editor**, and there are two modes — both live:
+
+- **Fixed** — a set money amount (e.g. +$5.00 for gift wrap)
+- **Percent** — a percentage of the product's price (e.g. +15% for a premium material)
+
+![Optionify Option Set Editor showing the add-on price field with Fixed and Percent modes](/images/charge-extra-for-product-option/add-on-pricing.png)
+*Set a fixed amount or a percentage of the product price as the add-on charge.*
+
+### Fixed vs Percent — which to use
+
+Pick the mode that matches how the upgrade should scale:
+
+- **Fixed** is best for flat add-ons that cost the same regardless of the product: gift wrapping, rush processing, a stamped card. +$5 is +$5 whether the item is $20 or $200.
+- **Percent** is best for upgrades that should scale with the base price: a premium material on a $40 shirt versus a $400 jacket shouldn't cost the same flat fee. A percentage keeps the surcharge proportional.
+
+## How the extra charge reaches checkout
+
+This is where a lot of options apps quietly fail. Optionify sends add-on charges to checkout through a **hidden companion product** — the extra amount rides along as a separate, invisible line so checkout totals it correctly.
+
+The important consequence: it **works with Buy it Now and Shop Pay**, not just the standard cart. Express and accelerated checkouts skip the cart page, so approaches that only adjust the cart lose the surcharge. The companion-product method means the extra charge is collected wherever the customer checks out.
+
+Every selection and its price also appear on the Shopify order as line-item properties, so your fulfillment team sees exactly what was chosen and what was charged.
+
+## How to charge extra for an option, step by step
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — free forever, add-on pricing included
+2. Enable the Optionify **app embed** in your theme editor so options render on the storefront
+3. Click **Create option set** (or open an existing set in the **Option Set Editor**)
+4. Add the option you want to charge for — for example a **Switch** for gift wrap, or a **Radio buttons** option for material
+5. On the option or value, set the **add-on price** and choose **Fixed** or **Percent**
+6. Choose an **assignment**: all products, by tag, by collection, or individual products ([assignment types](/articles/understanding-assign-types))
+7. Set the set to **Active** and save via Shopify's save bar
+8. Use **Preview** to open an assigned product and confirm the extra charge appears in the total
+
+## Use cases: what to charge extra for
+
+Add-on pricing fits any option that adds cost or value:
+
+- **Gift wrap** — a [Switch option](/articles/switch-options) that toggles on a flat +$5, perfect for Fixed pricing
+- **Rush / priority processing** — a fixed fee for faster turnaround
+- **Premium material or finish** — a Percent add-on that scales with the product price
+- **Engraving or embroidery** — a fixed fee on top of a text input
+- **Add-on products or accessories** — a fixed charge for a bundled extra
+- **Size or dimension upgrades** — pair with the Dimension type for area-based pricing
+
+For a deeper look at pricing options and how add-on charges behave in the cart and order, see [pricing product options](/articles/pricing-variants).
+
+## Does charging extra cost anything?
+
+No. Optionify is **free forever**, and that includes add-on pricing in both Fixed and Percent modes. There are no paid tiers, no premium plan, and no transaction fees on the extra amounts you collect. You keep what you charge.
+
+## FAQ
+
+### How do I charge extra for a product option on Shopify?
+
+Native line-item properties add no price. Use Optionify: add an add-on price to any option — a fixed amount or a percentage of the product price — and it's collected at checkout, including on Buy it Now and Shop Pay.
+
+### Can I charge a percentage instead of a fixed amount?
+
+Yes. Optionify supports both. Fixed adds a set money amount; Percent adds a percentage of the product's price, useful for premium upgrades that should scale with the base price. Both modes are live.
+
+### Does the extra charge work with Shop Pay?
+
+Yes. Optionify sends add-on charges to checkout through a hidden companion product, so the extra amount is collected correctly on express checkouts like Buy it Now and Shop Pay, not just the standard cart.
+
+## Get started
+
+1. **[Install Optionify](https://apps.shopify.com/optionify)** — free
+2. **[Learn how option pricing works](/articles/pricing-variants)**
+3. **[Add a paid gift-wrap toggle with a Switch option](/articles/switch-options)**
+
+---
+
+**Need help?** See the [Troubleshooting Guide](/articles/troubleshooting) or contact support.

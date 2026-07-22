@@ -8,6 +8,7 @@ import FeedbackWidget from '@/components/ui/FeedbackWidget';
 import SocialShare from '@/components/ui/SocialShare';
 import ArticleSchema from '@/components/seo/ArticleSchema';
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import FAQSchema from '@/components/seo/FAQSchema';
 import {
   getAllArticleSlugs,
   getArticleBySlug,
@@ -17,6 +18,21 @@ import {
 } from '@/lib/articles';
 import { categories } from '@/lib/categories';
 import { marked } from 'marked';
+
+// Give rendered <h2>/<h3> the same id slugs the TOC generates, so in-page
+// anchor links (and Google "jump to section" deep links) actually work.
+const slugifyHeading = (text: string) =>
+  text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+marked.use({
+  renderer: {
+    heading(token: { text?: string; depth: number; tokens: unknown[] }): string {
+      const inner = (this as { parser: { parseInline: (t: unknown[]) => string } }).parser.parseInline(token.tokens);
+      const id = slugifyHeading(token.text ?? '');
+      return `<h${token.depth} id="${id}">${inner}</h${token.depth}>\n`;
+    },
+  },
+});
 import { generateOgMetadata, generateTwitterMetadata, generateCanonicalUrl } from '@/lib/seo-config';
 
 export async function generateStaticParams() {
@@ -136,6 +152,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         wordCount={wordCount}
       />
       <BreadcrumbSchema items={breadcrumbItems} />
+      {article.frontmatter.faq && article.frontmatter.faq.length > 0 && (
+        <FAQSchema items={article.frontmatter.faq} />
+      )}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">

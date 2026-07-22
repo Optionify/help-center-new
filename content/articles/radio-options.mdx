@@ -1,519 +1,113 @@
 ---
-title: "How to Use Radio Button Options"
-description: "Complete guide to using radio button options for single-choice selections, size variants, and exclusive preferences. Learn button group styles, default selections, pricing, and layout options."
+title: "Shopify Radio Button Options Setup"
+description: "Add Shopify radio button options for single-select choices like fit or shipping speed, with per-choice pricing and no variants. Free with Optionify."
 category: "option-types"
-lastUpdated: "2026-02-05"
-tags: ["radio", "selection", "option types", "buttons", "radio buttons", "button group", "size selection", "shopify variants", "single choice", "product variants"]
-featured: true
+lastUpdated: "2026-07-05"
+tags: ["shopify radio button options", "radio buttons", "single select", "option types", "add-on pricing"]
+featured: false
 order: 6
+faq:
+  - question: "How do I add radio button options in Shopify?"
+    answer: "With Optionify, create an option set, add a Radio buttons option, list each choice as a value with an optional add-on price, assign the set to your products, and enable the theme app embed. Customers then pick exactly one choice on the product page."
+  - question: "What is the difference between radio buttons and a dropdown?"
+    answer: "Radio buttons show every choice at once so customers compare and tap in one step, ideal for two to five options. A dropdown hides choices in a menu, which saves space and suits longer lists. Both let a customer select only one value."
+  - question: "Can each radio button choice have its own price?"
+    answer: "Yes. Every radio value can carry an add-on price as a fixed money amount or a percentage of the product price. The selected choice adds its charge to the total and carries through to checkout, including Buy it Now and Shop Pay."
+  - question: "Do radio button options create Shopify variants?"
+    answer: "No. Radio options are not variants, so they never create SKUs or count against Shopify's 3-options-per-product limit. You can add radio choices to a product without inventory bloat or extra variant combinations."
+  - question: "Should I use radio buttons or checkboxes?"
+    answer: "Use radio buttons when a customer must pick exactly one choice, like a single finish or shipping speed. Use checkboxes when they can select any number of stackable add-ons. If the answer to 'can they pick more than one?' is no, use radio buttons."
 ---
 
-Radio button options allow customers to select exactly one choice from multiple options. Perfect for size selection, style choices, and any scenario where customers must pick a single option from a set of mutually exclusive choices.
-
-## What Are Radio Button Options?
-
-Radio buttons create a set of options where customers can select only one choice at a time. When a customer clicks a different option, the previous selection is automatically deselected. This makes radio buttons ideal for exclusive choices where only one answer is possible.
-
-![Radio buttons on product page](/images/radio-options/radio-product-page.png)
-*Radio button options for gender selection with pricing displayed on product page*
-
-## Real-World Use Cases
-
-### 1. Product Variants
-
-**Size Selection**
-```
-Label: "Select Size"
-Options: Small, Medium, Large, X-Large
-Default: Medium
-Pricing: +$5 for X-Large
-```
-
-**Gender/Fit Selection**
-```
-Label: "Select Fit"
-Options: Men's, Women's, Unisex
-Pricing: Different pricing by fit
-```
-
-### 2. Style Choices
-
-**Design Style**
-```
-Label: "Choose Style"
-Options: Classic, Modern, Vintage, Minimalist
-Default: Classic
-```
-
-**Color Finish**
-```
-Label: "Finish"
-Options: Matte, Glossy, Satin
-Pricing: +$10 for Glossy finish
-```
-
-### 3. Service Options
-
-**Shipping Speed**
-```
-Label: "Shipping Method"
-Options: Standard (5-7 days), Express (2-3 days), Overnight
-Pricing: Standard (Free), Express (+$10), Overnight (+$25)
-Default: Standard
-```
-
-**Gift Wrapping**
-```
-Label: "Gift Wrapping"
-Options: No Thank You, Standard ($5), Premium ($15)
-Default: No Thank You
-```
-
-### 4. Configuration Choices
-
-**Engraving Location**
-```
-Label: "Where should we engrave?"
-Options: Front, Back, Inside
-```
-
-**Paper Type**
-```
-Label: "Paper Quality"
-Options: Standard, Premium, Luxury
-Pricing: Premium (+$5), Luxury (+$15)
-```
-
-## Creating Radio Button Options
-
-### Step 1: Basic Setup
-
-1. Click **Create New Option**
-2. Select **Radio** option type
-3. Enter option details:
-
-```
-Option Label: "Select Shipping Date"
-Internal Name: "shipping-date"
-Help Text: "Choose your preferred shipping speed"
-```
-
-![Radio button configuration](/images/radio-options/radio-settings.png)
-*Configure radio button display style, layout, default selection, and pricing*
-
-### Step 2: Add Option Values
-
-Add the choices customers can select from:
-
-```
-Value 1: Standard Shipping
-Value 2: Express Shipping
-Value 3: Overnight Shipping
-```
-
-**Tips for option values:**
-- Use clear, descriptive names
-- Keep them concise (2-4 words ideal)
-- Make differences obvious
-- Include key information (timing, features)
-
-### Step 3: Configure Display Settings
-
-#### Display Style
-
-Choose how radio buttons appear:
-
-**Button Group (Recommended)**
-- Modern, clickable buttons
-- Clear visual selection
-- Better mobile experience
-- Professional appearance
-- Shows pricing inline
-
-**Traditional Radio Buttons**
-- Classic circular selectors
-- Familiar interface
-- Compact display
-- Good for long lists
-
-The Button Group style shown in the screenshot provides a clean, modern look that works well with pricing display.
-
-#### Layout Options
+Radio button options let a customer pick **exactly one** choice from a visible set — one fit, one finish, one shipping speed. If you searched for **Shopify radio button options**, this guide explains when radio beats a dropdown or checkbox, and how to build single-select choices with optional per-choice pricing in a few minutes using [Optionify](https://apps.shopify.com/optionify), a free product options app.
 
-**Horizontal Layout**
-```
-Display: Side by side
-Best for: 2-4 short options
-Example: Male | Female | Unisex
-```
-
-**Vertical Layout**
-```
-Display: Stacked
-Best for: 3+ options, long option names
-Example:
-○ Standard Shipping (5-7 days)
-○ Express (2-3 days)
-○ Overnight (next day)
-```
+## How do I add radio button options in Shopify?
 
-**Grid Layout**
-```
-Display: Multi-column grid
-Best for: 4+ options with images or icons
-```
-
-### Step 4: Set Default Selection
+Shopify's built-in options are limited to 3 per product and always create variants. With Optionify, create an option set, add a **Radio buttons** option, list each choice as a value with an optional add-on price, assign the set to your products, and enable the theme app embed. Customers then select exactly one choice on the product page.
 
-Choose which option is pre-selected when customers view the product:
+![Radio button options on a Shopify product page with one choice selected and pricing shown](/images/radio-options/radio-product-page.png)
+*Single-select radio button options on a live product page, each with optional pricing*
 
-```
-Default Selection: Male
-```
+## When should you use radio buttons?
 
-**When to set defaults:**
-- ✅ Most popular choice
-- ✅ Standard/basic option
-- ✅ Free option (if others have charges)
-- ✅ When one choice fits majority of customers
+Radio buttons suit **mutually exclusive** choices where only one answer makes sense: a single fit, a single finish, one shipping speed, one engraving location. Because every choice is visible at once, customers compare options and decide in a single tap — no menu to open, no scrolling.
 
-**When NOT to set defaults:**
-- ❌ When you need explicit customer choice
-- ❌ All options are equally important
-- ❌ Forcing a selection prevents mistakes
+Reach for radio buttons when you have roughly two to five short choices that benefit from being seen side by side. For longer lists, a [dropdown](/articles/dropdown-options) keeps the page tidy.
 
-### Step 5: Add Pricing to Options
+## Radio buttons vs. dropdown vs. checkbox
 
-Each radio option can have its own price:
+These three option types look similar but solve different problems:
 
-```
-Male: +₼1.00
-Female: +₼1.00
-Unisex: No additional charge
-```
+- **Radio buttons** — select **exactly one** choice, all choices visible. Best for 2–5 options where comparison helps: fit, finish, shipping speed.
+- **[Dropdown](/articles/dropdown-options)** — select **exactly one** choice from a collapsed menu. Best for longer or familiar lists where space matters.
+- **[Checkbox](/articles/checkbox-options)** — select **any number** of stackable choices. Best for independent add-ons: extra battery, gift wrap, warranty.
 
-**Pricing strategies:**
-- Base option: $0 additional
-- Premium options: Add upcharge
-- Different costs: Reflect actual cost differences
-- Free vs paid: Make free option clear
+If the answer to "can they pick more than one?" is yes, use a checkbox. If it's no and the list is short, use radio buttons.
 
-**Price display formats:**
-```
-Custom Format: (+{symbol}{price})
-Example: (+$5.00)
-Example: (+₼1.00)
-```
+## How to set up radio button options in Optionify
 
-The pricing automatically displays next to each option as shown in the screenshot.
+1. Click **Create option set** and name the set (e.g. "Shirt options").
+2. Add an option and choose the **Radio buttons** type.
+3. Enter the option label, such as "Select fit" or "Choose a finish."
+4. Add each choice as a **value** — "Men's," "Women's," "Unisex."
+5. Give any value an add-on price if it should cost extra (details below).
+6. Decide whether the option is **required** so customers can't skip it.
+7. Assign the set with the right [assignment method](/articles/understanding-assign-types) — All Products, Tagged Products, Collections, or Individual Products.
+8. Set the set to **Active** and save with Shopify's save bar.
 
-### Step 6: Required vs Optional
+![Radio buttons option configured in the Optionify Option Set Editor with values and add-on prices](/images/radio-options/radio-editor.png)
+*Adding radio values with per-choice fixed or percentage pricing in the Option Set Editor*
 
-**Make it required when:**
-- Customer MUST make a choice
-- No default covers all scenarios
-- Critical for fulfillment
+Options only appear on the storefront once the **theme app embed** is enabled in your theme editor. If your radio buttons aren't showing, that's the first thing to check.
 
-**Make it optional when:**
-- Default choice works for most
-- Not essential to order
-- Customer may prefer not to choose
+## Can each radio choice have its own price?
 
-```
-Required: Yes (forces selection before checkout)
-Required: No (default value used if not changed)
-```
+Yes. Every radio value carries an optional **add-on price** in one of two modes:
 
-## Advanced Features
+- **Fixed** — a set amount, e.g. "Glossy finish (+$10.00)."
+- **Percent** — a percentage of the product price, e.g. "Premium fit (+15%)."
 
-### Conditional Logic
+Whichever choice the customer selects adds its charge to the total and carries to checkout through a hidden companion product — so it works with **Buy it Now** and **Shop Pay** too. See [add-on pricing](/articles/pricing-variants) for how the totals reach the order.
 
-Show/hide other options based on radio selection:
+## Do radio options count as Shopify variants?
 
-```
-IF "Shipping Method" = "Express"
-THEN show "Preferred Delivery Date"
-```
+No. A Shopify variant is a stock-tracked combination like "Blue / Large," and each product is still capped at **3 options** even after Shopify raised the variant ceiling to 2,048 in October 2025. Radio options live outside that system: they create no SKUs and don't count against the [3-option limit](/articles/shopify-variant-limit).
 
-Learn more: [Conditional Logic](/articles/conditional-logic)
+That means you can offer a "finish" choice, a "shipping speed" choice, and a personalization field on the same product without burning your three variant options on things that were never really inventory.
 
-### Dynamic Pricing
+## Real use cases for radio button options
 
-Each radio option can have:
-- Fixed price addition (+$10)
-- Percentage increase (+15%)
-- Price subtraction (discount)
-- No price change ($0)
+**Fit and finish.** An apparel store offers "Men's," "Women's," and "Unisex" as radio choices, and a homeware brand lets buyers pick "Matte," "Satin," or "Glossy (+$10)."
 
-### Option Dependencies
+**Shipping speed.** A store surfaces "Standard (free)," "Express (+$10)," and "Overnight (+$25)" as a single-select radio group, so customers choose one delivery speed at a glance.
 
-Link radio selections to:
-- Show/hide other fields
-- Change available options elsewhere
-- Modify pricing of other options
-- Trigger validation rules
+**Engraving location.** A gift shop asks "Where should we engrave?" with "Front," "Back," or "Inside" — one choice only, no ambiguity for fulfillment.
 
-### Image Options
+**Service tier.** A furniture retailer offers "Standard assembly," "Premium assembly (+$40)," or "No assembly" as mutually exclusive choices.
 
-Enhance radio buttons with images:
-- Product color swatches
-- Style previews
-- Visual representation
-- Better customer understanding
+Because the selected value is saved as a line item property on the order, your fulfillment team sees exactly which choice each customer made — no guesswork.
 
-## Best Practices
+## FAQ
 
-### 1. Limit Number of Options
+**How do I add radio button options in Shopify?**
+With Optionify, create an option set, add a Radio buttons option, list each choice as a value with an optional add-on price, assign the set to your products, and enable the theme app embed. Customers then pick exactly one choice.
 
-**Ideal:** 2-5 options
-**Maximum:** 8 options (use dropdown beyond this)
+**What is the difference between radio buttons and a dropdown?**
+Radio buttons show every choice at once for quick comparison, ideal for two to five options. A dropdown hides choices in a menu to save space on longer lists. Both allow only one selection.
 
-Too many radio buttons:
-- Overwhelm customers
-- Take up too much space
-- Slow decision making
+**Can each radio button choice have its own price?**
+Yes. Every value can carry a fixed amount or a percentage of the product price. The selected choice adds its charge to the total and carries to checkout, including Buy it Now and Shop Pay.
 
-### 2. Clear, Distinct Labels
+**Do radio button options create Shopify variants?**
+No. Radio options aren't variants, so they never create SKUs or count against Shopify's 3-options-per-product limit.
 
-**Good labels:**
-- ✅ "Standard Shipping (5-7 business days)"
-- ✅ "Men's Fit"
-- ✅ "No Gift Wrapping"
+**Should I use radio buttons or checkboxes?**
+Use radio buttons when a customer must pick exactly one choice. Use checkboxes when they can select any number of stackable add-ons.
 
-**Poor labels:**
-- ❌ "Option 1", "Option 2"
-- ❌ "A", "B", "C"
-- ❌ Unclear abbreviations
+## Get started with Optionify
 
-### 3. Show Pricing Clearly
+Ready to add single-select radio button options? Install Optionify — it's **free, forever**, with all 17 option types, conditional logic, and per-choice pricing included.
 
-Make costs obvious:
-```
-✅ Express Shipping (+$10.00)
-✅ Premium Quality (+$15.00)
-✅ Standard (Free)
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
 
-❌ Express Shipping (check price at checkout)
-❌ Premium Quality (extra)
-```
-
-### 4. Logical Order
-
-Order options by:
-- Most to least popular
-- Least to most expensive
-- Logical progression (Small → Large)
-- Alphabetical (if no other logic)
-
-### 5. Helpful Help Text
-
-Explain when needed:
-```
-Help Text: "Select your size. If between sizes, we recommend sizing up."
-```
-
-### 6. Consider Default Impact
-
-Defaults have high selection rates:
-- 50-70% of customers keep defaults
-- Set defaults strategically
-- Use defaults for recommendations
-- Don't default to expensive options without reason
-
-## Common Mistakes to Avoid
-
-### ❌ Too Many Options
-
-**Problem:** 15 radio buttons for country selection
-**Solution:** Use dropdown for long lists
-
-### ❌ Unclear Differences
-
-**Problem:** "Option A" vs "Option B"
-**Solution:** Use descriptive names showing difference
-
-### ❌ Hidden Costs
-
-**Problem:** Pricing not shown until checkout
-**Solution:** Display all pricing with options
-
-### ❌ Wrong Default
-
-**Problem:** Most expensive option pre-selected
-**Solution:** Default to most popular or standard option
-
-### ❌ Using Checkboxes Instead
-
-**Problem:** Checkboxes when only one choice allowed
-**Solution:** Radio buttons for single selection, checkboxes for multiple
-
-### ❌ No Visual Feedback
-
-**Problem:** Unclear which option is selected
-**Solution:** Use Button Group style with clear selection state
-
-## Styling & Display
-
-### Button Group Style
-
-Modern button appearance:
-- Clear selection state (filled background)
-- Hover effects
-- Mobile-friendly touch targets
-- Pricing shown inline
-- Professional look
-
-### Traditional Radio Style
-
-Classic circular buttons:
-- Familiar interface
-- Compact display
-- Works in all themes
-- Accessibility built-in
-
-### Responsive Design
-
-Radio options adapt to screen size:
-- Horizontal on desktop (if space permits)
-- Vertical on mobile (easier tapping)
-- Touch-friendly targets (44x44px minimum)
-- Clear spacing between options
-
-### Custom Styling
-
-Match your brand:
-- Theme colors automatically applied
-- Custom CSS supported
-- Font styling inherited
-- Consistent with your store design
-
-## Integration with Orders
-
-### How Radio Options Appear in Orders
-
-In Shopify order details:
-
-```
-Product: Custom T-Shirt
-Options:
-  - Select Fit: Male (+₼1.00)
-  - Size: Large
-  - Color: Blue
-```
-
-### Order Export
-
-Radio selections export with:
-- Option label
-- Selected value
-- Price modifier
-- Easy CSV processing
-
-### Fulfillment Systems
-
-Radio data integrates with:
-- Production systems
-- Print-on-demand services
-- Inventory management
-- Shipping providers
-
-## Radio vs Other Option Types
-
-### Radio vs Dropdown
-
-**Use Radio when:**
-- 2-5 options
-- Visual comparison helpful
-- Quick selection important
-- All options should be visible
-
-**Use Dropdown when:**
-- 6+ options
-- Space is limited
-- Options are familiar (countries, states)
-- Visual comparison not needed
-
-### Radio vs Checkboxes
-
-**Use Radio when:**
-- Select ONLY ONE option
-- Mutually exclusive choices
-- "Choose one" scenario
-
-**Use Checkboxes when:**
-- Select MULTIPLE options
-- Independent choices
-- "Choose all that apply" scenario
-
-### Radio vs Buttons/Swatches
-
-Both are similar! Button Group style IS essentially large, modern radio buttons.
-
-## SEO Benefits
-
-Radio options improve SEO by:
-- Structured product variations
-- Better user experience
-- Lower bounce rates
-- Clearer product information
-- Improved conversion signals
-
-## Troubleshooting
-
-### Default Selection Not Working
-
-**Cause:** Default value doesn't match option value exactly
-**Fix:** Ensure exact spelling and case match
-
-### Can't Select Radio Button
-
-**Cause:** Theme JavaScript conflict
-**Fix:** Check browser console for errors, contact support
-
-### Pricing Not Displaying
-
-**Cause:** Price format configuration issue
-**Fix:** Verify price format settings in configuration
-
-### Mobile Layout Issues
-
-**Cause:** Horizontal layout with too many options
-**Fix:** Switch to vertical layout or reduce options
-
-### Selection Not Saving
-
-**Cause:** Form submission timing
-**Fix:** Ensure selection made before "Add to Cart"
-
-## Related Option Types
-
-- **Dropdown Options**: For longer lists → [Learn more](/articles/dropdown-options)
-- **Checkbox Options**: For multiple selections → [Learn more](/articles/checkbox-options)
-- **Color Options**: For color swatches → [Learn more](/articles/color-options)
-
-## Next Steps
-
-Now that you understand radio button options:
-
-- Learn [Conditional Logic](/articles/conditional-logic) to show options based on radio selection
-- Explore [Pricing Variants](/articles/pricing-variants) to understand dynamic pricing
-- Try [Button Group styling](/articles/radio-options) for modern appearance
-
-## Get Started with Optionify
-
-Ready to add professional radio button options to your Shopify store? Install Optionify today from the Shopify App Store and start offering size selections, style choices, and service options in minutes.
-
-**[Install Optionify on Shopify App Store](https://apps.shopify.com/optionify)**
-
-With Optionify's radio button options, you can:
-- Create single-choice selections with modern button styles
-- Add individual pricing to each option
-- Set default selections to guide customers
-- Choose between horizontal, vertical, or grid layouts
-- Integrate seamlessly with your store design
-
-Join thousands of Shopify merchants who trust Optionify for flexible product options and customization.
-
----
-
-**Need help?** Check our [Troubleshooting Guide](/articles/troubleshooting) or contact support
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), then compare [dropdown options](/articles/dropdown-options) for longer lists and [checkbox options](/articles/checkbox-options) for multi-select add-ons.

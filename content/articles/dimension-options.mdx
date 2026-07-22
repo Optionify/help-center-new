@@ -1,0 +1,111 @@
+---
+title: "Shopify Dimension & Size-Based Pricing"
+description: "Add a Shopify dimension option for size-based pricing. Charge by width × height area automatically — no variants — using free Optionify."
+category: "option-types"
+lastUpdated: "2026-07-05"
+tags: ["shopify dimension option", "size-based pricing", "area-based pricing", "price by width and height", "dimension"]
+featured: false
+order: 16
+faq:
+  - question: "What is a dimension option in Shopify?"
+    answer: "A dimension option is an Optionify option type with width and height inputs. The customer enters both measurements, Optionify multiplies them to get the area, then multiplies the area by your unit price. It gives live area-based pricing on the product page with no variants."
+  - question: "How do I price a Shopify product by width and height?"
+    answer: "Use Optionify's Dimension option. Set a unit price per square meter or square foot. The customer types a width and a height, Optionify calculates the area and multiplies it by your unit price, and the add-on charge updates live before add to cart."
+  - question: "How does area-based pricing work?"
+    answer: "Area-based pricing means the charge equals your unit price multiplied by the area the customer requests. Width times height gives the area, and area times unit price gives the add-on charge. So a 1.2 m by 1.5 m order at $45 per square meter adds $81.00 automatically."
+  - question: "Does a dimension option create Shopify variants?"
+    answer: "No. A dimension option is not a Shopify variant, so it never creates SKUs or counts against the 3-options-per-product limit. It replaces what would otherwise need thousands of pre-built size variants that still couldn't cover every dimension."
+  - question: "Do the measurements show on the order?"
+    answer: "Yes. The width and height a customer enters are saved as line item properties on the Shopify order, so your production team sees the exact size to cut or make without contacting the customer, along with the calculated charge."
+---
+
+A **Shopify dimension option** gives customers a width input and a height input, then prices the product by the **area** they request — unit price × area. It's the tool for **size-based pricing** on made-to-cut products like blinds, signage and custom panels. This guide explains what the Dimension type is, walks a worked area-pricing example, and shows how to set it up in [Optionify](https://apps.shopify.com/optionify), a free product options app.
+
+## What is a dimension option in Shopify?
+
+A dimension option adds two fields — **width** and **height** — to the product page. When the customer fills them in, Optionify multiplies width by height to get the **area**, then multiplies that area by the **unit price** you set (per m² or per ft²). The add-on charge updates live before add to cart. Shopify variants can't do this: they're fixed, pre-built values, not a calculation from a size the customer types in.
+
+![Shopify dimension option on a product page with width and height inputs and a live area-based price](/images/dimension-options/dimension-product-page.png)
+*The Dimension type turns two measurements into a live area-based price*
+
+## Why variants can't do size-based pricing
+
+A Shopify variant is a fixed combination with a set price and a SKU. To price by size with variants you'd have to pre-build every dimension in advance — a blind between 30 cm and 300 cm is millions of combinations, and you'd still miss most requests. Even after Shopify raised the variant cap to 2,048 in October 2025, the [3-options-per-product limit is unchanged](/articles/shopify-variant-limit).
+
+Size-based pricing isn't inventory — it's **a calculation**. The Dimension option does that math live and never creates a variant, so there are no SKUs and nothing counts against the variant limit.
+
+## How area-based pricing works
+
+The Dimension type uses one simple formula:
+
+```
+Area          = Width × Height
+Add-on price  = Area × Unit price
+```
+
+You set a single **unit price** — your rate per square meter or square foot. Optionify handles the rest for every size the customer enters. Whether they want a tiny panel or a large one, the price is always your rate times the area they asked for.
+
+## A worked area-pricing example
+
+Say you sell made-to-measure roller blinds at **$45 per square meter**. In the Optionify editor you set the Dimension option's unit price to `$45`. On the storefront:
+
+```
+Customer enters:  Width 1.2 m  ×  Height 1.5 m
+Area:             1.2 × 1.5   = 1.8 m²
+Add-on price:     1.8 × $45   = $81.00
+```
+
+The customer sees **+$81.00** the moment they finish typing. Change the height to 2.0 m and the area becomes 2.4 m², so the price jumps to **$108.00** — automatically, with no variant and no spreadsheet lookup. You set one unit price; Optionify prices every size.
+
+## How to set up a dimension option in Optionify
+
+1. Click **Create option set** and name the set (e.g. "Made-to-measure size").
+2. Add an option and choose the **Dimension** type.
+3. Enter the option label, such as "Enter your size" or "Width × Height."
+4. Set the **unit price** to your rate per m² or per ft².
+5. Decide whether the option is **required** so the customer must enter a size before adding to cart.
+6. Assign the set with the right [assignment method](/articles/understanding-assign-types) — assign it to just your made-to-measure range using Tagged Products, Collections, or Individual Products.
+7. Set the set to **Active** and save with Shopify's save bar.
+8. Use the editor's **Preview** action to open an assigned product and test a few sizes.
+
+![Dimension option configuration in the Optionify Option Set Editor showing the unit price field](/images/dimension-options/dimension-editor.png)
+*Setting the per-area unit price for the Dimension option in the Option Set Editor*
+
+Options only appear on the storefront once the **theme app embed** is enabled in your theme editor. If the width and height fields don't show after saving, that's usually why — the [troubleshooting guide](/articles/troubleshooting) covers it in one step.
+
+The calculated charge reaches checkout through a hidden companion product, so it's collected correctly and works with **Buy it Now and Shop Pay**, not just the standard cart. See [add-on pricing](/articles/pricing-variants) for how totals reach the order.
+
+## Real use cases for dimension options
+
+**Blinds and curtains.** A window-treatment store prices roller blinds per square meter of fabric — one Dimension option covers every size a customer could want.
+
+**Signage and banners.** A print shop charges per square meter of printed vinyl, so a large banner automatically costs more than a small sign.
+
+**Cut-to-size glass, acrylic and mirrors.** A glazier prices per square meter or square foot, and the customer's exact panel size flows straight to the workshop.
+
+Because the width and height are saved as line item properties on the order, your production team sees the exact size to cut without emailing the customer. For products priced by a **single** measurement rather than an area, use the [Range slider to sell by length](/articles/range-slider-options); for the full workflow, see the [made-to-measure guide](/articles/made-to-measure-shopify).
+
+## FAQ
+
+**What is a dimension option in Shopify?**
+A dimension option adds width and height inputs. The customer enters both, Optionify multiplies them into an area, then multiplies the area by your unit price — giving live area-based pricing on the product page with no variants.
+
+**How do I price a Shopify product by width and height?**
+Use Optionify's Dimension option and set a unit price per m² or ft². The customer types a width and height, Optionify calculates the area and multiplies by your unit price, and the charge updates live before add to cart.
+
+**How does area-based pricing work?**
+The charge equals unit price × area, where area is width × height. So 1.2 m × 1.5 m at $45 per square meter adds $81.00, calculated automatically the moment the customer enters their size.
+
+**Does a dimension option create Shopify variants?**
+No. It isn't a variant, so it never creates SKUs or counts against the 3-options-per-product limit. It replaces thousands of pre-built size variants that still couldn't cover every dimension.
+
+**Do the measurements show on the order?**
+Yes. The width and height are saved as line item properties on the order, so your production team sees the exact size to cut, along with the calculated charge.
+
+## Get started with Optionify
+
+Ready to price by size automatically? Install Optionify — it's **free, forever**, with all 17 option types, conditional logic, and area-based pricing included.
+
+**[Install Optionify on the Shopify App Store](https://apps.shopify.com/optionify)**
+
+New here? Start with [creating your first product option](/articles/creating-your-first-product-option), read the full [made-to-measure guide](/articles/made-to-measure-shopify), or use the [range slider](/articles/range-slider-options) to sell by a single length instead of area.

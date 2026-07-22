@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: 'Shopify Product Options & Custom Fields Tutorial',
-    template: '%s | Shopify Guide',
+    template: '%s | Optionify',
   },
   description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
   keywords: siteConfig.keywords,

@@ -1,197 +1,118 @@
 ---
-title: "Getting Started with Optionify"
-description: "Learn how to install and set up Optionify for your Shopify store, and discover what makes it the perfect solution for custom product options."
+title: "Shopify Product Options App Guide"
+description: "How to use Optionify, the free Shopify product options app: 17 option types, theme setup, option sets, and 4 assignment methods."
 category: "getting-started"
-lastUpdated: "2025-12-01"
-tags: ["getting started", "installation", "setup", "basics"]
+lastUpdated: "2026-07-05"
+tags: ["Shopify product options app", "how to use Optionify", "product options", "option sets", "free Shopify app"]
 featured: true
 order: 1
+faq:
+  - question: "Is Optionify really free?"
+    answer: "Yes. Optionify is fully free forever. Every merchant gets all 17 option types, all 4 assignment methods, conditional logic, and add-on pricing at no cost. There are no paid tiers, no premium plan, and no transaction fees on the options you create."
+  - question: "How do product options show on my storefront?"
+    answer: "Options render through Optionify's theme app embed. Open your theme editor, enable the Optionify app embed once, and every active option set appears on the products it is assigned to. If the embed is off, options will not display."
+  - question: "Do I need to create variants to use Optionify?"
+    answer: "No. Optionify options are separate from Shopify variants, so you avoid the 3-options-per-product limit entirely. You can add unlimited text fields, dropdowns, uploads, and date pickers without generating a single new variant or SKU."
+  - question: "Where does customer input appear after checkout?"
+    answer: "Every option a customer fills in is saved to the Shopify order as line item properties. Your fulfillment team sees the exact text, dates, uploads, and choices on the order detail page, so nothing gets lost between cart and packing."
+  - question: "How many products can one option set cover?"
+    answer: "As many as you want. A single option set can apply to All Products, every product with a chosen tag, whole collections, or a hand-picked list of individual products. One set can power your entire catalog or just one item."
 ---
 
-Welcome to Optionify! This guide will walk you through everything you need to know to get started with adding custom product options to your Shopify store.
+Optionify is a free Shopify product options app that lets you add custom fields, choices, and add-ons to your products without fighting Shopify's variant limits. This guide explains what the app does, walks through the 17 option types, and shows you how to install it, enable the theme app embed, build your first option set, and preview it live.
 
-## What is Optionify?
+## What does the Optionify product options app do?
 
-Optionify is a powerful Shopify app that allows you to add custom options to your products beyond Shopify's standard 3 variant limit. With 11 different option types and 4 flexible assignment methods, you can create unlimited customization possibilities for your customers.
+Optionify lets you attach custom options to products beyond Shopify's built-in variants. You group options into an **option set**, assign that set to the products it should appear on, and customers fill in their choices on the storefront. Everything a customer enters lands on the Shopify order.
 
-\![Optionify dashboard overview](/images/getting-started/dashboard-overview.png)
-*The Optionify dashboard showing available option types and recent configurations*
+Because Optionify options are independent of variants, you sidestep the [3-options-per-product limit](/articles/shopify-variant-limit) that still constrains native Shopify even after the variant cap rose to 2,048. Personalization text, gift wrapping, delivery dates, and file uploads all live outside the variant system.
 
-## Why Use Optionify?
+![Optionify option set list inside the Shopify admin](/images/getting-started/option-set-list.png)
+*The Optionify home screen listing your option sets with their status and assignment*
 
-### Overcome Shopify's Variant Limitations
+## What are the 17 Optionify option types?
 
-Shopify limits products to 3 options with 100 variants total. Optionify breaks through these limitations by allowing you to:
+Optionify ships with 17 option types, all free. Choice types (dropdown, radio, checkbox, and similar) hold values you define; input types collect text, numbers, dates, or files. You mix any of them inside a single option set to build exactly the form your product needs.
 
-- Add unlimited custom input fields
-- Collect customer personalization data
-- Offer product customizations without creating variants
-- Gather special instructions and preferences
+- **Text input** — short custom text such as names or personalization
+- **Textarea** — longer multi-line instructions
+- **Dropdown** — select one choice from a menu ([guide](/articles/dropdown-options))
+- **Select box** — a custom-styled single-choice dropdown
+- **Radio buttons** — select one choice, shown more visually ([guide](/articles/radio-options))
+- **Checkbox** — select multiple choices ([guide](/articles/checkbox-options))
+- **Switch** — a toggle for add-ons like gift wrap or rush ([guide](/articles/switch-options))
+- **Number input** — a numeric value such as quantity
+- **Email input** — a validated email address
+- **Phone input** — a phone number
+- **Date picker** — pick a date, with range and blocked-weekday controls ([guide](/articles/datepicker-options))
+- **File / Image upload** — customers upload artwork, logos, or photos ([guide](/articles/image-options))
+- **Color dropdown** — visual color selection with optional swatches ([guide](/articles/color-options))
+- **Image swatch** — visual selection using images like fabric textures
+- **Range slider** — pick a number on a slider with a min, max, and step
+- **Dimension** — width × height inputs with area-based pricing
+- **Product reference** — link another store product as a choice
 
-### Powerful Features
+## How do I install Optionify from the App Store?
 
-- **11 Option Types**: Text, textarea, radio, switch, checkbox, dropdown, image upload, date picker, email, number, and color
-- **4 Assignment Methods**: Apply options to all products, specific tags, collections, or individual products
-- **Conditional Logic**: Show or hide options based on customer selections
-- **Pricing Integration**: Add extra costs to specific options
-- **Mobile Responsive**: Works perfectly on all devices
+Install Optionify like any Shopify app. Open the [Optionify listing on the Shopify App Store](https://apps.shopify.com/optionify), click **Add app**, and approve the permissions. Optionify needs product, order, and theme access so it can attach options, write choices to orders, and render on your storefront.
 
+1. Visit the [Optionify App Store page](https://apps.shopify.com/optionify).
+2. Click **Add app**, then **Install** to add it to your store.
+3. Approve the requested permissions to finish installation.
 
-## Installation
+Installation is free, and there is no plan selection step. Optionify is free forever, so you land directly in the app with every feature unlocked.
 
-### Step 1: Install from Shopify App Store
+## How do I enable Optionify on my theme?
 
-1. Go to the [Shopify App Store](https://apps.shopify.com)
-2. Search for "Optionify"
-3. Click **Add app**
-4. Review the permissions and click **Install app**
+Options render through Optionify's **theme app embed**. In your Shopify admin go to **Online Store → Themes → Customize**, open the **App embeds** panel in the theme editor, toggle **Optionify** on, and save. Until the embed is enabled, your option sets will not appear on the storefront.
 
-\![Installing Optionify from Shopify App Store](/images/getting-started/install-app.png)
-*Click "Add app" to begin the installation process*
+![The Optionify app embed toggle in the Shopify theme editor](/images/getting-started/theme-app-embed.png)
+*Enable the Optionify app embed in your theme editor so options render on product pages*
 
-### Step 2: Grant Permissions
+This is a one-time step. Once the embed is on, every active option set displays automatically on the products it is assigned to, no theme code editing required.
 
-Optionify requires the following permissions to function properly:
+## How do I create my first option set?
 
-- **Read and modify products**: To add custom options to your products
-- **Read orders**: To include custom option data in orders
-- **Read themes**: To integrate with your store's theme
+Click **Create option set** in Optionify, give the set a name, add one or more options, and choose each option's type from the 17 available. For choice types, add the values customers pick from. Set the status to **Active**, then save with Shopify's save bar.
 
+An **option set** is the core building block: a named group that holds your options and their values. You do not create options in isolation; they always live inside a set, which is what you later assign to products. For a full walkthrough with pricing and previewing, follow the [creating your first product option](/articles/creating-your-first-product-option) tutorial.
 
-### Step 3: Complete Initial Setup
+![The Optionify option set editor with an option and its values](/images/getting-started/option-set-editor.png)
+*Naming an option set and adding an option with its type and values in the editor*
 
-After installation, you'll be guided through a quick setup wizard:
+## How do I assign an option set to products?
 
-1. **Choose Your Plan**: Select the plan that fits your needs
-2. **Theme Integration**: Optionify will automatically integrate with most themes
-3. **Test Product**: Create a test option to see how it works
+Optionify offers four assignment methods that decide where a set appears: **All Products**, **Tagged Products** (any product carrying a tag you choose), **Collections**, and **Individual Products**. You set this inside the option set, so one set can cover your whole catalog or a single item.
 
-\![Setup wizard completion screen](/images/getting-started/setup-wizard.png)
-*The setup wizard helps you get started in under 2 minutes*
+Pick the method that matches your workflow. A "gift wrapping" set might target All Products, while an "engraving" set might target only a `personalized` tag or one collection. Read [understanding assign types](/articles/understanding-assign-types) for guidance on choosing between them.
 
-## Understanding the Dashboard
+## How do I preview options on the storefront?
 
-Once installed, you'll see the Optionify dashboard with several key sections:
+Once your set is **Active** and assigned, use the **Preview** action in the editor. Optionify finds a product the set is assigned to and opens it on your live storefront so you can see the real rendering. Preview requires the set to be Active, since it loads the actual product page.
 
-### Option Types Panel
+Previewing is the fastest way to confirm labels, values, and add-on prices look right before customers see them. If nothing renders, double-check that the theme app embed is enabled and the set's status is Active.
 
-Displays all 11 available option types:
-- Text, Textarea, Radio, Switch
-- Checkbox, Dropdown, Image Upload
-- Date Picker, Email, Number, Color
+## FAQ
 
-### Recent Options
+**Is Optionify really free?**
+Yes. Optionify is fully free forever. Every merchant gets all 17 option types, all 4 assignment methods, conditional logic, and add-on pricing at no cost. There are no paid tiers, no premium plan, and no transaction fees on the options you create.
 
-Shows your most recently created or modified options for quick access.
+**How do product options show on my storefront?**
+Options render through Optionify's theme app embed. Open your theme editor, enable the Optionify app embed once, and every active option set appears on the products it is assigned to. If the embed is off, options will not display.
 
-### Quick Actions
+**Do I need to create variants to use Optionify?**
+No. Optionify options are separate from Shopify variants, so you avoid the 3-options-per-product limit entirely. You can add unlimited text fields, dropdowns, uploads, and date pickers without generating a single new variant or SKU.
 
-- Create New Option
-- View All Options
-- Settings & Configuration
+**Where does customer input appear after checkout?**
+Every option a customer fills in is saved to the Shopify order as line item properties. Your fulfillment team sees the exact text, dates, uploads, and choices on the order detail page, so nothing gets lost between cart and packing.
 
-\![Main dashboard layout](/images/getting-started/dashboard-layout.png)
-*The dashboard provides easy access to all features*
+**How many products can one option set cover?**
+As many as you want. A single option set can apply to All Products, every product with a chosen tag, whole collections, or a hand-picked list of individual products. One set can power your entire catalog or just one item.
 
-## Your First Steps
+## Get started with Optionify
 
-Now that Optionify is installed, here's what to do next:
+Optionify gives you 17 option types, visual conditional logic, and add-on pricing on a genuinely free plan. Install it, enable the theme app embed, and build your first option set in minutes.
 
-### 1. Create Your First Option
+**[Install Optionify free on the Shopify App Store](https://apps.shopify.com/optionify)**
 
-Start with something simple like a text field for gift messages or engraving. Our [Creating Your First Product Option](/articles/creating-your-first-product-option) guide walks you through this step-by-step.
-
-### 2. Understand Assignment Types
-
-Learn how to apply options to products using tags, collections, or individually. Check out [Understanding Assign Types](/articles/understanding-assign-types) for details.
-
-### 3. Explore Option Types
-
-Browse through our comprehensive guides for each of the 11 option types to see which ones fit your needs:
-
-- [Text Options](/articles/text-options) - For single-line input
-- [Checkbox Options](/articles/checkbox-options) - For multiple selections
-- [Image Upload](/articles/image-options) - For custom graphics
-- And many more!
-
-
-## Common Use Cases
-
-Here are some popular ways merchants use Optionify:
-
-### Personalization & Customization
-
-- Name engraving on jewelry
-- Custom text on apparel
-- Monogram initials on accessories
-- Gift messages for presents
-
-### Service Add-ons
-
-- Gift wrapping (+$5)
-- Express shipping
-- Installation services
-- Extended warranties
-
-### Customer Preferences
-
-- Delivery date selection
-- Special instructions
-- Dietary restrictions
-- Size preferences beyond variants
-
-### File Uploads
-
-- Custom artwork for printing
-- Logo files for embroidery
-- Photos for personalized products
-- Design mockups for approval
-
-## Best Practices
-
-
-### Naming Conventions
-
-Use clear, descriptive names for your options:
-- ✅ "Gift Message (optional)"
-- ✅ "Engraving Text (max 20 characters)"
-- ❌ "Text field 1"
-- ❌ "Option A"
-
-### Test Before Launch
-
-Always test new options on your store before making them live:
-
-1. Add the option to a test product
-2. Place a test order
-3. Verify the option data appears correctly in your order
-4. Check mobile responsiveness
-
-### Organization
-
-As you create more options:
-- Use consistent naming
-- Document what each option does
-- Group related options together
-- Archive unused options instead of deleting
-
-## Getting Help
-
-If you need assistance:
-
-1. **Search this Help Center**: Most questions are answered here
-2. **Check Troubleshooting**: See [Troubleshooting Common Issues](/articles/troubleshooting)
-3. **Contact Support**: Reach out via the in-app chat or email
-
-
-## Next Steps
-
-Ready to create your first option? Continue to:
-
-- [Creating Your First Product Option](/articles/creating-your-first-product-option) - Step-by-step tutorial
-- [Understanding Assign Types](/articles/understanding-assign-types) - Learn where options appear
-- [Text Options Guide](/articles/text-options) - Start with the most popular option type
-
----
-
-**Questions?** Visit our [Troubleshooting Guide](/articles/troubleshooting) or check out the [FAQ section](#).
+Next, follow the [creating your first product option](/articles/creating-your-first-product-option) tutorial, learn where options appear in [understanding assign types](/articles/understanding-assign-types), and see why options beat variants in the [Shopify variant limit](/articles/shopify-variant-limit) guide.
