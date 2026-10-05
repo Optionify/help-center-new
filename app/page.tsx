@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: 'Official Optionify app documentation. Learn how to use Optionify to add unlimited custom product options to your Shopify store.',
   }),
   alternates: {
-    canonical: 'https://help.optionify.co',
+    canonical: 'https://help.optfy.co',
   },
 };
 

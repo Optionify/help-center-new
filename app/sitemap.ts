@@ -3,7 +3,7 @@ import { getAllArticles } from '@/lib/articles';
 import { categories } from '@/lib/categories';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://help.optionify.co';
+  const baseUrl = 'https://help.optfy.co';
   const articles = getAllArticles();
 
   // Homepage

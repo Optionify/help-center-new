@@ -78,7 +78,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       'shopify custom fields',
       'how to use shopify',
     ],
-    authors: [{ name: 'Optionify Team', url: 'https://optionify.co' }],
+    authors: [{ name: 'Optionify Team', url: 'https://optfy.co' }],
     openGraph: generateOgMetadata({
       title: shopifyTitle,
       description: article.frontmatter.description,
@@ -194,7 +194,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             {/* Social Sharing */}
             <SocialShare
               title={article.frontmatter.title}
-              url={`https://help.optionify.co/articles/${params.slug}`}
+              url={`https://help.optfy.co/articles/${params.slug}`}
               description={article.frontmatter.description}
             />
 

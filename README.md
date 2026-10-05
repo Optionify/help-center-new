@@ -277,7 +277,7 @@ vercel --prod
 1. **In Vercel Dashboard:**
    - Go to your project
    - Click "Settings" → "Domains"
-   - Add `help.optionify.co`
+   - Add `help.optfy.co`
 
 2. **In Your DNS Provider:**
 
@@ -299,7 +299,7 @@ vercel --prod
 3. **Wait for Propagation**
    - Usually takes 5-30 minutes
    - Vercel auto-provisions SSL certificate
-   - Site will be live at `https://help.optionify.co`
+   - Site will be live at `https://help.optfy.co`
 
 ### Environment Variables
 
@@ -307,7 +307,7 @@ If you add any environment variables:
 
 ```bash
 # .env.local (don't commit this)
-NEXT_PUBLIC_SITE_URL=https://help.optionify.co
+NEXT_PUBLIC_SITE_URL=https://help.optfy.co
 ```
 
 Add in Vercel dashboard under Settings → Environment Variables

@@ -105,7 +105,7 @@ This file centralizes all SEO settings:
 ```typescript
 export const siteConfig = {
   name: 'Shopify Product Options Guide',
-  url: 'https://help.optionify.co',
+  url: 'https://help.optfy.co',
   keywords: [
     'shopify product options',
     'shopify custom fields',
@@ -339,7 +339,7 @@ https://search.google.com/test/mobile-friendly
 
 **Test your sitemap:**
 ```
-https://help.optionify.co/sitemap.xml
+https://help.optfy.co/sitemap.xml
 ```
 
 **Verify:**
@@ -353,7 +353,7 @@ https://help.optionify.co/sitemap.xml
 1. Go to https://search.google.com/search-console
 2. Select your property
 3. Navigate to Sitemaps
-4. Submit: `https://help.optionify.co/sitemap.xml`
+4. Submit: `https://help.optfy.co/sitemap.xml`
 
 ---
 
@@ -464,7 +464,7 @@ const inter = Inter({
 
 2. **Submit Sitemap:**
    ```
-   https://help.optionify.co/sitemap.xml
+   https://help.optfy.co/sitemap.xml
    ```
 
 3. **Monitor Key Metrics:**
@@ -586,7 +586,7 @@ src="/images/photo.png"
 **Problem:** OpenGraph image doesn't appear on social media
 
 **Solution:**
-- Image must be absolute URL: `https://help.optionify.co/images/og-image.png`
+- Image must be absolute URL: `https://help.optfy.co/images/og-image.png`
 - Recommended size: 1200x630px
 - File size: < 1MB
 - Format: JPG or PNG (not WebP for maximum compatibility)

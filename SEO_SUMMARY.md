@@ -117,8 +117,8 @@ npm run dev
 
 ### Verify SEO
 1. **Rich Results Test**: https://search.google.com/test/rich-results
-   - Test homepage: `https://help.optionify.co`
-   - Test article: `https://help.optionify.co/articles/getting-started-with-optionify`
+   - Test homepage: `https://help.optfy.co`
+   - Test article: `https://help.optfy.co/articles/getting-started-with-optionify`
 
 2. **PageSpeed Insights**: https://pagespeed.web.dev/
    - Target: 90+ performance score
@@ -177,7 +177,7 @@ git push
 - [ ] Add descriptive alt text to all images
 
 ### Priority 3: Google Search Console
-- [ ] Submit sitemap: `https://help.optionify.co/sitemap.xml`
+- [ ] Submit sitemap: `https://help.optfy.co/sitemap.xml`
 - [ ] Monitor coverage and indexing
 - [ ] Track Core Web Vitals
 - [ ] Review search performance weekly

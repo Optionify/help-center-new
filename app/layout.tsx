@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description: 'Learn how to add custom product options, text inputs, file uploads, and unlimited fields to your Shopify store. Complete tutorials for product customization.',
   keywords: siteConfig.keywords,
-  authors: [{ name: 'Optionify Team', url: 'https://optionify.co' }],
+  authors: [{ name: 'Optionify Team', url: 'https://optfy.co' }],
   creator: 'Optionify',
   publisher: 'Optionify',
   formatDetection: {

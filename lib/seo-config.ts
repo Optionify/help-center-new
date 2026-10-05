@@ -5,10 +5,10 @@
 
 export const siteConfig = {
   name: 'Optionify Help Center',
-  url: 'https://help.optionify.co',
+  url: 'https://help.optfy.co',
   appUrl: 'https://apps.shopify.com/optionify',
   description: 'Official Optionify app documentation and tutorials. Learn how to use Optionify to add unlimited custom product options, personalization fields, and custom inputs to your Shopify store.',
-  ogImage: 'https://help.optionify.co/images/og-image.png',
+  ogImage: 'https://help.optfy.co/images/og-image.png',
   keywords: [
     // Optionify-specific
     'optionify',
@@ -68,15 +68,15 @@ export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Optionify',
-  url: 'https://optionify.co',
-  logo: 'https://help.optionify.co/images/optionify-logo.png',
+  url: 'https://optfy.co',
+  logo: 'https://help.optfy.co/images/optionify-logo.png',
   sameAs: [
     'https://apps.shopify.com/optionify',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     contactType: 'customer support',
-    email: 'help@optionify.co',
+    email: 'help@optfy.co',
   },
 };
 

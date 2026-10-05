@@ -32,4 +32,4 @@ User-agent: SemrushBot
 Crawl-delay: 10
 
 # Sitemap location
-Sitemap: https://help.optionify.co/sitemap.xml
+Sitemap: https://help.optfy.co/sitemap.xml

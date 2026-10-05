@@ -47,14 +47,14 @@ export default function ArticleSchema({
     author: {
       '@type': 'Organization',
       name: 'Optionify Team',
-      url: 'https://optionify.co',
+      url: 'https://optfy.co',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Optionify',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://help.optionify.co/images/optionify-logo.png',
+        url: 'https://help.optfy.co/images/optionify-logo.png',
         width: 600,
         height: 60,
       },

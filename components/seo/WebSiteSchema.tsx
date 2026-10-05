@@ -17,7 +17,7 @@ export default function WebSiteSchema() {
       name: 'Optionify',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://help.optionify.co/images/optionify-logo.png',
+        url: 'https://help.optfy.co/images/optionify-logo.png',
       },
     },
     potentialAction: {
